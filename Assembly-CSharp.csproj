@@ -47,7 +47,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\02.Scripts\Command\Parents\ICommand.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerMove.cs" />
+    <Compile Include="Assets\02.Scripts\Command\Parents\Command.cs" />
+    <Compile Include="Assets\02.Scripts\Command\CommandManager.cs" />
+    <Compile Include="Assets\02.Scripts\Command\Type\MovementCommand.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
