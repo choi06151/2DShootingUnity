@@ -26,7 +26,7 @@ public class PlayerFire : MonoBehaviour
     void Update()
     {
         CheckFire();
-        AutoFire();
+        CheckAutoFire();
     }
 
     private void CheckFire()
@@ -54,7 +54,15 @@ public class PlayerFire : MonoBehaviour
         }
         
     }
+    
+    private void FireAllBullet()
+    {
+        _currentFireCooldown = 0;
 
+        FireMainBullet();
+        FireSubBullet();
+    }
+    
     private void FireMainBullet()
     {
         for (int i = 0; i < MainBulletCount; i++)
@@ -74,14 +82,8 @@ public class PlayerFire : MonoBehaviour
         }
     }
 
-    private void FireAllBullet()
-    {
-        _currentFireCooldown = 0;
-
-        FireMainBullet();
-        FireSubBullet();
-    }
-    private void AutoFire()
+    
+    private void CheckAutoFire()
     {
         if (_isAutoFire)
         {
@@ -101,7 +103,6 @@ public class PlayerFire : MonoBehaviour
     private void UpdateFireCoolTime()
     {
         _currentFireCooldown+=Time.deltaTime;
-        Debug.Log(_currentFireCooldown);
     }
     
 }
