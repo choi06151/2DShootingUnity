@@ -1,22 +1,32 @@
-using Unity.VisualScripting;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class CommandManager : MonoBehaviour
 {
-    private List<Command> _collectedCommands = new List<Command>(); //동적 생성을 위한 리스트
-
+    
+    private List<CommandParent> _commandsHistory= new List<CommandParent>();
+    
     private float _replayStartTime;
     private float _currentReplayTime;
     private int _replayIdx=0;
     private bool _isReplaying=false;
     
-    //추후 싱글톤 패턴 구현 
     
+    
+    public static CommandManager Instance { get; private set; } //어디에서든 호출 가능
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-    
-    
     void Start()
     {
         
@@ -25,10 +35,9 @@ public class CommandManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if(Input.GetKey(KeyCode.T))
         {
-            DeleteRecord();
+            DeleteHistory();
         }
         
         if(Input.GetKey(KeyCode.R)&&!_isReplaying)
@@ -40,48 +49,45 @@ public class CommandManager : MonoBehaviour
         {
             UpdateReplay();
         }
+    }
+
+    public void ExecuteCommand(CommandParent command)
+    {
+        command.Execute();
+        _commandsHistory.Add(command);
         
     }
 
-    public void Collect(Command command)
-    {
-        _collectedCommands.Add(command); //명령에 기록
-    }
-
-
-    public void DeleteRecord()
-    {
-        Debug.Log("기록된 레코드를 삭제합니다");
-        _collectedCommands.Clear();
-    }
     public void ReplayStart()
     {
-        Debug.Log($"리플레이를 시작합니다 저장된 리플레이 개수:{_collectedCommands.Count} ");
+        Debug.Log($"리플레이를 시작합니다 저장된 리플레이 개수:{_commandsHistory.Count} ");
         _replayStartTime=Time.time; //replay 초기값 설정
         _replayIdx=0;
         _isReplaying = true;
-        
-        
     }
 
     private void UpdateReplay()
     {
-        
         _currentReplayTime = Time.time - _replayStartTime;
 
         
-        if (_replayIdx < _collectedCommands.Count&&_currentReplayTime >= _collectedCommands[_replayIdx].GetExecutionTime()) // 저장된 리플레이를 다 진행 할 동안 
+        if (_replayIdx < _commandsHistory.Count&&_currentReplayTime >= _commandsHistory[_replayIdx].GetExecutionTime()) // 저장된 리플레이를 다 진행 할 동안 
         {
-                _collectedCommands[_replayIdx].Execute(); //저장된 커맨드를 실행 
-                _replayIdx++;//실행후 다음 인덷ㄱ스 검사
+            _commandsHistory[_replayIdx].Execute(); //저장된 커맨드를 실행 
+            _replayIdx++;//실행후 다음 인덷ㄱ스 검사
             
         }
 
-        if (_replayIdx >= _collectedCommands.Count)  //저장된리플레이 다 사용한다면
+        if (_replayIdx >= _commandsHistory.Count)  //저장된리플레이 다 사용한다면
         {
             Debug.Log($"리플레이가 완료되었습니다");
             _isReplaying = false;
         }
-        
+    }
+    
+    public void DeleteHistory()
+    {
+        Debug.Log("누적된 명령을 제거합니다");
+        _commandsHistory.Clear();
     }
 }
