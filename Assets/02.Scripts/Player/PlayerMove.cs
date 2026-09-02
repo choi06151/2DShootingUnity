@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -5,7 +6,8 @@ public class PlayerMove : MonoBehaviour
     //목적 : 키보드 입력에 따라서 플레이어 이동 처리를 하고싶다 
 
 
-
+    
+     private Transform _recordStartTransform;
      private float _currentSpeed;
      
      public float MoveSpeed = 3f;
@@ -14,7 +16,12 @@ public class PlayerMove : MonoBehaviour
      public float[] constraintYRange = new float[2]{-5f,-1.5f}; //-1.5 , -5 //이동 가능범위
      public float[] constraintXRange = new float[2]{-2.5f,2.5f};
 
-     
+
+     private void Start()
+     {
+         InitForRecord();
+     }
+
      void Update()
      {
          PlayerMovementCheck();
@@ -72,9 +79,13 @@ public class PlayerMove : MonoBehaviour
             
         }
     }
-    
-   
 
+
+    public void InitForRecord()
+    {
+        TeleportCommand teleportCommand=new TeleportCommand(this.gameObject,transform.position);
+        CommandManager.Instance.ExecuteCommand(teleportCommand);
+    }
     public void Move(Vector3 moveDirection)
     {
         transform.Translate(moveDirection);
