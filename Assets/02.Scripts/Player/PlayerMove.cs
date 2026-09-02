@@ -6,24 +6,43 @@ public class PlayerMove : MonoBehaviour
 
 
 
+     private bool _isDashing;
+     private float _currentSpeed;
+     
      public float MoveSpeed = 3f;
+     public float MoveMultiplier = 1.5f;
      public float[] constraintYRange = new float[2]{-5f,-1.5f}; //-1.5 , -5 //이동 가능범위
      public float[] constraintXRange = new float[2]{-2.5f,2.5f};
 
      void Update()
     {
+        
+        
+        _isDashing = Input.GetKey(KeyCode.LeftShift);
+        
+        if (_isDashing)
+        {
+            _currentSpeed=MoveSpeed*MoveMultiplier;
+        }
+        else
+        {
+            _currentSpeed = MoveSpeed;
+        }
+        
         float h=Input.GetAxisRaw("Horizontal"); //키보드 왼/ 오른쪽 입력상태에 따라 -1f ~ 1f
         float v = Input.GetAxisRaw("Vertical"); //키보드 위 /아래 -1f~1f
+        
+        
         //Raw를 추가하면 중간값 없어짐 
         //Debug.Log($"h:{h} v:{v}");
         
         Vector2 normalDirection = new Vector2(h,v);         //현재 방향과 속도에 따라 이동한다
         Vector2 normalizedDirection = normalDirection.normalized; //정규화
-        Vector3 nextPosition=transform.position+(Vector3)normalizedDirection * Time.deltaTime * MoveSpeed;
+        Vector3 nextPosition=transform.position+(Vector3)normalizedDirection * Time.deltaTime * _currentSpeed;
 
         if (nextPosition.y >= constraintYRange[0] && nextPosition.y <= constraintYRange[1]) //범위 내부여야만 이동
         {
-            transform.Translate(normalizedDirection * Time.deltaTime * MoveSpeed);
+            transform.Translate(normalizedDirection * Time.deltaTime * _currentSpeed);
 
         }
         
