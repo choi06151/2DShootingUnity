@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
 
      public float MoveSpeed = 3f;
      public float[] constraintYRange = new float[2]{-5f,-1.5f}; //-1.5 , -5 //이동 가능범위
+     public float[] constraintXRange = new float[2]{-2.5f,2.5f};
 
      void Update()
     {
@@ -24,6 +25,13 @@ public class PlayerMove : MonoBehaviour
         {
             transform.Translate(normalizedDirection * Time.deltaTime * MoveSpeed);
 
+        }
+        
+        if (nextPosition.x <= constraintXRange[0] || nextPosition.x >= constraintXRange[1]) //범위 내부여야만 이동
+        {
+            float convertedX=nextPosition.x*-1; //x좌표 위치 바꾸기
+            Vector3 convertedPosition = new Vector3(convertedX, transform.position.y, transform.position.z);
+            transform.position=convertedPosition; //해당 좌표로 순간이동
         }
 
         
