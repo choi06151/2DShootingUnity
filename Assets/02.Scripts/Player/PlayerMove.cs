@@ -29,6 +29,10 @@ public class PlayerMove : MonoBehaviour
         {
             _currentSpeed=MoveSpeed*MoveSpeedUpMultiplier;
         }
+        else
+        {
+            _currentSpeed=MoveSpeed;
+        }
         
         float h=Input.GetAxisRaw("Horizontal"); //키보드 왼/ 오른쪽 입력상태에 따라 -1f ~ 1f
         float v = Input.GetAxisRaw("Vertical"); //키보드 위 /아래 -1f~1f
