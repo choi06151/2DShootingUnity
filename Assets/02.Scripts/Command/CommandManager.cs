@@ -14,6 +14,9 @@ public class CommandManager : MonoBehaviour
     //추후 싱글톤 패턴 구현 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    
+    
     void Start()
     {
         

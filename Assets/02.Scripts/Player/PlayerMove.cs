@@ -6,11 +6,11 @@ public class PlayerMove : MonoBehaviour
 
 
 
-     private bool _isDashing;
      private float _currentSpeed;
      
      public float MoveSpeed = 3f;
-     public float MoveMultiplier = 1.5f;
+     public float MoveSpeedDownMultiplier = 0.5f;
+     public float MoveSpeedUpMultiplier = 1.5f;
      public float[] constraintYRange = new float[2]{-5f,-1.5f}; //-1.5 , -5 //이동 가능범위
      public float[] constraintXRange = new float[2]{-2.5f,2.5f};
 
@@ -20,15 +20,14 @@ public class PlayerMove : MonoBehaviour
     {
         
         
-        _isDashing = Input.GetKey(KeyCode.LeftShift);
         
-        if (_isDashing)
+        if (Input.GetKey(KeyCode.Q))
         {
-            _currentSpeed=MoveSpeed*MoveMultiplier;
+            _currentSpeed=MoveSpeed*MoveSpeedDownMultiplier;
         }
-        else
+        else if (Input.GetKey(KeyCode.E))
         {
-            _currentSpeed = MoveSpeed;
+            _currentSpeed=MoveSpeed*MoveSpeedUpMultiplier;
         }
         
         float h=Input.GetAxisRaw("Horizontal"); //키보드 왼/ 오른쪽 입력상태에 따라 -1f ~ 1f
