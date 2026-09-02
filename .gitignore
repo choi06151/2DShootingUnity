@@ -1,52 +1,72 @@
-# Prerequisites
-*.d
+```gitignore
+# ============================================
+# Unity
+# ============================================
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Unity generated/cache folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Unity cache / generated files
+MemoryCaptures/
+Recordings/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Crash reports
+sysinfo.txt
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# ============================================
+# Rider / JetBrains
+# ============================================
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Rider / JetBrains project settings
+.idea/
 
-# Executables
-*.exe
-*.out
+# Rider generated user-specific files
+*.sln.iml
+
+# ============================================
+# Visual Studio / VS Code
+# ============================================
+
+.vs/
+.vscode/
+
+# User-specific Visual Studio files
+*.user
+*.userosscache
+*.suo
+
+# ============================================
+# OS
+# ============================================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ============================================
+# Build / Generated
+# ============================================
+
+# Common Unity build outputs
+*.apk
+*.aab
 *.app
-*.i*86
-*.x86_64
-*.hex
+*.exe
+*.unitypackage
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# ============================================
+# Logs
+# ============================================
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+*.log
+```
