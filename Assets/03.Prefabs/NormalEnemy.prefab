@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8826160487782846972}
   - component: {fileID: 6967781684377843352}
-  - component: {fileID: 8440270010848694002}
   - component: {fileID: 2672948357289597695}
   - component: {fileID: 1959297313328246271}
+  - component: {fileID: 5950680651562814429}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: NormalEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,19 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &8440270010848694002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6709305820122906881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf228bf28644ba4da98bb31f752dcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  MoveSpeed: 3
 --- !u!60 &2672948357289597695
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -185,3 +172,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &5950680651562814429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380df2e37a8ccf74fac0013f27b68188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemy
+  MoveSpeed: 3

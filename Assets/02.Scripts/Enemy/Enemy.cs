@@ -2,10 +2,9 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     public float MoveSpeed = 3f;
-    private Vector3 _direction = new Vector3(0, -1, 0);
 
     private float _hp = 100;
 
@@ -26,12 +25,8 @@ public class Enemy : MonoBehaviour
         Move();
     }
 
-    private void Move()
-    {
-        MovementCommand movementCommand = new MovementCommand(this.gameObject,
-            _direction * Time.deltaTime * MoveSpeed);
-        CommandManager.Instance.ExecuteCommand(movementCommand);
-    }
+    protected abstract void Move();
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,8 +35,9 @@ public class Enemy : MonoBehaviour
         }
         else if (other.tag == "PlayerBullet")
         {
+            BulletMove bulletMove = other.GetComponent<BulletMove>();
             Destroy(other.gameObject);
-            GetDamage(100);
+            GetDamage(bulletMove.Damage);
         }
     }
 

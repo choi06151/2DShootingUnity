@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
+    public PoolingManager PoolingManager;
+
     public GameObject MainBulletPrefab;
     public const int MainBulletCount = 2;
     public Transform[] MainFirePoint = new Transform[MainBulletCount];

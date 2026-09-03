@@ -1,13 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCreator : MonoBehaviour
 {
     public float distanceToAnotherEnemy = 0.5f;
-    public GameObject EnemyPrefab;
+    public List<Enemy> EnemyPrefabs;
     public GameObject SpawnPoint;
     public float RespawnCoolTime = 2;
 
     private float _currentCoolTime = 0;
+
+    public PoolingManager PoolingManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +40,7 @@ public class EnemyCreator : MonoBehaviour
     {
         int spawnedCount = 0;
         int spawnAmount = Random.Range(1, 5);
+        int randomSpawnType = Random.Range(0, EnemyPrefabs.Count);
         bool[] isCreated = new bool[5];
 
         while (spawnedCount <= spawnAmount)
@@ -48,7 +52,8 @@ public class EnemyCreator : MonoBehaviour
             }
 
             CreateCommand createCommand =
-                new CreateCommand(this.gameObject, EnemyPrefab, GetSpawnPoint(spawnPointIndex));
+                new CreateCommand(this.gameObject, EnemyPrefabs[randomSpawnType].gameObject,
+                    GetSpawnPoint(spawnPointIndex));
             CommandManager.Instance.ExecuteCommand(createCommand);
             isCreated[spawnPointIndex] = true;
             spawnedCount++;
