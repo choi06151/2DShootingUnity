@@ -14,7 +14,7 @@ public class HomingEnemy : Enemy
 
     protected override void Move()
     {
-        _direction = _playerMove.transform.position - transform.position;
+        _direction = (_playerMove.transform.position - transform.position).normalized;
         MovementCommand movementCommand = new MovementCommand(this.gameObject,
             _direction * Time.deltaTime * MoveSpeed);
         CommandManager.Instance.ExecuteCommand(movementCommand);

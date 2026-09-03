@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\Enemy\Types\ToPlayerDirectionEnemy.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
-    <Compile Include="Assets\02.Scripts\PoolingSystem\PoolingManager.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerFire.cs" />

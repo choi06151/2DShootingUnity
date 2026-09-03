@@ -8,13 +8,12 @@ public class ToPlayerDirectionEnemy : Enemy
 
     private void Start()
     {
-        _direction = CommandManager.Instance.PlayerMove.transform.position - transform.position;
+        _direction = (CommandManager.Instance.PlayerMove.transform.position - transform.position).normalized;
     }
 
     protected override void Move()
     {
-        MovementCommand movementCommand = new MovementCommand(this.gameObject,
-            _direction * Time.deltaTime * MoveSpeed);
+        MovementCommand movementCommand = new MovementCommand(this.gameObject, _direction * Time.deltaTime * MoveSpeed);
         CommandManager.Instance.ExecuteCommand(movementCommand);
     }
 }

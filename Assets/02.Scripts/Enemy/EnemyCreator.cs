@@ -10,7 +10,6 @@ public class EnemyCreator : MonoBehaviour
 
     private float _currentCoolTime = 0;
 
-    public PoolingManager PoolingManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

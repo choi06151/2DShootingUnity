@@ -184,4 +184,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f457c17c70b164041a3f37eed417bfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToPlayerDirectionEnemy
-  MoveSpeed: 0.5
+  MoveSpeed: 2.5
