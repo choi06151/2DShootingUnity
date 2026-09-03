@@ -35,17 +35,33 @@ public class EnemyCreator : MonoBehaviour
 
     public void CreateEnemy()
     {
-        CreateCommand createCommand = new CreateCommand(this.gameObject, EnemyPrefab, GetRandomSpawnPoint());
-        CommandManager.Instance.ExecuteCommand(createCommand);
+        int spawnedCount = 0;
+        int spawnAmount = Random.Range(1, 5);
+        bool[] isCreated = new bool[5];
+
+        while (spawnedCount <= spawnAmount)
+        {
+            int spawnPointIndex = Random.Range(0, 5);
+            while (isCreated[spawnPointIndex])
+            {
+                spawnPointIndex = Random.Range(0, 5);
+            }
+
+            CreateCommand createCommand =
+                new CreateCommand(this.gameObject, EnemyPrefab, GetSpawnPoint(spawnPointIndex));
+            CommandManager.Instance.ExecuteCommand(createCommand);
+            isCreated[spawnPointIndex] = true;
+            spawnedCount++;
+        }
     }
 
-    private Vector3 GetRandomSpawnPoint()
+    private Vector3 GetSpawnPoint(int index) // 0 1 2 3 4
     {
+        int normalizeIndex = index - 2;
         Vector3 basicSpawnPoint = SpawnPoint.transform.position;
-        int randomIndex = Random.Range(-2, 2);
-        float xPos = basicSpawnPoint.x + distanceToAnotherEnemy * randomIndex;
-        Vector3 randomSpawnPoint = new Vector3(xPos, basicSpawnPoint.y, basicSpawnPoint.z);
+        float xPos = basicSpawnPoint.x + distanceToAnotherEnemy * normalizeIndex;
+        Vector3 indexSpawnPoint = new Vector3(xPos, basicSpawnPoint.y, basicSpawnPoint.z);
 
-        return randomSpawnPoint;
+        return indexSpawnPoint;
     }
 }
