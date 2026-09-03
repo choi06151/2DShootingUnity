@@ -1,333 +1,48 @@
 ﻿root = true
 
-# Unity 게임 코드에만 적용
-[Assets/02_Script/**.cs]
+# 게임 코드에만 적용한다. Unity가 생성하는 스크립트/외부 코드는 대상이 아니다.
+[Assets/02.Scripts/**.cs]
 
-########################################
-# 기본 포맷
-########################################
+#### 들여쓰기 / 중괄호 ####
 
 indent_style = space
 indent_size = 4
-tab_width = 4
-
-end_of_line = crlf
-charset = utf-8
-insert_final_newline = true
-trim_trailing_whitespace = true
-
-
-########################################
-# C# 중괄호 / 줄바꿈
-########################################
-
-# 메서드, 클래스, if, for 등 중괄호는 다음 줄
 csharp_new_line_before_open_brace = all
 
-# else / catch / finally도 새 줄
-csharp_new_line_before_else = true
-csharp_new_line_before_catch = true
-csharp_new_line_before_finally = true
-
-# query expression 줄바꿈
-csharp_new_line_between_query_expression_clauses = true
-
-
-########################################
-# 들여쓰기
-########################################
-
-csharp_indent_case_contents = true
-csharp_indent_switch_labels = true
-csharp_indent_labels = flush_left
-csharp_indent_block_contents = true
-csharp_indent_braces = false
-
-
-########################################
-# 공백
-########################################
-
-csharp_space_after_cast = false
-
-csharp_space_after_keywords_in_control_flow_statements = true
-
-csharp_space_between_parentheses = false
-csharp_space_between_method_call_parameter_list_parentheses = false
-csharp_space_between_method_declaration_parameter_list_parentheses = false
-
-csharp_space_before_colon_in_inheritance_clause = true
-csharp_space_after_colon_in_inheritance_clause = true
-
-csharp_space_before_comma = false
-csharp_space_after_comma = true
-
-csharp_space_before_dot = false
-csharp_space_after_dot = false
-
-csharp_space_before_semicolon_in_for_statement = false
-csharp_space_after_semicolon_in_for_statement = true
-
-csharp_space_around_binary_operators = before_and_after
-
-csharp_space_around_declaration_statements = ignore
-
-
-########################################
-# 중괄호 사용
-########################################
-
-# 여러 줄일 경우 중괄호 필수
+# 조기 리턴(단일 행)은 중괄호 없이 허용, 여러 줄일 때만 중괄호 강제
 csharp_prefer_braces = when_multiline:warning
 
+#### 이름 규칙 ####
 
-########################################
-# using
-########################################
+# 규칙 순서는 무관하다. required_modifiers가 있는 쪽이 더 구체적이라
+# private const / private static readonly 예외가 private 필드 규칙보다 자동으로 우선한다.
 
-# using은 namespace 바깥
-csharp_using_directive_placement = outside_namespace:warning
-
-# System namespace 우선
-dotnet_sort_system_directives_first = true
-
-# 불필요한 using 제거
-dotnet_diagnostic.IDE0005.severity = warning
-
-
-########################################
-# var 규칙
-########################################
-
-# Microsoft 스타일에 가깝게:
-# 타입이 명확해도 기본적으로 명시적 타입 사용
-csharp_style_var_for_built_in_types = false:warning
-csharp_style_var_when_type_is_apparent = false:warning
-csharp_style_var_elsewhere = false:warning
-
-
-########################################
-# this 사용
-########################################
-
-dotnet_style_qualification_for_field = false:warning
-dotnet_style_qualification_for_property = false:warning
-dotnet_style_qualification_for_method = false:warning
-dotnet_style_qualification_for_event = false:warning
-
-
-########################################
-# 기본 표현식 스타일
-########################################
-
-# 내장 타입 키워드 사용
-dotnet_style_predefined_type_for_locals_parameters_members = true:warning
-dotnet_style_predefined_type_for_member_access = true:warning
-
-# null 검사
-dotnet_style_coalesce_expression = true:suggestion
-dotnet_style_null_propagation = true:suggestion
-
-# object/collection initializer
-dotnet_style_object_initializer = true:suggestion
-dotnet_style_collection_initializer = true:suggestion
-
-# 자동 프로퍼티
-dotnet_style_prefer_auto_properties = true:suggestion
-
-# readonly 권장
-dotnet_style_readonly_field = true:warning
-
-
-########################################
-# expression-bodied
-########################################
-
-csharp_style_expression_bodied_methods = false:suggestion
-csharp_style_expression_bodied_constructors = false:suggestion
-csharp_style_expression_bodied_operators = false:suggestion
-
-csharp_style_expression_bodied_properties = true:suggestion
-csharp_style_expression_bodied_indexers = true:suggestion
-csharp_style_expression_bodied_accessors = true:suggestion
-
-
-########################################
-# 패턴 / 조건식
-########################################
-
-csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
-csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
-
-csharp_style_prefer_not_pattern = true:suggestion
-csharp_style_prefer_switch_expression = true:suggestion
-
-csharp_style_prefer_conditional_expression_over_assignment = true:suggestion
-csharp_style_prefer_conditional_expression_over_return = true:suggestion
-
-
-########################################
-# 기타 C# 스타일
-########################################
-
-csharp_style_prefer_simple_using_statement = true:suggestion
-csharp_style_prefer_local_over_anonymous_function = true:suggestion
-
-csharp_style_prefer_index_operator = true:suggestion
-csharp_style_prefer_range_operator = true:suggestion
-
-csharp_style_prefer_tuple_swap = true:suggestion
-
-csharp_style_namespace_declarations = block_scoped:suggestion
-
-
-########################################
-# Naming Style 정의
-########################################
-
-# PascalCase
 dotnet_naming_style.pascal_case.capitalization = pascal_case
-
-# camelCase
-dotnet_naming_style.camel_case.capitalization = camel_case
-
-# _camelCase
 dotnet_naming_style.underscore_camel_case.required_prefix = _
 dotnet_naming_style.underscore_camel_case.capitalization = camel_case
 
-# IPascalCase
-dotnet_naming_style.interface_pascal_case.required_prefix = I
-dotnet_naming_style.interface_pascal_case.capitalization = pascal_case
-
-
-########################################
-# public / protected / internal 멤버
-########################################
-
-dotnet_naming_symbols.public_members.applicable_kinds = property, method, event, field
-dotnet_naming_symbols.public_members.applicable_accessibilities = public, protected, protected_internal, internal
-
-dotnet_naming_rule.public_members_pascal_case.symbols = public_members
-dotnet_naming_rule.public_members_pascal_case.style = pascal_case
-dotnet_naming_rule.public_members_pascal_case.severity = warning
-
-
-########################################
-# private field → _camelCase
-########################################
-
+# private 필드 → _camelCase
 dotnet_naming_symbols.private_fields.applicable_kinds = field
 dotnet_naming_symbols.private_fields.applicable_accessibilities = private
-
 dotnet_naming_rule.private_fields_underscore.symbols = private_fields
 dotnet_naming_rule.private_fields_underscore.style = underscore_camel_case
 dotnet_naming_rule.private_fields_underscore.severity = warning
 
-
-########################################
 # private const → PascalCase
-########################################
-
 dotnet_naming_symbols.private_constants.applicable_kinds = field
 dotnet_naming_symbols.private_constants.applicable_accessibilities = private
 dotnet_naming_symbols.private_constants.required_modifiers = const
-
 dotnet_naming_rule.private_constants_pascal.symbols = private_constants
 dotnet_naming_rule.private_constants_pascal.style = pascal_case
 dotnet_naming_rule.private_constants_pascal.severity = warning
 
+# private static readonly → PascalCase
+dotnet_naming_symbols.private_static_readonly.applicable_kinds = field
+dotnet_naming_symbols.private_static_readonly.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_readonly.required_modifiers = static, readonly
+dotnet_naming_rule.private_static_readonly_pascal.symbols = private_static_readonly
+dotnet_naming_rule.private_static_readonly_pascal.style = pascal_case
+dotnet_naming_rule.private_static_readonly_pascal.severity = warning
 
-########################################
-# static readonly → PascalCase
-########################################
-
-dotnet_naming_symbols.static_readonly_fields.applicable_kinds = field
-dotnet_naming_symbols.static_readonly_fields.required_modifiers = static, readonly
-
-dotnet_naming_rule.static_readonly_pascal.symbols = static_readonly_fields
-dotnet_naming_rule.static_readonly_pascal.style = pascal_case
-dotnet_naming_rule.static_readonly_pascal.severity = warning
-
-
-########################################
-# local 변수 → camelCase
-########################################
-
-dotnet_naming_symbols.local_variables.applicable_kinds = local
-
-dotnet_naming_rule.local_variables_camel.symbols = local_variables
-dotnet_naming_rule.local_variables_camel.style = camel_case
-dotnet_naming_rule.local_variables_camel.severity = warning
-
-
-########################################
-# parameter → camelCase
-########################################
-
-dotnet_naming_symbols.parameters.applicable_kinds = parameter
-
-dotnet_naming_rule.parameters_camel.symbols = parameters
-dotnet_naming_rule.parameters_camel.style = camel_case
-dotnet_naming_rule.parameters_camel.severity = warning
-
-
-########################################
-# method → PascalCase
-########################################
-
-dotnet_naming_symbols.methods.applicable_kinds = method
-
-dotnet_naming_rule.methods_pascal.symbols = methods
-dotnet_naming_rule.methods_pascal.style = pascal_case
-dotnet_naming_rule.methods_pascal.severity = warning
-
-
-########################################
-# property → PascalCase
-########################################
-
-dotnet_naming_symbols.properties.applicable_kinds = property
-
-dotnet_naming_rule.properties_pascal.symbols = properties
-dotnet_naming_rule.properties_pascal.style = pascal_case
-dotnet_naming_rule.properties_pascal.severity = warning
-
-
-########################################
-# class / struct / enum → PascalCase
-########################################
-
-dotnet_naming_symbols.types.applicable_kinds = class, struct, enum
-
-dotnet_naming_rule.types_pascal.symbols = types
-dotnet_naming_rule.types_pascal.style = pascal_case
-dotnet_naming_rule.types_pascal.severity = warning
-
-
-########################################
-# interface → IPascalCase
-########################################
-
-dotnet_naming_symbols.interfaces.applicable_kinds = interface
-
-dotnet_naming_rule.interfaces_prefix.symbols = interfaces
-dotnet_naming_rule.interfaces_prefix.style = interface_pascal_case
-dotnet_naming_rule.interfaces_prefix.severity = warning
-
-
-########################################
-# enum member → PascalCase
-########################################
-
-dotnet_naming_symbols.enum_members.applicable_kinds = enum_member
-
-dotnet_naming_rule.enum_members_pascal.symbols = enum_members
-dotnet_naming_rule.enum_members_pascal.style = pascal_case
-dotnet_naming_rule.enum_members_pascal.severity = warning
-
-
-########################################
-# Naming 진단
-########################################
-
+# 규칙 severity는 IDE에서만 존중되므로, 빌드/dotnet format에서 잡히도록 진단 severity도 올린다.
 dotnet_diagnostic.IDE1006.severity = warning
