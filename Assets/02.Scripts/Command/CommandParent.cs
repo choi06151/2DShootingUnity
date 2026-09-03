@@ -7,7 +7,7 @@ public abstract class CommandParent : ICommand
 
     public CommandParent(GameObject executedObject)
     {
-        _executedTime=Time.time;
+        _executedTime = Time.time;
         _executedObject = executedObject;
     }
 
@@ -16,5 +16,6 @@ public abstract class CommandParent : ICommand
     {
         return _executedTime;
     }
+
     public abstract void Execute();
 }

@@ -4,22 +4,21 @@ public class CreateCommand : CommandParent
 {
     private GameObject _createTarget;
     private Vector3 _createPosition;
-    
-    public CreateCommand(GameObject executedObject,GameObject createTarget,Vector3 createPosition) : base(executedObject)
+
+    public CreateCommand(GameObject executedObject, GameObject createTarget, Vector3 createPosition) : base(
+        executedObject)
     {
         _createTarget = createTarget;
-        _createPosition= createPosition;
+        _createPosition = createPosition;
     }
 
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
 
