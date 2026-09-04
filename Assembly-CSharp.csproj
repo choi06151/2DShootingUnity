@@ -50,6 +50,7 @@
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerMove.cs" />
+    <Compile Include="Assets\02.Scripts\Environment\DestroyZone.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerFire.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandManager.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\IEnemyFun.cs" />
