@@ -726,7 +726,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCreator
   distanceToAnotherEnemy: 1
-  EnemyPrefab: {fileID: 6709305820122906881, guid: 7ef03b44a09da824b8c8e24f762ece11, type: 3}
+  EnemyPrefabs:
+  - {fileID: 5185800396200252646, guid: cc365782f89b11f4bb412c61c8e4107c, type: 3}
+  - {fileID: 5950680651562814429, guid: 7ef03b44a09da824b8c8e24f762ece11, type: 3}
+  - {fileID: -6317996665165057776, guid: ba45351f0b206d7469e4640fbf486d48, type: 3}
   SpawnPoint: {fileID: 2081495119}
   RespawnCoolTime: 1.5
 --- !u!4 &2081495121
