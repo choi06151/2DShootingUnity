@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, IPlayerFun
 {
     //목적 : 키보드 입력에 따라서 플레이어 이동 처리를 하고싶다 
 
@@ -9,17 +9,21 @@ public class PlayerMove : MonoBehaviour
     private Transform _recordStartTransform;
     private float _currentSpeed;
 
-    public float MoveSpeed = 3f;
-    public float MoveSpeedDownMultiplier = 0.5f;
-    public float MoveSpeedUpMultiplier = 1.5f;
+    private float _moveSpeed;
+    private float _moveSpeedDownMultiplier;
+    private float _moveSpeedUpMultiplier;
     public float[] constraintYRange = new float[2] { -5f, -1.5f }; //-1.5 , -5 //이동 가능범위
     public float[] constraintXRange = new float[2] { -2.5f, 2.5f };
 
 
-    private void Start()
+    public void Init(Player player)
     {
+        _moveSpeed = player.MoveSpeed;
+        _moveSpeedDownMultiplier = 1.0f - player.MoveSpeedMultiplier;
+        _moveSpeedUpMultiplier = 1.0f + player.MoveSpeedMultiplier;
         InitForRecord();
     }
+
 
     void Update()
     {
@@ -31,15 +35,15 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            _currentSpeed = MoveSpeed * MoveSpeedDownMultiplier;
+            _currentSpeed = _moveSpeed * _moveSpeedDownMultiplier;
         }
         else if (Input.GetKey(KeyCode.E))
         {
-            _currentSpeed = MoveSpeed * MoveSpeedUpMultiplier;
+            _currentSpeed = _moveSpeed * _moveSpeedUpMultiplier;
         }
         else
         {
-            _currentSpeed = MoveSpeed;
+            _currentSpeed = _moveSpeed;
         }
     }
 

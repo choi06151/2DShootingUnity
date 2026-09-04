@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NormalEnemyMove : EnemyMove
+public class NormalEnemyFunMove : EnemyFunMove
 {
     private Vector3 _direction = new Vector3(0, -1, 0);
 

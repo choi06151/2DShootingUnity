@@ -186,7 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d20a4ecbf327e44282a74f3c23315b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomingEnemy
-  _moveSpeed: 3
 --- !u!114 &-6823504070308606980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0515717ac0becec4ca7383cf9101919e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
-  _damage: 30
 --- !u!114 &2875208668282470267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,3 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1932c3a34f4183c41a603c51ae6e2312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  _enemySpeed: 1.5
+  _enemyHP: 100
+  _enemyDamage: 20

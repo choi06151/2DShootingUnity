@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 6967781684377843352}
   - component: {fileID: 2672948357289597695}
   - component: {fileID: 1959297313328246271}
-  - component: {fileID: 5950680651562814429}
-  - component: {fileID: -4226483521117098271}
-  - component: {fileID: -1462791388863640007}
+  - component: {fileID: -6317996665165057776}
+  - component: {fileID: 1737814595040063037}
+  - component: {fileID: 5319305071654250509}
   m_Layer: 8
-  m_Name: NormalEnemy
+  m_Name: ToPlayerDirectionEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5495987, g: 0.8632076, b: 0.51711017, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &5950680651562814429
+--- !u!114 &-6317996665165057776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,11 +183,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6709305820122906881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380df2e37a8ccf74fac0013f27b68188, type: 3}
+  m_Script: {fileID: 11500000, guid: f457c17c70b164041a3f37eed417bfb8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemy
-  _moveSpeed: 3
---- !u!114 &-4226483521117098271
+  m_EditorClassIdentifier: Assembly-CSharp::ToPlayerDirectionEnemy
+--- !u!114 &1737814595040063037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,8 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0515717ac0becec4ca7383cf9101919e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
-  _damage: 50
---- !u!114 &-1462791388863640007
+--- !u!114 &5319305071654250509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,3 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1932c3a34f4183c41a603c51ae6e2312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  _enemySpeed: 4
+  _enemyHP: 50
+  _enemyDamage: 70

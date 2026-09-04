@@ -3,11 +3,6 @@
 # 게임 코드에만 적용한다. Unity가 생성하는 스크립트/외부 코드는 대상이 아니다.
 [Assets/02.Scripts/**.cs]
 
-#### 들여쓰기 / 중괄호 ####
-
-indent_style = space
-indent_size = 4
-csharp_new_line_before_open_brace = all
 
 # 조기 리턴(단일 행)은 중괄호 없이 허용, 여러 줄일 때만 중괄호 강제
 csharp_prefer_braces = when_multiline:warning

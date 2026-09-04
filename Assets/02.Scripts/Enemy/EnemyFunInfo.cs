@@ -1,17 +1,18 @@
 using System;
 using UnityEngine;
 
-public class EnemyInfo : MonoBehaviour, IHP
+public class EnemyFunInfo : MonoBehaviour, IHP, IEnemyFun
 {
     public float Hp { get; private set; }
-    public float MaxHp { get; private set; } = 100;
+    public float MaxHp { get; private set; }
 
-    [SerializeField] private float _damage;
+    private float _damage;
 
-
-    private void Start()
+    public void Init(Enemy enemy)
     {
+        MaxHp = enemy.EnemyHp;
         Hp = MaxHp;
+        _damage = enemy.EnemyDamage;
     }
 
 

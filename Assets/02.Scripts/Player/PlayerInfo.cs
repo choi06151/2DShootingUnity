@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class PlayerInfo : MonoBehaviour, IHP
+public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
 {
     public float Hp { get; private set; }
     public float MaxHp { get; private set; } = 100;
 
-    private void Start()
+
+    public void Init(Player player)
     {
+        MaxHp = player.MaxHp;
         Hp = MaxHp;
     }
+
 
     public void GetDamage(float damage)
     {

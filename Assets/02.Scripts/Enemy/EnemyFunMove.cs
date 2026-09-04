@@ -2,9 +2,14 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class EnemyMove : MonoBehaviour
+public abstract class EnemyFunMove : MonoBehaviour, IEnemyFun
 {
-    [SerializeField] protected float _moveSpeed = 3f;
+    protected float _moveSpeed;
+
+    public void Init(Enemy enemy)
+    {
+        _moveSpeed = enemy.EnemySpeed;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

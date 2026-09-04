@@ -1,27 +1,26 @@
+using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class PlayerFire : MonoBehaviour
+public class PlayerFire : MonoBehaviour, IPlayerFun
 {
-    public GameObject MainBulletPrefab;
-    public const int MainBulletCount = 2;
-    public Transform[] MainFirePoint = new Transform[MainBulletCount];
-
-    public GameObject SubBulletPrefab;
-    public const int SubBulletCount = 2;
-    public Transform[] SubFirePoint = new Transform[MainBulletCount];
-
-    public float FireCoolTime = 0.1f;
-
-    private bool _isAutoFire = false;
+    private List<BulletMove> _spawnBulletList;
+    private Transform _mainBulletSpawnPoint;
+    private int _bulletFireCount;
+    private float _fireCoolTime;
+    private bool _isAutoFire;
     private float _currentFireCooldown = 999f;
+    private float _firePointInterval;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Init(Player player)
     {
+        _bulletFireCount = player.BulletFireCount;
+        _fireCoolTime = player.FireCoolTime;
+        _mainBulletSpawnPoint = player.BulletSpawnPoint;
+        _firePointInterval = player.FirePointInterval;
+        _spawnBulletList = player.BulletList;
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckFire();
@@ -56,36 +55,32 @@ public class PlayerFire : MonoBehaviour
     {
         _currentFireCooldown = 0;
 
-        FireMainBullet();
-        FireSubBullet();
-    }
 
-    private void FireMainBullet()
-    {
-        for (int i = 0; i < MainBulletCount; i++)
+        foreach (BulletMove bullet in _spawnBulletList)
         {
-            CreateCommand createCommand =
-                new CreateCommand(this.gameObject, MainBulletPrefab, MainFirePoint[i].position);
-            CommandManager.Instance.ExecuteCommand(createCommand);
+            for (int i = 0; i < _bulletFireCount; i++)
+            {
+                CreateCommand createCommand = new CreateCommand(this.gameObject, bullet.gameObject, GetFirePoint(i));
+                CommandManager.Instance.ExecuteCommand(createCommand);
+            }
         }
     }
 
 
-    private void FireSubBullet()
+    private Vector3 GetFirePoint(int index)
     {
-        for (int i = 0; i < SubBulletCount; i++)
-        {
-            CreateCommand createCommand = new CreateCommand(this.gameObject, SubBulletPrefab, SubFirePoint[i].position);
-            CommandManager.Instance.ExecuteCommand(createCommand);
-        }
-    }
+        float centerIndex = (_bulletFireCount - 1) / 2f;
+        float offsetX = (index - centerIndex) * _firePointInterval;
 
+        return _mainBulletSpawnPoint.position
+               + Vector3.right * offsetX;
+    }
 
     private void CheckAutoFire()
     {
         if (_isAutoFire)
         {
-            if (_currentFireCooldown > FireCoolTime)
+            if (_currentFireCooldown > _fireCoolTime)
             {
                 FireAllBullet();
             }
@@ -94,7 +89,7 @@ public class PlayerFire : MonoBehaviour
 
     private bool CheckFireCoolTime()
     {
-        return _currentFireCooldown > FireCoolTime;
+        return _currentFireCooldown > _fireCoolTime;
     }
 
     private void UpdateFireCoolTime()
