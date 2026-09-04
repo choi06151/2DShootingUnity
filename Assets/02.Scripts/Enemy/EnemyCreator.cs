@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class EnemyCreator : MonoBehaviour
 {
-    public float distanceToAnotherEnemy = 0.5f;
-    public List<Enemy> EnemyPrefabs;
-    public GameObject SpawnPoint;
-    public float RespawnCoolTime = 2;
+    [Header("적과의 간격")] public float distanceToAnotherEnemy = 0.5f;
+    [Header("스폰될 적")] public List<Enemy> EnemyPrefabs;
+    [Header("스폰 위치")] public GameObject SpawnPoint;
+    [Header("스폰 간격")] public float RespawnCoolTime = 2;
 
     private float _currentCoolTime = 0;
 
@@ -19,10 +19,10 @@ public class EnemyCreator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckRespawn();
+        CheckRespawnEnable();
     }
 
-    private void CheckRespawn()
+    private void CheckRespawnEnable()
     {
         if (_currentCoolTime >= RespawnCoolTime)
         {

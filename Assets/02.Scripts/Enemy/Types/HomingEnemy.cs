@@ -9,12 +9,11 @@ public class HomingEnemy : Enemy
 
     private void Start()
     {
+        _playerMove = CommandManager.Instance.PlayerMove;
     }
 
     protected override void Move()
     {
-        _playerMove = CommandManager.Instance.PlayerMove;
-
         _direction = (_playerMove.transform.position - transform.position).normalized;
         MovementCommand movementCommand = new MovementCommand(this.gameObject,
             _direction * Time.deltaTime * MoveSpeed);
