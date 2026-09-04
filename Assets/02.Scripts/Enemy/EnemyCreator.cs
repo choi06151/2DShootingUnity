@@ -1,6 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+enum EnemyType
+{
+    Normal,
+    Homing,
+    ToPlayerDirection
+}
+
 public class EnemyCreator : MonoBehaviour
 {
     [Header("적과의 간격")] public float distanceToAnotherEnemy = 0.5f;
@@ -40,7 +48,7 @@ public class EnemyCreator : MonoBehaviour
     {
         int spawnedCount = 0;
         int spawnAmount = Random.Range(1, 5);
-        int randomSpawnType = Random.Range(0, EnemyPrefabs.Count);
+        EnemyType spawnType = GetRandomSpawnType();
         bool[] isCreated = new bool[5];
 
         while (spawnedCount <= spawnAmount)
@@ -52,7 +60,7 @@ public class EnemyCreator : MonoBehaviour
             }
 
             CreateCommand createCommand =
-                new CreateCommand(this.gameObject, EnemyPrefabs[randomSpawnType].gameObject,
+                new CreateCommand(this.gameObject, EnemyPrefabs[(int)spawnType].gameObject,
                     GetSpawnPoint(spawnPointIndex));
             CommandManager.Instance.ExecuteCommand(createCommand);
             isCreated[spawnPointIndex] = true;
@@ -70,6 +78,23 @@ public class EnemyCreator : MonoBehaviour
         Vector3 indexSpawnPoint = new Vector3(xPos, basicSpawnPoint.y, basicSpawnPoint.z);
 
         return indexSpawnPoint;
+    }
+
+    private EnemyType GetRandomSpawnType()
+    {
+        int randomIdx = Random.Range(0, 10);
+        if (randomIdx >= 0 && randomIdx < 5)
+        {
+            return EnemyType.Normal;
+        }
+        else if (randomIdx >= 5 & randomIdx < 8)
+        {
+            return EnemyType.ToPlayerDirection;
+        }
+        else
+        {
+            return EnemyType.Homing;
+        }
     }
 
     private void ChangeRespawnTime()
