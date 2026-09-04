@@ -54,26 +54,34 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
     private void FireAllBullet()
     {
         _currentFireCooldown = 0;
-
+        int bulletIndex = 0;
 
         foreach (BulletMove bullet in _spawnBulletList)
         {
             for (int i = 0; i < _bulletFireCount; i++)
             {
-                CreateCommand createCommand = new CreateCommand(this.gameObject, bullet.gameObject, GetFirePoint(i));
+                CreateCommand createCommand =
+                    new CreateCommand(this.gameObject, bullet.gameObject, GetFirePoint(i, bulletIndex));
                 CommandManager.Instance.ExecuteCommand(createCommand);
             }
+
+            bulletIndex++;
         }
     }
 
 
-    private Vector3 GetFirePoint(int index)
+    private Vector3 GetFirePoint(int createIndex, int bulletIndex)
     {
         float centerIndex = (_bulletFireCount - 1) / 2f;
-        float offsetX = (index - centerIndex) * _firePointInterval;
+        float offsetX = (createIndex - centerIndex) * _firePointInterval;
 
-        return _mainBulletSpawnPoint.position
-               + Vector3.right * offsetX;
+        Vector3 controlledXPos = _mainBulletSpawnPoint.position
+                                 + Vector3.right * offsetX;
+
+        float offsetY = bulletIndex * _firePointInterval;
+
+        Vector3 controlledYPos = controlledXPos + Vector3.up * offsetY;
+        return controlledYPos;
     }
 
     private void CheckAutoFire()
