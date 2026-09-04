@@ -6,6 +6,8 @@ public class BulletMove : MonoBehaviour
     public float Damage = 35f;
     private bool _isActive;
 
+    private Player _player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,7 @@ public class BulletMove : MonoBehaviour
             Move();
         }
     }
+
 
     private void Move()
     {

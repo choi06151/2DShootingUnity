@@ -5,6 +5,9 @@ public class CreateCommand : CommandParent
     private GameObject _createTarget;
     private Vector3 _createPosition;
 
+    private GameObject _createdObject;
+    public GameObject GetCreatedObeject => _createdObject;
+
     public CreateCommand(GameObject executedObject, GameObject createTarget, Vector3 createPosition) : base(
         executedObject)
     {
@@ -24,7 +27,8 @@ public class CreateCommand : CommandParent
 
     public override void Execute()
     {
-        GameObject bullet = GameObject.Instantiate(_createTarget);
-        bullet.transform.position = _createPosition;
+        GameObject createdObject = GameObject.Instantiate(_createTarget);
+        createdObject.transform.position = _createPosition;
+        _createdObject = createdObject;
     }
 }

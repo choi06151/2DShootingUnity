@@ -2,13 +2,13 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ToPlayerDirectionEnemyFunMove : EnemyFunMove
+public class ToPlayerDirectionEnemyMove : EnemyMove
 {
     private Vector3 _direction;
 
     private void Start()
     {
-        _direction = (CommandManager.Instance.PlayerMove.transform.position - transform.position).normalized;
+        _direction = (_player.transform.position - transform.position).normalized;
     }
 
     protected override void Move()

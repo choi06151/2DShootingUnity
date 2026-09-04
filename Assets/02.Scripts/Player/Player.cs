@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     [Header("플레이어 최대 체력")] [SerializeField]
     private float _maxHp;
 
+    [Header("플레이어 공격력")] [SerializeField] private float _playerDamageMultiplier;
+
     [Header("플레이어 총알 쿨타임")] [SerializeField]
     private float _fireCoolTime;
 
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
     public float MoveSpeed => _moveSpeed;
     public float MoveSpeedMultiplier => _moveSpeedMultiplier;
     public float MaxHp => _maxHp;
+    public float PlayerDamageMultiplier => _playerDamageMultiplier;
     public float FireCoolTime => _fireCoolTime;
     public float FirePointInterval => _firePointInterval;
     public int BulletFireCount => _bulletFireCount;

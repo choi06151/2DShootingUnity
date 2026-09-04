@@ -21,7 +21,6 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
         _moveSpeed = player.MoveSpeed;
         _moveSpeedDownMultiplier = 1.0f - player.MoveSpeedMultiplier;
         _moveSpeedUpMultiplier = 1.0f + player.MoveSpeedMultiplier;
-        InitForRecord();
     }
 
 
@@ -75,22 +74,5 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
                 CommandManager.Instance.ExecuteCommand(teleportCommand);
             }
         }
-    }
-
-
-    public void InitForRecord()
-    {
-        TeleportCommand teleportCommand = new TeleportCommand(this.gameObject, transform.position);
-        CommandManager.Instance.ExecuteCommand(teleportCommand);
-    }
-
-    public void Move(Vector3 moveDirection)
-    {
-        transform.Translate(moveDirection);
-    }
-
-    public void Teleport(Vector3 teleportPosition)
-    {
-        transform.position = teleportPosition;
     }
 }

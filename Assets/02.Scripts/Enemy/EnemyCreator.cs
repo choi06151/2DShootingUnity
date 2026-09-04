@@ -12,17 +12,23 @@ enum EnemyType
 public class EnemyCreator : MonoBehaviour
 {
     [Header("적과의 간격")] public float distanceToAnotherEnemy = 0.5f;
-    [Header("스폰될 적")] public List<EnemyFunMove> EnemyPrefabs;
+    [Header("스폰될 적")] public List<EnemyMove> EnemyPrefabs;
     [Header("스폰 위치")] public GameObject SpawnPoint;
     [Header("스폰 간격 - 시작 끝")] public float[] RespawnCoolTimeSet = new float[2] { 1, 4 };
+
 
     private float _nextSpawnTime = 3;
     private float _currentCoolTime = 0;
 
+    private Player _player;
+    public Player GetPlayer => _player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _player = FindFirstObjectByType<Player>();
+        if (_player == null)
+            Debug.Log("플레이어 없음");
     }
 
     // Update is called once per frame
@@ -44,6 +50,8 @@ public class EnemyCreator : MonoBehaviour
         }
     }
 
+    // TODO:Scriptable을 통한 확률 모듈화 
+
     public void CreateEnemy()
     {
         int spawnedCount = 0;
@@ -63,6 +71,7 @@ public class EnemyCreator : MonoBehaviour
                 new CreateCommand(this.gameObject, EnemyPrefabs[(int)spawnType].gameObject,
                     GetSpawnPoint(spawnPointIndex));
             CommandManager.Instance.ExecuteCommand(createCommand);
+            createCommand.GetCreatedObeject.GetComponent<Enemy>().InitEnemy(this);
             isCreated[spawnPointIndex] = true;
             spawnedCount++;
         }

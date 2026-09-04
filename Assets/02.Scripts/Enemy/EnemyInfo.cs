@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyFunInfo : MonoBehaviour, IHP, IEnemyFun
+public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
 {
     public float Hp { get; private set; }
     public float MaxHp { get; private set; }
@@ -39,6 +39,7 @@ public class EnemyFunInfo : MonoBehaviour, IHP, IEnemyFun
 
     public void Death()
     {
+        ItemCreator.Instance.CreateItem(this.transform.position);
         Destroy(gameObject);
     }
 }

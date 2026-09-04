@@ -1,10 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyFunMove), typeof(EnemyFunInfo))]
+[RequireComponent(typeof(EnemyMove), typeof(EnemyInfo))]
 public class Enemy : MonoBehaviour
 {
-    private EnemyFunMove _enemyFunMove;
-    private EnemyFunInfo _enemyFunInfo;
+    [SerializeField] private EnemyCreator _enemyCreator;
+    private EnemyMove _enemyMove;
+    private EnemyInfo _enemyInfo;
 
 
     [Header("적 기본 속도")] [SerializeField] protected float _enemySpeed;
@@ -15,14 +16,18 @@ public class Enemy : MonoBehaviour
     public float EnemyHp => _enemyHP;
     public float EnemyDamage => _enemyDamage;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        _enemyFunInfo = GetComponent<EnemyFunInfo>();
-        _enemyFunMove = GetComponent<EnemyFunMove>();
+    public EnemyCreator GetEnemyCreator => _enemyCreator;
 
-        _enemyFunInfo.Init(this);
-        _enemyFunMove.Init(this);
+
+    public void InitEnemy(EnemyCreator enemyCreator)
+    {
+        _enemyCreator = enemyCreator;
+
+        _enemyInfo = GetComponent<EnemyInfo>();
+        _enemyMove = GetComponent<EnemyMove>();
+
+        _enemyInfo.Init(this);
+        _enemyMove.Init(this);
     }
 
     // Update is called once per frame
@@ -30,20 +35,21 @@ public class Enemy : MonoBehaviour
     {
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             Player player = other.GetComponent<Player>();
-            player.TakeDamage(_enemyFunInfo.GetDamageInfo());
-            _enemyFunInfo.Death();
+            player.TakeDamage(_enemyInfo.GetDamageInfo());
+            _enemyInfo.Death();
             Debug.Log("충돌");
         }
         else if (other.tag == "PlayerBullet")
         {
             BulletMove bulletMove = other.GetComponent<BulletMove>();
             Destroy(other.gameObject);
-            _enemyFunInfo.GetDamage(bulletMove.Damage);
+            _enemyInfo.GetDamage(bulletMove.Damage);
         }
     }
 }

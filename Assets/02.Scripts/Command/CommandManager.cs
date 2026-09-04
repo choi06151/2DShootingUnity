@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class CommandManager : MonoBehaviour
 {
-    public PlayerMove PlayerMove;
-
-
     private List<CommandParent> _commandsHistory = new List<CommandParent>();
     private float _replayStartTime;
     private float _currentReplayTime;
@@ -86,6 +83,5 @@ public class CommandManager : MonoBehaviour
     {
         Debug.Log("누적된 명령을 제거합니다");
         _commandsHistory = new List<CommandParent>();
-        PlayerMove.InitForRecord();
     }
 }

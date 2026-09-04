@@ -2,19 +2,14 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class HomingEnemyFunMove : EnemyFunMove
+public class HomingEnemyMove : EnemyMove
 {
     private Vector3 _direction;
-    private PlayerMove _playerMove;
 
-    private void Start()
-    {
-        _playerMove = CommandManager.Instance.PlayerMove;
-    }
 
     protected override void Move()
     {
-        _direction = (_playerMove.transform.position - transform.position).normalized;
+        _direction = (_player.transform.position - transform.position).normalized;
         MovementCommand movementCommand = new MovementCommand(this.gameObject,
             _direction * Time.deltaTime * _moveSpeed);
         CommandManager.Instance.ExecuteCommand(movementCommand);

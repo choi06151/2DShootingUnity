@@ -11,6 +11,7 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
     private bool _isAutoFire;
     private float _currentFireCooldown = 999f;
     private float _firePointInterval;
+    private float _playerDamageMultiplier;
 
     public void Init(Player player)
     {

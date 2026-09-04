@@ -523,7 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1852999d4048f4f87b9569ca2a4bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CommandManager
-  PlayerMove: {fileID: 1223197393}
 --- !u!4 &1025780083
 Transform:
   m_ObjectHideFlags: 0
@@ -574,17 +573,6 @@ Transform:
   - {fileID: 401316301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1223197393 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7844185130547943632, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
-  m_PrefabInstance: {fileID: 7980036394222415362}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6879d4d92c67142b810d524095b28f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
 --- !u!1001 &2031754540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,7 +705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2365482074889503211, guid: 01d6e8d697ed2f540a42e52899de21e9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365482074889503211, guid: 01d6e8d697ed2f540a42e52899de21e9, type: 3}
       propertyPath: m_LocalPosition.x
