@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletMove : MonoBehaviour, IPool
+public class BulletMove : MonoBehaviour
 {
     public float MoveSpeed = 3f;
     public float Damage = 35f;

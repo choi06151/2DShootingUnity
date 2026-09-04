@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ToPlayerDirectionEnemy : Enemy
+public class ToPlayerDirectionEnemyMove : EnemyMove
 {
     private Vector3 _direction;
 
@@ -13,7 +13,8 @@ public class ToPlayerDirectionEnemy : Enemy
 
     protected override void Move()
     {
-        MovementCommand movementCommand = new MovementCommand(this.gameObject, _direction * Time.deltaTime * MoveSpeed);
+        MovementCommand movementCommand =
+            new MovementCommand(this.gameObject, _direction * Time.deltaTime * _moveSpeed);
         CommandManager.Instance.ExecuteCommand(movementCommand);
     }
 }

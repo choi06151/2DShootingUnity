@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2672948357289597695}
   - component: {fileID: 1959297313328246271}
   - component: {fileID: -6317996665165057776}
+  - component: {fileID: 1737814595040063037}
+  - component: {fileID: 5319305071654250509}
   m_Layer: 8
   m_Name: ToPlayerDirectionEnemy
   m_TagString: Untagged
@@ -184,4 +186,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f457c17c70b164041a3f37eed417bfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToPlayerDirectionEnemy
-  MoveSpeed: 2.5
+  _moveSpeed: 3
+--- !u!114 &1737814595040063037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0515717ac0becec4ca7383cf9101919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
+  _damage: 70
+--- !u!114 &5319305071654250509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1932c3a34f4183c41a603c51ae6e2312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2672948357289597695}
   - component: {fileID: 1959297313328246271}
   - component: {fileID: 5185800396200252646}
+  - component: {fileID: -6823504070308606980}
+  - component: {fileID: 2875208668282470267}
   m_Layer: 8
   m_Name: HomingEnemy
   m_TagString: Untagged
@@ -184,4 +186,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d20a4ecbf327e44282a74f3c23315b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomingEnemy
-  MoveSpeed: 2
+  _moveSpeed: 3
+--- !u!114 &-6823504070308606980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0515717ac0becec4ca7383cf9101919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
+  _damage: 30
+--- !u!114 &2875208668282470267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1932c3a34f4183c41a603c51ae6e2312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy

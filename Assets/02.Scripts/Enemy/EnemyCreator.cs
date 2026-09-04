@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyCreator : MonoBehaviour
 {
     [Header("적과의 간격")] public float distanceToAnotherEnemy = 0.5f;
-    [Header("스폰될 적")] public List<Enemy> EnemyPrefabs;
+    [Header("스폰될 적")] public List<EnemyMove> EnemyPrefabs;
     [Header("스폰 위치")] public GameObject SpawnPoint;
     [Header("스폰 간격 - 시작 끝")] public float[] RespawnCoolTimeSet = new float[2] { 1, 4 };
 
