@@ -59,6 +59,7 @@
     <Compile Include="Assets\02.Scripts\Command\Commands\MovementCommand.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\IPool.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\TeleportCommand.cs" />
+    <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolObject.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandParent.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\Types\NormalEnemy.cs" />

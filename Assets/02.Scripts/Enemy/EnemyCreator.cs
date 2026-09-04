@@ -6,8 +6,9 @@ public class EnemyCreator : MonoBehaviour
     [Header("적과의 간격")] public float distanceToAnotherEnemy = 0.5f;
     [Header("스폰될 적")] public List<Enemy> EnemyPrefabs;
     [Header("스폰 위치")] public GameObject SpawnPoint;
-    [Header("스폰 간격")] public float RespawnCoolTime = 2;
+    [Header("스폰 간격 - 시작 끝")] public float[] RespawnCoolTimeSet = new float[2] { 1, 4 };
 
+    private float _nextSpawnTime = 3;
     private float _currentCoolTime = 0;
 
 
@@ -24,7 +25,7 @@ public class EnemyCreator : MonoBehaviour
 
     private void CheckRespawnEnable()
     {
-        if (_currentCoolTime >= RespawnCoolTime)
+        if (_currentCoolTime >= _nextSpawnTime)
         {
             _currentCoolTime = 0;
             CreateEnemy();
@@ -57,6 +58,8 @@ public class EnemyCreator : MonoBehaviour
             isCreated[spawnPointIndex] = true;
             spawnedCount++;
         }
+
+        ChangeRespawnTime();
     }
 
     private Vector3 GetSpawnPoint(int index) // 0 1 2 3 4
@@ -67,5 +70,10 @@ public class EnemyCreator : MonoBehaviour
         Vector3 indexSpawnPoint = new Vector3(xPos, basicSpawnPoint.y, basicSpawnPoint.z);
 
         return indexSpawnPoint;
+    }
+
+    private void ChangeRespawnTime()
+    {
+        _nextSpawnTime = Random.Range(RespawnCoolTimeSet[0], RespawnCoolTimeSet[1]);
     }
 }
