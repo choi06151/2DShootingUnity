@@ -75,6 +75,7 @@
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\ToPlayerDirectionEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
+    <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletDamageUpItem.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandParent.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\Enemy.cs" />
     <Reference Include="UnityEngine">

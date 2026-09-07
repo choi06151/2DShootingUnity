@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     private PlayerMove _playerMove;
     private PlayerInfo _playerInfo;
 
-
     [Header("플레이어 메인 총알 발사 지점")] [SerializeField]
     private Transform _bulletSpawnPoint;
 
@@ -91,8 +90,9 @@ public class Player : MonoBehaviour
         _playerInfo.GetMaxHp(hp);
     }
 
-    public void TakeDamageUp(float input)
+    public void TakeDamageUp()
     {
+        _playerDamageMultiplier += 0.5f;
     }
 
     public void TakeBulletCountUp()

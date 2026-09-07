@@ -38,7 +38,6 @@ public class Item : MonoBehaviour
         if (other.tag == "Player")
         {
             _itemEffector.Effect(other.GetComponent<Player>());
-            Debug.Log("OnTriggerEnter2D Effect");
         }
     }
 }

@@ -13,8 +13,11 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
     private float _firePointInterval;
     private float _playerDamageMultiplier;
 
+    private Player _player;
+
     public void Init(Player player)
     {
+        _player = player;
         _bulletFireCount = player.BulletFireCount;
         _fireCoolTime = player.FireCoolTime;
         _mainBulletSpawnPoint = player.BulletSpawnPoint;
@@ -64,6 +67,7 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
                 CreateCommand createCommand =
                     new CreateCommand(this.gameObject, bullet.gameObject, GetFirePoint(i, bulletIndex));
                 CommandManager.Instance.ExecuteCommand(createCommand);
+                createCommand.GetCreatedObeject.GetComponent<BulletMove>().Init(_player);
             }
 
             bulletIndex++;
