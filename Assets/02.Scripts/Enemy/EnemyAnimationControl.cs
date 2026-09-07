@@ -26,6 +26,8 @@ public class EnemyAnimationControl : MonoBehaviour, IEnemyFun
 
     public void TriggerDamageAnimation()
     {
+        _animator.ResetTrigger(ANIM_TakeDamage);
+
         _animator.SetTrigger(ANIM_TakeDamage);
     }
 }

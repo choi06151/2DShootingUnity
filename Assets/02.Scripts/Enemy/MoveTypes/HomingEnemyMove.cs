@@ -13,5 +13,7 @@ public class HomingEnemyMove : EnemyMove
         MovementCommand movementCommand = new MovementCommand(this.gameObject,
             _direction * Time.deltaTime * _moveSpeed);
         CommandManager.Instance.ExecuteCommand(movementCommand);
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90);
     }
 }

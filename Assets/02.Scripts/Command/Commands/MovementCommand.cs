@@ -21,6 +21,6 @@ public class MovementCommand : CommandParent
 
     public override void Execute()
     {
-        _executedObject.transform.Translate(_moveinfo);
+        _executedObject.transform.Translate(_moveinfo, Space.World);
     }
 }

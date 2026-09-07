@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
 
     [Header("플레이어 공격력")] [SerializeField] private float _playerDamageMultiplier;
 
+    [Header("플레이어 총알 자동 발사")] [SerializeField]
+    private bool _bulletAutoFire;
+
     [Header("플레이어 총알 쿨타임")] [SerializeField]
     private float _fireCoolTime;
 
@@ -42,6 +45,7 @@ public class Player : MonoBehaviour
     public float MoveSpeedMultiplier => _moveSpeedMultiplier;
     public float MaxHp => _maxHp;
     public float PlayerDamageMultiplier => _playerDamageMultiplier;
+    public bool bulletAutoFire => _bulletAutoFire;
     public float FireCoolTime => _fireCoolTime;
     public float FirePointInterval => _firePointInterval;
     public int BulletFireCount => _bulletFireCount;

@@ -17,6 +17,7 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
 
     public void Init(Player player)
     {
+        _isAutoFire = player.bulletAutoFire;
         _player = player;
         _bulletFireCount = player.BulletFireCount;
         _fireCoolTime = player.FireCoolTime;

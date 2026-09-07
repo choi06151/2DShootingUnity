@@ -957,6 +957,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _moveSpeedMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _bulletList.Array.size
       value: 1
       objectReference: {fileID: 0}
