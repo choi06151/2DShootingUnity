@@ -2,18 +2,10 @@ using UnityEngine;
 
 public class BulletDamageUpItem : ItemEffector
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    [Header("데미지 증가율")] [SerializeField] private float _damagePlusMultiplier;
 
     public override void Effect(Player player)
     {
-        player.TakeDamageUp();
+        player.TakeDamageUp(_damagePlusMultiplier);
     }
 }

@@ -2,18 +2,11 @@ using UnityEngine;
 
 public class BulletCountItem : ItemEffector
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    [Header("총알 발사 개수 증가율")] [SerializeField]
+    private int _bulletCountPlus;
 
     public override void Effect(Player player)
     {
-        player.TakeBulletCountUp();
+        player.TakeBulletCountUp(_bulletCountPlus);
     }
 }

@@ -90,14 +90,14 @@ public class Player : MonoBehaviour
         _playerInfo.GetMaxHp(hp);
     }
 
-    public void TakeDamageUp()
+    public void TakeDamageUp(float input)
     {
-        _playerDamageMultiplier += 0.5f;
+        _playerDamageMultiplier += input;
     }
 
-    public void TakeBulletCountUp()
+    public void TakeBulletCountUp(int input)
     {
-        _bulletFireCount += 1;
+        _bulletFireCount += input;
         _playerFire.Init(this);
     }
 

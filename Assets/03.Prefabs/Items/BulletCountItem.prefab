@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3856796077683734735}
   - component: {fileID: -468275134248700456}
   m_Layer: 0
-  m_Name: BulletItem
+  m_Name: BulletCountItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,3 +182,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2788c86ef7554244bf2e814aaa136f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletCountItem
+  _bulletCountPlus: 1

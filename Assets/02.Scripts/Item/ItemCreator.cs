@@ -6,7 +6,7 @@ public class ItemCreator : MonoBehaviour
 {
     [Header("아이템 리스트")] [SerializeField] private List<Item> _items;
     [Header("아이템 이동 속도")] [SerializeField] private float _itemMoveSpeed;
-
+    
     [Header("아이템 이동 대기시간")] [SerializeField]
     private float _itemWaitTime;
 
