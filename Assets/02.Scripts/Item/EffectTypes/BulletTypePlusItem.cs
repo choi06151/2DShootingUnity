@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BulletTypePlusItem : ItemEffector
 {
     [Header("추가되는 총알 종류")] [SerializeField]
-    BulletMove _bulletMove;
+    private Bullet _bullet;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +18,6 @@ public class BulletTypePlusItem : ItemEffector
 
     public override void Effect(Player player)
     {
-        player.TakeBulletTypePlusItem(_bulletMove);
+        player.TakeBulletTypePlusItem(_bullet);
     }
 }

@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     private int _bulletFireCount;
 
     [Header("플레이어 총알 종류")] [SerializeField]
-    private List<BulletMove> _bulletList;
+    private List<Bullet> _bulletList;
 
 
     public Transform BulletSpawnPoint => _bulletSpawnPoint;
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     public float FireCoolTime => _fireCoolTime;
     public float FirePointInterval => _firePointInterval;
     public int BulletFireCount => _bulletFireCount;
-    public List<BulletMove> BulletList => _bulletList;
+    public List<Bullet> BulletList => _bulletList;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -101,8 +101,8 @@ public class Player : MonoBehaviour
         _playerFire.Init(this);
     }
 
-    public void TakeBulletTypePlusItem(BulletMove bulletMove)
+    public void TakeBulletTypePlusItem(Bullet bullet)
     {
-        _bulletList.Add(bulletMove);
+        _bulletList.Add(bullet);
     }
 }

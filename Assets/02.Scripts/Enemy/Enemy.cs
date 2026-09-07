@@ -46,9 +46,9 @@ public class Enemy : MonoBehaviour
         }
         else if (other.tag == "PlayerBullet")
         {
-            BulletMove bulletMove = other.GetComponent<BulletMove>();
+            Bullet bullet = other.GetComponent<Bullet>();
             Destroy(other.gameObject);
-            _enemyInfo.GetDamage(bulletMove.Damage);
+            _enemyInfo.GetDamage(bullet.Damage);
         }
     }
 }

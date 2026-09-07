@@ -724,6 +724,7 @@ MonoBehaviour:
   - {fileID: 8313095365546275626, guid: c225b314316fb6c47a75a4a08b662904, type: 3}
   - {fileID: 8313095365546275626, guid: d2fa76b9254baf24793845239d689791, type: 3}
   - {fileID: 8313095365546275626, guid: 10e93bc2ba85ae7468e53337ac137951, type: 3}
+  - {fileID: 8313095365546275626, guid: a6a3cdcacc8a1c64d9640433204d9ccb, type: 3}
   _itemMoveSpeed: 0.05
   _itemWaitTime: 0.5
   _player: {fileID: 827450791}

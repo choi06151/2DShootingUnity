@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour, IPlayerFun
 {
-    private List<BulletMove> _spawnBulletList;
+    private List<Bullet> _spawnBulletList;
     private Transform _mainBulletSpawnPoint;
     private int _bulletFireCount;
     private float _fireCoolTime;
@@ -60,14 +60,14 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
         _currentFireCooldown = 0;
         int bulletIndex = 0;
 
-        foreach (BulletMove bullet in _spawnBulletList)
+        foreach (Bullet bullet in _spawnBulletList)
         {
             for (int i = 0; i < _bulletFireCount; i++)
             {
                 CreateCommand createCommand =
                     new CreateCommand(this.gameObject, bullet.gameObject, GetFirePoint(i, bulletIndex));
                 CommandManager.Instance.ExecuteCommand(createCommand);
-                createCommand.GetCreatedObeject.GetComponent<BulletMove>().Init(_player);
+                createCommand.GetCreatedObeject.GetComponent<Bullet>().Init(_player);
             }
 
             bulletIndex++;

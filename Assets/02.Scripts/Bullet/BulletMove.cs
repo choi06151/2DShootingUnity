@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class BulletMove : MonoBehaviour
+public abstract class BulletMove : MonoBehaviour, IBulletFun
 {
-    public float MoveSpeed = 3f;
-    public float Damage = 35f;
+    protected float _moveSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,14 +15,10 @@ public class BulletMove : MonoBehaviour
         Move();
     }
 
-    public void Init(Player player)
+    public void Init(Bullet bullet)
     {
-        Damage = Damage * player.PlayerDamageMultiplier;
+        _moveSpeed = bullet.MoveSpeed;
     }
 
-    private void Move()
-    {
-        MovementCommand movementCommand = new MovementCommand(this.gameObject, Vector2.up * MoveSpeed * Time.deltaTime);
-        CommandManager.Instance.ExecuteCommand(movementCommand);
-    }
+    protected abstract void Move();
 }
