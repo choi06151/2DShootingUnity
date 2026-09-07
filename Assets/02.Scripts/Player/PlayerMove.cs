@@ -6,9 +6,10 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
     //목적 : 키보드 입력에 따라서 플레이어 이동 처리를 하고싶다 
 
 
-    private Animator _animator;
+    private Player _player;
     private Transform _recordStartTransform;
     private float _currentSpeed;
+
 
     private float _moveSpeed;
     private float _moveSpeedDownMultiplier;
@@ -19,7 +20,6 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
     }
 
     public void Init(Player player)
@@ -27,6 +27,7 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
         _moveSpeed = player.MoveSpeed;
         _moveSpeedDownMultiplier = 1.0f - player.MoveSpeedMultiplier;
         _moveSpeedUpMultiplier = 1.0f + player.MoveSpeedMultiplier;
+        _player = player;
     }
 
 
@@ -56,10 +57,10 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
     {
         float h = Input.GetAxisRaw("Horizontal"); //키보드 왼/ 오른쪽 입력상태에 따라 -1f ~ 1f
         float v = Input.GetAxisRaw("Vertical"); //키보드 위 /아래 -1f~1f
-
+        Vector2 normalDirection = new Vector2(0, 0);
         if (h != 0 || v != 0) //이동 인풋이 들어온다면
         {
-            Vector2 normalDirection = new Vector2(h, v); //현재 방향과 속도에 따라 이동한다
+            normalDirection = new Vector2(h, v); //현재 방향과 속도에 따라 이동한다
             Vector2 normalizedDirection = normalDirection.normalized; //정규화
             Vector3 nextPosition = transform.position + (Vector3)normalizedDirection * Time.deltaTime * _currentSpeed;
 
@@ -79,12 +80,8 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
                 TeleportCommand teleportCommand = new TeleportCommand(this.gameObject, convertedPosition);
                 CommandManager.Instance.ExecuteCommand(teleportCommand);
             }
+        }
 
-            _animator.SetInteger("x", (int)normalDirection.x);
-        }
-        else
-        {
-            _animator.SetInteger("x", 0);
-        }
+        _player.UpdateAnimState((int)normalDirection.x, false, false);
     }
 }

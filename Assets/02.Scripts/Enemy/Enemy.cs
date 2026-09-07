@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyCreator _enemyCreator;
     private EnemyMove _enemyMove;
     private EnemyInfo _enemyInfo;
-
+    private EnemyAnimationControl _enemyAnimationControl;
 
     [Header("적 기본 속도")] [SerializeField] protected float _enemySpeed;
     [Header("적 기본 체력")] [SerializeField] protected float _enemyHP;
@@ -25,9 +25,11 @@ public class Enemy : MonoBehaviour
 
         _enemyInfo = GetComponent<EnemyInfo>();
         _enemyMove = GetComponent<EnemyMove>();
+        _enemyAnimationControl = GetComponent<EnemyAnimationControl>();
 
         _enemyInfo.Init(this);
         _enemyMove.Init(this);
+        _enemyAnimationControl.Init(this);
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class Enemy : MonoBehaviour
             Bullet bullet = other.GetComponent<Bullet>();
             Destroy(other.gameObject);
             _enemyInfo.GetDamage(bullet.Damage);
+            _enemyAnimationControl.TriggerDamageAnimation();
         }
     }
 }

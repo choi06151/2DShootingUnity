@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private PlayerFire _playerFire;
     private PlayerMove _playerMove;
     private PlayerInfo _playerInfo;
+    private PlayerAnimationControl _playerAnimationControl;
 
     [Header("플레이어 메인 총알 발사 지점")] [SerializeField]
     private Transform _bulletSpawnPoint;
@@ -52,15 +53,23 @@ public class Player : MonoBehaviour
         _playerInfo = GetComponent<PlayerInfo>();
         _playerMove = GetComponent<PlayerMove>();
         _playerFire = GetComponent<PlayerFire>();
+        _playerAnimationControl = GetComponent<PlayerAnimationControl>();
 
         _playerInfo.Init(this);
         _playerMove.Init(this);
         _playerFire.Init(this);
+        _playerAnimationControl.Init(this);
     }
 
     // Update is called once per frame
     void Update()
     {
+    }
+
+
+    public void UpdateAnimState(int xVector, bool isfire, bool isHit)
+    {
+        _playerAnimationControl.UpdateMoveAnimation(xVector);
     }
 
     public void TakeDamage(float damage)

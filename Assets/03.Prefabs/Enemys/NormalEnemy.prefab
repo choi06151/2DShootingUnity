@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5950680651562814429}
   - component: {fileID: -4226483521117098271}
   - component: {fileID: -1462791388863640007}
+  - component: {fileID: 634953394652511314}
+  - component: {fileID: 5042027062677900311}
   m_Layer: 7
   m_Name: NormalEnemy
   m_TagString: Untagged
@@ -126,7 +128,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -134,7 +136,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.12, y: 0.11}
+    oldSize: {x: 0.5, y: 0.45833334}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -142,10 +144,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: -0.25, y: 0.22916667}
+      - {x: -0.25, y: -0.22916667}
+      - {x: 0.25, y: -0.22916667}
+      - {x: 0.25, y: 0.1875}
+      - {x: 0.20833334, y: 0.22916667}
   m_UseDelaunayMesh: 1
 --- !u!50 &1959297313328246271
 Rigidbody2D:
@@ -214,3 +217,37 @@ MonoBehaviour:
   _enemySpeed: 3
   _enemyHP: 200
   _enemyDamage: 40
+--- !u!114 &634953394652511314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65768e20f36cd6643b19f07e0ee73d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimationControl
+--- !u!95 &5042027062677900311
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dce4b7725b442fb498e9a2cecd503b6f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5185800396200252646}
   - component: {fileID: -6823504070308606980}
   - component: {fileID: 2875208668282470267}
+  - component: {fileID: 1493077831807280776}
+  - component: {fileID: 3369274886613505907}
   m_Layer: 7
   m_Name: HomingEnemy
   m_TagString: Untagged
@@ -126,7 +128,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -142,10 +144,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: 0.6666667, y: -0.39583334}
+      - {x: 0.6666667, y: 0.5625}
+      - {x: -0.6666667, y: 0.5625}
+      - {x: -0.6666667, y: -0.5625}
+      - {x: 0.625, y: -0.5625}
   m_UseDelaunayMesh: 1
 --- !u!50 &1959297313328246271
 Rigidbody2D:
@@ -214,3 +217,37 @@ MonoBehaviour:
   _enemySpeed: 1.5
   _enemyHP: 100
   _enemyDamage: 20
+--- !u!114 &1493077831807280776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65768e20f36cd6643b19f07e0ee73d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimationControl
+--- !u!95 &3369274886613505907
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709305820122906881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1ae7bb892353234f809ce31279f7b0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -48,9 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\Bullet\MoveType\ForwardBulletMove.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerAnimationControl.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\NormalEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\SpeedItem.cs" />
+    <Compile Include="Assets\02.Scripts\Common\RotateToMoveDirection.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
@@ -70,10 +72,11 @@
     <Compile Include="Assets\02.Scripts\Item\ItemEffector.cs" />
     <Compile Include="Assets\02.Scripts\Player\Player.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\MovementCommand.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\EnemyAnimationControl.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\HPItem.cs" />
     <Compile Include="Assets\02.Scripts\Item\IItemFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletTypePlusItem.cs" />
-    <Compile Include="Assets\02.Scripts\CommonInterface\IHP.cs" />
+    <Compile Include="Assets\02.Scripts\Common\IHP.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\TeleportCommand.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Bullet\Bullet.cs" />
