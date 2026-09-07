@@ -38,6 +38,7 @@ public class Item : MonoBehaviour
         if (other.tag == "Player")
         {
             _itemEffector.Effect(other.GetComponent<Player>());
+            Destroy(gameObject);
         }
     }
 }

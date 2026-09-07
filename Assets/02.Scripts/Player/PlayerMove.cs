@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
     //목적 : 키보드 입력에 따라서 플레이어 이동 처리를 하고싶다 
 
 
+    private Animator _animator;
     private Transform _recordStartTransform;
     private float _currentSpeed;
 
@@ -15,6 +16,11 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
     public float[] constraintYRange = new float[2] { -5f, -1.5f }; //-1.5 , -5 //이동 가능범위
     public float[] constraintXRange = new float[2] { -2.5f, 2.5f };
 
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     public void Init(Player player)
     {
@@ -73,6 +79,12 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
                 TeleportCommand teleportCommand = new TeleportCommand(this.gameObject, convertedPosition);
                 CommandManager.Instance.ExecuteCommand(teleportCommand);
             }
+
+            _animator.SetInteger("x", (int)normalDirection.x);
+        }
+        else
+        {
+            _animator.SetInteger("x", 0);
         }
     }
 }
