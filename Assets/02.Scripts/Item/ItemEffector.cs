@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PoolManager : MonoBehaviour
+public abstract class ItemEffector : MonoBehaviour, IItemFun
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,4 +11,11 @@ public class PoolManager : MonoBehaviour
     void Update()
     {
     }
+
+    public void Init(Item item)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public abstract void Effect(Player player);
 }

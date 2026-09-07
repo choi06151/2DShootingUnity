@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     [Header("플레이어 총알 발사 위치 간격")] [SerializeField]
     private float _firePointInterval;
 
-    [Header("플레이어 총알 발사 위치 개수")] [SerializeField]
+    [Header("플레이어 총알 발사 개수")] [SerializeField]
     private int _bulletFireCount;
 
     [Header("플레이어 총알 종류")] [SerializeField]
@@ -67,5 +67,37 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _playerInfo.GetDamage(damage);
+    }
+
+    public void TakeSpeedUp(float speed)
+    {
+        _moveSpeed = speed;
+        _playerMove.Init(this);
+    }
+
+    public void TakeSpeedMultiply(float speedMultiplier)
+    {
+        _moveSpeedMultiplier = speedMultiplier;
+        _playerMove.Init(this);
+    }
+
+    public void TakeHp(float hp)
+    {
+        _playerInfo.GetHp(hp);
+    }
+
+    public void TakeMaxHp(float hp)
+    {
+        _playerInfo.GetMaxHp(hp);
+    }
+
+    public void TakeDamageUp(float input)
+    {
+    }
+
+    public void TakeBulletCountUp()
+    {
+        _bulletFireCount += 1;
+        _playerFire.Init(this);
     }
 }

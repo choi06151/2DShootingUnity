@@ -43,7 +43,6 @@ public class Enemy : MonoBehaviour
             Player player = other.GetComponent<Player>();
             player.TakeDamage(_enemyInfo.GetDamageInfo());
             _enemyInfo.Death();
-            Debug.Log("충돌");
         }
         else if (other.tag == "PlayerBullet")
         {

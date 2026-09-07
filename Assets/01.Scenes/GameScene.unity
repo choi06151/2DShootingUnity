@@ -425,6 +425,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &827450791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+  m_PrefabInstance: {fileID: 7980036394222415362}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d155922f9e571341a1ba3afc4f63d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!1001 &928503666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -652,6 +663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081495121}
   - component: {fileID: 2081495120}
+  - component: {fileID: 2081495122}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -695,6 +707,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2081495122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081495119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a5eb8ce6706564388d7de2ad2e0778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemCreator
+  _items:
+  - {fileID: 8313095365546275626, guid: 24dc9d6df413f6847bc6b5ec7ae825b8, type: 3}
+  - {fileID: 8313095365546275626, guid: c225b314316fb6c47a75a4a08b662904, type: 3}
+  - {fileID: 8313095365546275626, guid: d2fa76b9254baf24793845239d689791, type: 3}
+  _itemMoveSpeed: 0.05
+  _itemWaitTime: 0.5
+  _player: {fileID: 827450791}
 --- !u!1001 &6507244448794555415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,6 +850,10 @@ PrefabInstance:
     - target: {fileID: 8099008968024565070, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _firePointInterval
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

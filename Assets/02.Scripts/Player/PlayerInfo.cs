@@ -29,6 +29,11 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
             Hp = MaxHp;
     }
 
+    public void GetMaxHp(float input)
+    {
+        MaxHp += input;
+    }
+
     public void Death()
     {
         Destroy(gameObject);

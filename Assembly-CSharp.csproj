@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\NormalEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemMove.cs" />
+    <Compile Include="Assets\02.Scripts\Item\EffectTypes\SpeedItem.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
@@ -62,18 +63,18 @@
     <Compile Include="Assets\02.Scripts\Command\Commands\CreateCommand.cs" />
     <Compile Include="Assets\02.Scripts\Item\Item.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerInfo.cs" />
+    <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletCountItem.cs" />
+    <Compile Include="Assets\02.Scripts\Item\ItemEffector.cs" />
     <Compile Include="Assets\02.Scripts\Player\Player.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\MovementCommand.cs" />
-    <Compile Include="Assets\02.Scripts\PoolingSystem\IPool.cs" />
+    <Compile Include="Assets\02.Scripts\Item\EffectTypes\HPItem.cs" />
     <Compile Include="Assets\02.Scripts\Item\IItemFun.cs" />
     <Compile Include="Assets\02.Scripts\CommonInterface\IHP.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\TeleportCommand.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\ToPlayerDirectionEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
-    <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
-    <Compile Include="Assets\02.Scripts\PoolingSystem\PoolObject.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandParent.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\Enemy.cs" />
     <Reference Include="UnityEngine">

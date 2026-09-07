@@ -6,6 +6,8 @@ public class ItemMove : MonoBehaviour, IItemFun
     private Player _player;
     private CommandManager _commandManager;
     private float _moveSpeed;
+    private float _itemWaitTime;
+    private bool _isInit = false;
 
     void Start()
     {
@@ -14,14 +16,26 @@ public class ItemMove : MonoBehaviour, IItemFun
     // Update is called once per frame
     void Update()
     {
-        MoveToPlayer();
+        if (IsEnableStart())
+        {
+            MoveToPlayer();
+        }
     }
 
     public void Init(Item item)
     {
         _player = item.GetItemCreator.GetPlayer;
         _commandManager = item.GetItemCreator.GetCommandManager;
-        _moveSpeed = item.ItemMoveSpeed;
+        _moveSpeed = item.MoveSpeed;
+        _itemWaitTime = item.WaitTime;
+        _isInit = true;
+    }
+
+    private bool IsEnableStart()
+    {
+        _itemWaitTime -= Time.deltaTime;
+
+        return _itemWaitTime <= 0 && _isInit;
     }
 
     private void MoveToPlayer()
