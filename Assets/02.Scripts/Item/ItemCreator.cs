@@ -2,13 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-enum ItemType
-{
-    SPEED,
-    HEALTH,
-    DAMAGE
-}
-
 public class ItemCreator : MonoBehaviour
 {
     [Header("아이템 리스트")] [SerializeField] private List<Item> _items;
@@ -55,7 +48,7 @@ public class ItemCreator : MonoBehaviour
         if (IsCreate())
         {
             CreateCommand createCommand =
-                new CreateCommand(this.gameObject, _items[(int)GetRandomItemIdx()].gameObject, position);
+                new CreateCommand(this.gameObject, _items[GetRandomItemIdx()].gameObject, position);
             CommandManager.Instance.ExecuteCommand(createCommand);
             createCommand.GetCreatedObeject.GetComponent<Item>().InitItem(this);
         }
@@ -69,8 +62,8 @@ public class ItemCreator : MonoBehaviour
         return randomIndex >= 7;
     }
 
-    private ItemType GetRandomItemIdx() //추후 확률 보정 
+    private int GetRandomItemIdx() //추후 확률 보정 
     {
-        return (ItemType)Random.Range(0, _items.Count);
+        return Random.Range(0, _items.Count);
     }
 }

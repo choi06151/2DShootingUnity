@@ -264,9 +264,9 @@ MonoBehaviour:
   _moveSpeed: 3
   _moveSpeedMultiplier: 0.5
   _maxHp: 100
+  _playerDamageMultiplier: 0
   _fireCoolTime: 0.5
   _firePointInterval: 0.75
   _bulletFireCount: 5
   _bulletList:
   - {fileID: 8973682823937549010, guid: 827e41c1df07b834bb8d5b2af41eeb9a, type: 3}
-  - {fileID: 8973682823937549010, guid: 7cf17436ad260f4439c7516e5ad2e02f, type: 3}

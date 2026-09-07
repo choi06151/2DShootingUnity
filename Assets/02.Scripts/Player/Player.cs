@@ -100,4 +100,9 @@ public class Player : MonoBehaviour
         _bulletFireCount += 1;
         _playerFire.Init(this);
     }
+
+    public void TakeBulletTypePlusItem(BulletMove bulletMove)
+    {
+        _bulletList.Add(bulletMove);
+    }
 }

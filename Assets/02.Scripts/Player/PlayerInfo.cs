@@ -15,6 +15,11 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
 
     public void GetDamage(float damage)
     {
+        if ((damage < 0))
+        {
+            return;
+        }
+
         Hp -= damage;
         if (Hp <= 0)
         {
@@ -24,6 +29,11 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
 
     public void GetHp(float hp)
     {
+        if ((hp < 0))
+        {
+            return;
+        }
+
         Hp += hp;
         if (Hp > MaxHp)
             Hp = MaxHp;

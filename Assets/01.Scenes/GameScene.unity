@@ -723,6 +723,7 @@ MonoBehaviour:
   - {fileID: 8313095365546275626, guid: 24dc9d6df413f6847bc6b5ec7ae825b8, type: 3}
   - {fileID: 8313095365546275626, guid: c225b314316fb6c47a75a4a08b662904, type: 3}
   - {fileID: 8313095365546275626, guid: d2fa76b9254baf24793845239d689791, type: 3}
+  - {fileID: 8313095365546275626, guid: 10e93bc2ba85ae7468e53337ac137951, type: 3}
   _itemMoveSpeed: 0.05
   _itemWaitTime: 0.5
   _player: {fileID: 827450791}
@@ -852,8 +853,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _bulletFireCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _firePointInterval
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _bulletList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _playerDamageMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

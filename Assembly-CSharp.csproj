@@ -60,6 +60,7 @@
     <Compile Include="Assets\02.Scripts\Command\CommandManager.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\IEnemyFun.cs" />
     <Compile Include="Assets\02.Scripts\Bullet\BulletMove.cs" />
+    <Compile Include="Assets\02.Scripts\Item\EffectTypes\MaxHpItem.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\CreateCommand.cs" />
     <Compile Include="Assets\02.Scripts\Item\Item.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerInfo.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\02.Scripts\Command\Commands\MovementCommand.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\HPItem.cs" />
     <Compile Include="Assets\02.Scripts\Item\IItemFun.cs" />
+    <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletTypePlusItem.cs" />
     <Compile Include="Assets\02.Scripts\CommonInterface\IHP.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\TeleportCommand.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyMove.cs" />
