@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private PlayerMove _playerMove;
     private PlayerInfo _playerInfo;
     private PlayerAnimationControl _playerAnimationControl;
+    private PlayerSkillManager _playerSkillManager;
 
     [Header("플레이어 메인 총알 발사 지점")] [SerializeField]
     private Transform _bulletSpawnPoint;
@@ -39,6 +40,14 @@ public class Player : MonoBehaviour
     [Header("플레이어 총알 종류")] [SerializeField]
     private List<Bullet> _bulletList;
 
+    [Header("플레이어 피격시 이펙트 프리팹")] [SerializeField]
+    private GameObject _damagedPrefab;
+
+    [Header("플레이어 죽을시 이펙트 프리팹")] [SerializeField]
+    private GameObject _deathPrefab;
+
+    [Header("현재 플레이어 스킬프리팹")] [SerializeField]
+    private GameObject _playerSkillPrefab;
 
     public Transform BulletSpawnPoint => _bulletSpawnPoint;
     public float MoveSpeed => _moveSpeed;
@@ -51,6 +60,10 @@ public class Player : MonoBehaviour
     public int BulletFireCount => _bulletFireCount;
     public List<Bullet> BulletList => _bulletList;
 
+    public GameObject DamagedPrefab => _damagedPrefab;
+    public GameObject DeathPrefab => _deathPrefab;
+    public GameObject PlayerSkillPrefab => _playerSkillPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,16 +71,13 @@ public class Player : MonoBehaviour
         _playerMove = GetComponent<PlayerMove>();
         _playerFire = GetComponent<PlayerFire>();
         _playerAnimationControl = GetComponent<PlayerAnimationControl>();
+        _playerSkillManager = GetComponent<PlayerSkillManager>();
 
         _playerInfo.Init(this);
         _playerMove.Init(this);
         _playerFire.Init(this);
         _playerAnimationControl.Init(this);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        _playerSkillManager.Init(this);
     }
 
 
@@ -84,14 +94,12 @@ public class Player : MonoBehaviour
     public void TakeSpeedUp(float speed)
     {
         _moveSpeed = _moveSpeed + _moveSpeed * speed;
+        _moveSpeedMultiplier = speed;
+        _fireCoolTime = _fireCoolTime - _fireCoolTime * _moveSpeedMultiplier;
         _playerMove.Init(this);
+        _playerFire.Init(this);
     }
 
-    public void TakeSpeedMultiply(float speedMultiplier)
-    {
-        _moveSpeedMultiplier = speedMultiplier;
-        _playerMove.Init(this);
-    }
 
     public void TakeHp(float hp)
     {

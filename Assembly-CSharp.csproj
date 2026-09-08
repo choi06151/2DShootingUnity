@@ -54,7 +54,9 @@
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\SpeedItem.cs" />
     <Compile Include="Assets\02.Scripts\Common\RotateToMoveDirection.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerSkill.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
+    <Compile Include="Assets\02.Scripts\Player\Skills\PlayerBombSkill.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
     <Compile Include="Assets\02.Scripts\Bullet\IBulletFun.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolingObject.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\02.Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\ToPlayerDirectionEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerSkillManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletDamageUpItem.cs" />

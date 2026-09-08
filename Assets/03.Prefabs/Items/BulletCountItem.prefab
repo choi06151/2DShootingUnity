@@ -120,6 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab1deed2cc75f341a1fcb565b477af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
+  _moveSpeed: 3
+  _waitTime: 0.5
+  _UseEffect: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
 --- !u!60 &3856796077683734735
 PolygonCollider2D:
   m_ObjectHideFlags: 0

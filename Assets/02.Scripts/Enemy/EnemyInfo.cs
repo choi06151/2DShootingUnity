@@ -7,12 +7,14 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
     public float MaxHp { get; private set; }
 
     private float _damage;
+    private GameObject _exlosionPrefab;
 
     public void Init(Enemy enemy)
     {
         MaxHp = enemy.EnemyHp;
         Hp = MaxHp;
         _damage = enemy.EnemyDamage;
+        _exlosionPrefab = enemy.ExplosionPrefab;
     }
 
 
@@ -39,6 +41,7 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
 
     public void Death()
     {
+        Instantiate(_exlosionPrefab, transform.position, Quaternion.identity);
         ItemCreator.Instance.CreateItem(this.transform.position);
         //Destroy(gameObject);
         PoolManager.Instance.InputToPool(gameObject);

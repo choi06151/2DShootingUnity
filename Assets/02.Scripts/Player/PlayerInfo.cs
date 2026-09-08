@@ -5,11 +5,15 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
     public float Hp { get; private set; }
     public float MaxHp { get; private set; } = 100;
 
+    private GameObject _hitPrefab;
+    private GameObject _deathPrefab;
 
     public void Init(Player player)
     {
         MaxHp = player.MaxHp;
         Hp = MaxHp;
+        _hitPrefab = player.DamagedPrefab;
+        _deathPrefab = player.DeathPrefab;
     }
 
 
@@ -19,6 +23,8 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
         {
             return;
         }
+
+        Instantiate(_hitPrefab, transform.position, Quaternion.identity);
 
         Hp -= damage;
         if (Hp <= 0)
@@ -46,7 +52,8 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
 
     public void Death()
     {
-        //Destroy(gameObject);
-        GetComponent<PoolingObject>().Deactivate();
+        Instantiate(_deathPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }

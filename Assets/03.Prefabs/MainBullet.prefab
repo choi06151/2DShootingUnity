@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletMove
   _moveSpeed: 3
   _damage: 35
+  _hitEffectPrefab: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
 --- !u!58 &8513467978541790691
 CircleCollider2D:
   m_ObjectHideFlags: 0

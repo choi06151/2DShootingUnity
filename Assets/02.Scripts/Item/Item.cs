@@ -4,8 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(ItemMove))]
 public class Item : PoolingObject
 {
-    private float _moveSpeed;
+    [Header("아이템 이동속도")] [SerializeField] private float _moveSpeed;
+
+    [Header("아이템 출현 후 대기시간")] [SerializeField]
     private float _waitTime;
+
+    [Header("아이템 획득시 VFX프리팹")] [SerializeField]
+    protected GameObject _UseEffect;
 
     public float MoveSpeed => _moveSpeed;
     public float WaitTime => _waitTime;
@@ -37,6 +42,7 @@ public class Item : PoolingObject
     {
         if (other.tag == "Player")
         {
+            Instantiate(_UseEffect, transform.position, Quaternion.identity);
             _itemEffector.Effect(other.GetComponent<Player>());
             //Destroy(gameObject);
             PoolManager.Instance.InputToPool(this.gameObject);

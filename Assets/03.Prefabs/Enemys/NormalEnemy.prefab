@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5042027062677900311}
   m_Layer: 7
   m_Name: NormalEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
   _enemySpeed: 3
   _enemyHP: 200
   _enemyDamage: 40
+  _explosionPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
 --- !u!114 &634953394652511314
 MonoBehaviour:
   m_ObjectHideFlags: 0

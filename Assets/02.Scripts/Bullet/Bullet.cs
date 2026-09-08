@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -6,10 +7,15 @@ public class Bullet : PoolingObject
 {
     [Header("총알 속도")] [SerializeField] private float _moveSpeed = 3f;
     [Header("총알 기본 데미지")] [SerializeField] private float _damage = 35f;
+
+    [Header("총알 피격시 이펙트 프리팹")] [SerializeField]
+    private GameObject _hitEffectPrefab;
+
     public float MoveSpeed => _moveSpeed;
     public float Damage => _damage;
-
+    public GameObject HitEffectPrefab => _hitEffectPrefab;
     private BulletMove _bulletMove;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,5 +34,18 @@ public class Bullet : PoolingObject
     public void Init(Player player)
     {
         _damage = _damage * player.PlayerDamageMultiplier;
+        _moveSpeed = _moveSpeed + _moveSpeed * player.MoveSpeedMultiplier;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Instantiate(_hitEffectPrefab, transform.position, Quaternion.identity);
+            Enemy enemy = other.GetComponent<Enemy>();
+
+            enemy.TakeDamage(_damage);
+            PoolManager.Instance.InputToPool(this.gameObject);
+        }
     }
 }

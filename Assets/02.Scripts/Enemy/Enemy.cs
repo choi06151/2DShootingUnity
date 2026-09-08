@@ -12,9 +12,15 @@ public class Enemy : PoolingObject
     [Header("적 기본 체력")] [SerializeField] protected float _enemyHP;
     [Header("적 기본 데미지")] [SerializeField] protected float _enemyDamage;
 
+    [Header("죽을때 나올 이펙트 프리팹")] [SerializeField]
+    protected GameObject _explosionPrefab;
+
     public float EnemySpeed => _enemySpeed;
     public float EnemyHp => _enemyHP;
     public float EnemyDamage => _enemyDamage;
+
+    public GameObject ExplosionPrefab => _explosionPrefab;
+
 
     public EnemyCreator GetEnemyCreator => _enemyCreator;
 
@@ -46,14 +52,11 @@ public class Enemy : PoolingObject
             player.TakeDamage(_enemyInfo.GetDamageInfo());
             _enemyInfo.Death();
         }
-        else if (other.tag == "PlayerBullet")
-        {
-            Bullet bullet = other.GetComponent<Bullet>();
-            // Destroy(other.gameObject);
-            PoolManager.Instance.InputToPool(bullet.gameObject);
+    }
 
-            _enemyInfo.GetDamage(bullet.Damage);
-            _enemyAnimationControl.TriggerDamageAnimation();
-        }
+    public void TakeDamage(float damage)
+    {
+        _enemyInfo.GetDamage(damage);
+        _enemyAnimationControl.TriggerDamageAnimation();
     }
 }
