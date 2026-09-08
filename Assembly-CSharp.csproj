@@ -57,6 +57,7 @@
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
     <Compile Include="Assets\02.Scripts\Bullet\IBulletFun.cs" />
+    <Compile Include="Assets\02.Scripts\PoolingSystem\PoolingObject.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\02.Scripts\Environment\DestroyZone.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerFire.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\02.Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\ToPlayerDirectionEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
+    <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletDamageUpItem.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandParent.cs" />

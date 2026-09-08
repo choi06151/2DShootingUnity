@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMove), typeof(EnemyInfo))]
-public class Enemy : MonoBehaviour
+public class Enemy : PoolingObject
 {
     [SerializeField] private EnemyCreator _enemyCreator;
     private EnemyMove _enemyMove;
@@ -49,7 +49,9 @@ public class Enemy : MonoBehaviour
         else if (other.tag == "PlayerBullet")
         {
             Bullet bullet = other.GetComponent<Bullet>();
-            Destroy(other.gameObject);
+            // Destroy(other.gameObject);
+            PoolManager.Instance.InputToPool(bullet.gameObject);
+
             _enemyInfo.GetDamage(bullet.Damage);
             _enemyAnimationControl.TriggerDamageAnimation();
         }

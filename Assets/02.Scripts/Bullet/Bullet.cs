@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(BulletMove))]
-public class Bullet : MonoBehaviour
+public class Bullet : PoolingObject
 {
     [Header("총알 속도")] [SerializeField] private float _moveSpeed = 3f;
     [Header("총알 기본 데미지")] [SerializeField] private float _damage = 35f;

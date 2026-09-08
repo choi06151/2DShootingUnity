@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(ItemMove))]
-public class Item : MonoBehaviour
+public class Item : PoolingObject
 {
     private float _moveSpeed;
     private float _waitTime;
@@ -38,7 +38,10 @@ public class Item : MonoBehaviour
         if (other.tag == "Player")
         {
             _itemEffector.Effect(other.GetComponent<Player>());
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            PoolManager.Instance.InputToPool(this.gameObject);
+
+            //this.GetComponent<PoolingObject>().Deactivate();
         }
     }
 }

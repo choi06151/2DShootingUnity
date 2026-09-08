@@ -8,6 +8,7 @@ public class CreateCommand : CommandParent
     private GameObject _createdObject;
     public GameObject GetCreatedObeject => _createdObject;
 
+
     public CreateCommand(GameObject executedObject, GameObject createTarget, Vector3 createPosition) : base(
         executedObject)
     {
@@ -27,8 +28,13 @@ public class CreateCommand : CommandParent
 
     public override void Execute()
     {
-        GameObject createdObject = GameObject.Instantiate(_createTarget);
-        createdObject.transform.position = _createPosition;
-        _createdObject = createdObject;
+        PoolingObject pooledObject = PoolManager.Instance.GetFromPool(_createTarget);
+        pooledObject.gameObject.transform.position = _createPosition;
+        _createdObject = pooledObject.gameObject;
+
+
+        // GameObject createdObject = GameObject.Instantiate(_createTarget);
+        // createdObject.transform.position = _createPosition;
+        // _createdObject = createdObject;
     }
 }

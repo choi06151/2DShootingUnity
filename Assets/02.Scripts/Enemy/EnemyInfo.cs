@@ -40,6 +40,7 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
     public void Death()
     {
         ItemCreator.Instance.CreateItem(this.transform.position);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        PoolManager.Instance.InputToPool(gameObject);
     }
 }

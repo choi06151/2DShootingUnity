@@ -46,6 +46,7 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
 
     public void Death()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        GetComponent<PoolingObject>().Deactivate();
     }
 }

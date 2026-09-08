@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
 
     public void TakeSpeedUp(float speed)
     {
-        _moveSpeed = speed;
+        _moveSpeed = _moveSpeed + _moveSpeed * speed;
         _playerMove.Init(this);
     }
 

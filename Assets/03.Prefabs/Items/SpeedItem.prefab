@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ec7d8177bb60a47a8eeee26e31ccba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpeedItem
-  _speedPlusMultiplier: 10
+  _speedPlusMultiplier: 0.5
 --- !u!60 &8469198271692027510
 PolygonCollider2D:
   m_ObjectHideFlags: 0
