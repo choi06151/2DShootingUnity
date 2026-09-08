@@ -554,7 +554,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1025780083}
   - component: {fileID: 1025780082}
-  - component: {fileID: 1025780084}
   m_Layer: 0
   m_Name: CommandManager
   m_TagString: Untagged
@@ -589,34 +588,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1025780084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025780081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbc6bdbb12b93e149a2ca7b5cb89f803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
-  _enemyPoolSize: 40
-  _enemyLists:
-  - {fileID: 2875208668282470267, guid: cc365782f89b11f4bb412c61c8e4107c, type: 3}
-  - {fileID: -1462791388863640007, guid: 7ef03b44a09da824b8c8e24f762ece11, type: 3}
-  - {fileID: 5319305071654250509, guid: ba45351f0b206d7469e4640fbf486d48, type: 3}
-  _bulletPoolSize: 100
-  _bulletLists:
-  - {fileID: 8973682823937549010, guid: 827e41c1df07b834bb8d5b2af41eeb9a, type: 3}
-  - {fileID: 8973682823937549010, guid: 7cf17436ad260f4439c7516e5ad2e02f, type: 3}
-  _itemPoolSize: 10
-  _itemLists:
-  - {fileID: 8313095365546275626, guid: c225b314316fb6c47a75a4a08b662904, type: 3}
-  - {fileID: 8313095365546275626, guid: 10e93bc2ba85ae7468e53337ac137951, type: 3}
-  - {fileID: 8313095365546275626, guid: 24dc9d6df413f6847bc6b5ec7ae825b8, type: 3}
-  - {fileID: 8313095365546275626, guid: a6a3cdcacc8a1c64d9640433204d9ccb, type: 3}
-  - {fileID: 8313095365546275626, guid: d2fa76b9254baf24793845239d689791, type: 3}
 --- !u!1 &1051791435
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +621,66 @@ Transform:
   - {fileID: 351487190}
   - {fileID: 504242181}
   - {fileID: 401316301}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1552402566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552402568}
+  - component: {fileID: 1552402567}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1552402567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552402566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc6bdbb12b93e149a2ca7b5cb89f803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
+  _enemyPoolSize: 40
+  _enemyLists:
+  - {fileID: 2875208668282470267, guid: cc365782f89b11f4bb412c61c8e4107c, type: 3}
+  - {fileID: -1462791388863640007, guid: 7ef03b44a09da824b8c8e24f762ece11, type: 3}
+  - {fileID: 5319305071654250509, guid: ba45351f0b206d7469e4640fbf486d48, type: 3}
+  _bulletPoolSize: 100
+  _bulletLists:
+  - {fileID: 8973682823937549010, guid: 827e41c1df07b834bb8d5b2af41eeb9a, type: 3}
+  - {fileID: 8973682823937549010, guid: 7cf17436ad260f4439c7516e5ad2e02f, type: 3}
+  _itemPoolSize: 10
+  _itemLists:
+  - {fileID: 8313095365546275626, guid: c225b314316fb6c47a75a4a08b662904, type: 3}
+  - {fileID: 8313095365546275626, guid: 10e93bc2ba85ae7468e53337ac137951, type: 3}
+  - {fileID: 8313095365546275626, guid: 24dc9d6df413f6847bc6b5ec7ae825b8, type: 3}
+  - {fileID: 8313095365546275626, guid: a6a3cdcacc8a1c64d9640433204d9ccb, type: 3}
+  - {fileID: 8313095365546275626, guid: d2fa76b9254baf24793845239d689791, type: 3}
+--- !u!4 &1552402568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552402566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.67437, y: -3.15198, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2031754540
@@ -1082,3 +1113,4 @@ SceneRoots:
   - {fileID: 1025780083}
   - {fileID: 2081495121}
   - {fileID: 1051791436}
+  - {fileID: 1552402568}
