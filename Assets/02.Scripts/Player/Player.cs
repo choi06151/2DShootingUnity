@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     private PlayerInfo _playerInfo;
     private PlayerAnimationControl _playerAnimationControl;
     private PlayerSkillManager _playerSkillManager;
+    private PlayerFollowerManager _playerFollowerManager;
+
+    public PlayerFollowerManager PlayerFollowerManager => _playerFollowerManager;
 
     [Header("플레이어 메인 총알 발사 지점")] [SerializeField]
     private Transform _bulletSpawnPoint;
@@ -37,6 +40,9 @@ public class Player : MonoBehaviour
     [Header("플레이어 총알 발사 개수")] [SerializeField]
     private int _bulletFireCount;
 
+    [Header("플레이어 총알 업그레이드 기준 개수")] [SerializeField]
+    private int _bulletUpgradeCount;
+
     [Header("플레이어 총알 종류")] [SerializeField]
     private List<Bullet> _bulletList;
 
@@ -56,8 +62,10 @@ public class Player : MonoBehaviour
     public float PlayerDamageMultiplier => _playerDamageMultiplier;
     public bool bulletAutoFire => _bulletAutoFire;
     public float FireCoolTime => _fireCoolTime;
+
     public float FirePointInterval => _firePointInterval;
     public int BulletFireCount => _bulletFireCount;
+    public int BulletUpgradeCount => _bulletUpgradeCount;
     public List<Bullet> BulletList => _bulletList;
 
     public GameObject DamagedPrefab => _damagedPrefab;
@@ -72,12 +80,14 @@ public class Player : MonoBehaviour
         _playerFire = GetComponent<PlayerFire>();
         _playerAnimationControl = GetComponent<PlayerAnimationControl>();
         _playerSkillManager = GetComponent<PlayerSkillManager>();
+        _playerFollowerManager = GetComponent<PlayerFollowerManager>();
 
         _playerInfo.Init(this);
         _playerMove.Init(this);
         _playerFire.Init(this);
         _playerAnimationControl.Init(this);
         _playerSkillManager.Init(this);
+        _playerFollowerManager.Init(this);
     }
 
 
@@ -119,11 +129,28 @@ public class Player : MonoBehaviour
     public void TakeBulletCountUp(int input)
     {
         _bulletFireCount += input;
-        _playerFire.Init(this);
+        CheckFireUpgrade();
     }
 
     public void TakeBulletTypePlusItem(Bullet bullet)
     {
         _bulletList.Add(bullet);
+        CheckFireUpgrade();
+    }
+
+    private void CheckFireUpgrade()
+    {
+        if (_bulletFireCount >= BulletUpgradeCount || _bulletList.Count >= BulletUpgradeCount)
+        {
+            Bullet mainBullet = _bulletList[0];
+            _bulletList.Clear();
+            _bulletList.Add(mainBullet);
+            _bulletFireCount = 1;
+            _playerDamageMultiplier *= 1.2f;
+            _playerFollowerManager.CreateFollowers();
+        }
+
+
+        _playerFire.Init(this);
     }
 }

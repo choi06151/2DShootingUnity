@@ -73,8 +73,14 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
 
             bulletIndex++;
         }
+
+        FireFollowerBullet();
     }
 
+    private void FireFollowerBullet()
+    {
+        _player.PlayerFollowerManager.FireAllFollowers();
+    }
 
     private Vector3 GetFirePoint(int createIndex, int bulletIndex)
     {
@@ -109,5 +115,9 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
     private void UpdateFireCoolTime()
     {
         _currentFireCooldown += Time.deltaTime;
+    }
+
+    public void BulletUpgrade()
+    {
     }
 }

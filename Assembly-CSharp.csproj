@@ -58,6 +58,7 @@
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerBombSkill.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerFollower.cs" />
     <Compile Include="Assets\02.Scripts\Bullet\IBulletFun.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolingObject.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerMove.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\02.Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\ToPlayerDirectionEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerFollowerManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerSkillManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSlowZoneSkill.cs" />
