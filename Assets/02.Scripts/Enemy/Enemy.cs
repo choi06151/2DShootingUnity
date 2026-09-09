@@ -13,7 +13,9 @@ public class Enemy : PoolingObject
     [Header("적 기본 데미지")] [SerializeField] protected float _enemyDamage;
 
     [Header("죽을때 나올 이펙트 프리팹")] [SerializeField]
-    protected GameObject _explosionPrefab;
+    private GameObject _explosionPrefab;
+
+    [Header("죽을때 나올 소리")] [SerializeField] private AudioClip _deathSound;
 
     private float _originalSpeed;
 
@@ -26,7 +28,7 @@ public class Enemy : PoolingObject
 
 
     public EnemyCreator GetEnemyCreator => _enemyCreator;
-
+    public AudioClip DeathSound => _deathSound;
 
     public void InitEnemy(EnemyCreator enemyCreator)
     {

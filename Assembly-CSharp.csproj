@@ -54,6 +54,7 @@
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\SpeedItem.cs" />
     <Compile Include="Assets\02.Scripts\Common\RotateToMoveDirection.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
+    <Compile Include="Assets\02.Scripts\AudioSystem\AudioManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerSkill.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerBombSkill.cs" />

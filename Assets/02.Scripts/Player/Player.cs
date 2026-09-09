@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
     [Header("플레이어 총알 종류")] [SerializeField]
     private List<Bullet> _bulletList;
 
+    [Header("플레이어 총알 발사 소리")] [SerializeField]
+    private AudioClip _fireClip;
+
     [Header("플레이어 피격시 이펙트 프리팹")] [SerializeField]
     private GameObject _damagedPrefab;
 
@@ -62,7 +65,7 @@ public class Player : MonoBehaviour
     public float PlayerDamageMultiplier => _playerDamageMultiplier;
     public bool bulletAutoFire => _bulletAutoFire;
     public float FireCoolTime => _fireCoolTime;
-
+    public AudioClip FireClip => _fireClip;
     public float FirePointInterval => _firePointInterval;
     public int BulletFireCount => _bulletFireCount;
     public int BulletUpgradeCount => _bulletUpgradeCount;
@@ -71,6 +74,7 @@ public class Player : MonoBehaviour
     public GameObject DamagedPrefab => _damagedPrefab;
     public GameObject DeathPrefab => _deathPrefab;
     public List<GameObject> PlayerSkillPrefab => _playerSkillPrefab;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

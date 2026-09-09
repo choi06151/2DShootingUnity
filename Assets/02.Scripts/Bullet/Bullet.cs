@@ -11,6 +11,8 @@ public class Bullet : PoolingObject
     [Header("총알 피격시 이펙트 프리팹")] [SerializeField]
     private GameObject _hitEffectPrefab;
 
+    [Header("총알 피격시 소리")] [SerializeField] private AudioClip _hitAudioClip;
+
     public float MoveSpeed => _moveSpeed;
     public float Damage => _damage;
     public GameObject HitEffectPrefab => _hitEffectPrefab;
@@ -43,6 +45,8 @@ public class Bullet : PoolingObject
         {
             Instantiate(_hitEffectPrefab, transform.position, Quaternion.identity);
             Enemy enemy = other.GetComponent<Enemy>();
+
+            AudioManager.Instance.ActivateEffectAudioClip(_hitAudioClip);
 
             enemy.TakeDamage(_damage);
             PoolManager.Instance.InputToPool(this.gameObject);

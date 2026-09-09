@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -15,6 +16,9 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
 
     private Player _player;
 
+    private AudioSource _audioSource;
+    private AudioClip _fireClip;
+
     public void Init(Player player)
     {
         _player = player;
@@ -24,6 +28,12 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
         _mainBulletSpawnPoint = player.BulletSpawnPoint;
         _firePointInterval = player.FirePointInterval;
         _spawnBulletList = player.BulletList;
+        _fireClip = player.FireClip;
+    }
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -75,6 +85,12 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
         }
 
         FireFollowerBullet();
+        PlayFireSound();
+    }
+
+    private void PlayFireSound()
+    {
+        AudioManager.Instance.ActivateEffectAudioClip(_fireClip);
     }
 
     private void FireFollowerBullet()
