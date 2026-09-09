@@ -2,19 +2,30 @@ using UnityEngine;
 
 public class BackgroundScroll : MonoBehaviour
 {
-    private Material _material;
+    private SpriteRenderer _renderer;
+    private MaterialPropertyBlock _mpb;
+
     private float _offsetY;
+
     [SerializeField] private float _scrollSpeed;
 
-    void Start()
+    private void Start()
     {
-        _material = GetComponent<SpriteRenderer>().material;
+        _renderer = GetComponent<SpriteRenderer>();
+        _mpb = new MaterialPropertyBlock();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         _offsetY += _scrollSpeed * Time.deltaTime;
-        _material.mainTextureOffset = new Vector2(0, _offsetY);
+
+        _renderer.GetPropertyBlock(_mpb);
+
+        _mpb.SetVector(
+            "_MainTex_ST",
+            new Vector4(1, 1, 0, _offsetY)
+        );
+
+        _renderer.SetPropertyBlock(_mpb);
     }
 }
