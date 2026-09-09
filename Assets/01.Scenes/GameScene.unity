@@ -1259,6 +1259,22 @@ PrefabInstance:
       propertyPath: _playerDamageMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _playerSkillPrefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: '_playerSkillPrefab.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2683211638110727440, guid: 3ded5389a7cb3434e9c86d0f197f6aba, type: 3}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: '_playerSkillPrefab.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5181791240031209338, guid: 87b1be0c1885f504cacdf4b31ee24641, type: 3}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: '_playerSkillPrefab.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8458861027839058721, guid: bd6518e7c0bac3b49aa40906049ba28e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

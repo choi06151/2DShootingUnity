@@ -73,6 +73,7 @@
     <Compile Include="Assets\02.Scripts\Player\PlayerInfo.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletCountItem.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemEffector.cs" />
+    <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSwordSlashSkill.cs" />
     <Compile Include="Assets\02.Scripts\Player\Player.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\MovementCommand.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyAnimationControl.cs" />

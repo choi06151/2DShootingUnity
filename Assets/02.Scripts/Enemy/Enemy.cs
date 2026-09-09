@@ -59,6 +59,16 @@ public class Enemy : PoolingObject
         }
     }
 
+    public bool CheckDeathDamage(float damage)
+    {
+        if (_enemyInfo.IsDeathAbleDamage(damage))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void TakeDamage(float damage)
     {
         _enemyInfo.GetDamage(damage);

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletMove
   _moveSpeed: 3
-  _damage: 35
+  _damage: 5
   _hitEffectPrefab: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0, type: 3}
 --- !u!251 &-9202972959405574277
 PlatformEffector2D:

@@ -39,6 +39,16 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
             Hp = MaxHp;
     }
 
+    public bool IsDeathAbleDamage(float damage)
+    {
+        if (Hp - damage <= 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void Death()
     {
         Instantiate(_exlosionPrefab, transform.position, Quaternion.identity);
