@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerSkillManager : MonoBehaviour, IPlayerFun
 {
     private PlayerSkill _curEquipedSkill;
+    private GameObject _curEquipedSkillPrefab;
     private float _skillCoolTime;
     private float _curCoolTime;
     private Player _player;
@@ -26,10 +27,16 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     public void Init(Player player)
     {
         _player = player;
-        _curEquipedSkill = _player.PlayerSkillPrefab.GetComponent<PlayerSkill>();
-        _skillCoolTime = _curEquipedSkill.SkillCoolTime;
+        GetRandomSkill();
     }
 
+    private void GetRandomSkill()
+    {
+        int randomIdx = Random.Range(0, _player.PlayerSkillPrefab.Count);
+        _curEquipedSkillPrefab = _player.PlayerSkillPrefab[randomIdx];
+        _curEquipedSkill = _curEquipedSkillPrefab.GetComponent<PlayerSkill>();
+        _skillCoolTime = _curEquipedSkill.SkillCoolTime;
+    }
 
     public void CheckUseSkill()
     {
@@ -56,9 +63,11 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     private void SpawnSkill()
     {
         GameObject skill = Instantiate(
-            _player.PlayerSkillPrefab,
+            _curEquipedSkillPrefab,
             _player.BulletSpawnPoint.position,
             Quaternion.identity
         );
+
+        GetRandomSkill();
     }
 }

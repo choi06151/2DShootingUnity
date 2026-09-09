@@ -46,8 +46,8 @@ public class Player : MonoBehaviour
     [Header("플레이어 죽을시 이펙트 프리팹")] [SerializeField]
     private GameObject _deathPrefab;
 
-    [Header("현재 플레이어 스킬프리팹")] [SerializeField]
-    private GameObject _playerSkillPrefab;
+    [Header("현재 플레이어 스킬 후보 프리팹")] [SerializeField]
+    private List<GameObject> _playerSkillPrefab = new List<GameObject>();
 
     public Transform BulletSpawnPoint => _bulletSpawnPoint;
     public float MoveSpeed => _moveSpeed;
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
     public GameObject DamagedPrefab => _damagedPrefab;
     public GameObject DeathPrefab => _deathPrefab;
-    public GameObject PlayerSkillPrefab => _playerSkillPrefab;
+    public List<GameObject> PlayerSkillPrefab => _playerSkillPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -128,6 +128,10 @@ public class PlayerBombSkill : PlayerSkill
 
     private void Explosion()
     {
+        float randomScale = Random.Range(0.9f, 1);
+        transform.localScale = _maxScaleVector * randomScale;
+
+
         if (_curTime <= 0)
         {
             _isExplodeStart = false;
