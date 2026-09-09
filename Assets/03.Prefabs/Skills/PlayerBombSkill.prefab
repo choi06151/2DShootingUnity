@@ -135,7 +135,7 @@ MonoBehaviour:
   _maxScale: 1
   _minScale: 0.1
   _explodeEffectPrefab: {fileID: 7177991128484655659, guid: 59a35ab9f68edff40b6e5332bed330f5, type: 3}
-  _increaseTime: 0.2
+  _increaseTime: 0.1
 --- !u!58 &6383632470745318975
 CircleCollider2D:
   m_ObjectHideFlags: 0

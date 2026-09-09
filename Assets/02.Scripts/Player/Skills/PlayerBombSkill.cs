@@ -55,14 +55,13 @@ public class PlayerBombSkill : PlayerSkill
 
     protected override void UseSkill()
     {
-        // 최소 / 최대 크기 저장
         _minScaleVector = Vector3.one * _minScale;
         _maxScaleVector = Vector3.one * _maxScale;
 
-        // 처음에는 작은 크기
+
         transform.localScale = _minScaleVector;
 
-        // 이동 시작
+
         MoveStartToExplosionPoint();
     }
 

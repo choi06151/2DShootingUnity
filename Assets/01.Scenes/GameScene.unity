@@ -1246,7 +1246,7 @@ PrefabInstance:
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _playerSkillPrefab
       value: 
-      objectReference: {fileID: 2683211638110727440, guid: 3ded5389a7cb3434e9c86d0f197f6aba, type: 3}
+      objectReference: {fileID: 5181791240031209338, guid: 87b1be0c1885f504cacdf4b31ee24641, type: 3}
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _moveSpeedMultiplier
       value: 0.2

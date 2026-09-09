@@ -87,6 +87,7 @@
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerSkillManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
+    <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSlowZoneSkill.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletDamageUpItem.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandParent.cs" />
@@ -918,6 +919,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
@@ -960,6 +964,12 @@
     <Reference Include="Unity.Burst.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Bindings.OpenImageIO.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Bindings.OpenImageIO.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
@@ -980,6 +990,9 @@
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>

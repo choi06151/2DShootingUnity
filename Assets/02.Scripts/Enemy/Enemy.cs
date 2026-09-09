@@ -15,6 +15,9 @@ public class Enemy : PoolingObject
     [Header("죽을때 나올 이펙트 프리팹")] [SerializeField]
     protected GameObject _explosionPrefab;
 
+    private float _originalSpeed;
+
+
     public float EnemySpeed => _enemySpeed;
     public float EnemyHp => _enemyHP;
     public float EnemyDamage => _enemyDamage;
@@ -36,6 +39,8 @@ public class Enemy : PoolingObject
         _enemyInfo.Init(this);
         _enemyMove.Init(this);
         _enemyAnimationControl.Init(this);
+
+        _originalSpeed = _enemySpeed;
     }
 
     // Update is called once per frame
@@ -58,5 +63,17 @@ public class Enemy : PoolingObject
     {
         _enemyInfo.GetDamage(damage);
         _enemyAnimationControl.TriggerDamageAnimation();
+    }
+
+    public void TakeSlowEffect(float amount)
+    {
+        _enemySpeed = _enemySpeed - _enemySpeed * amount;
+        _enemyMove.Init(this);
+    }
+
+    public void ClearSlowEffect()
+    {
+        _enemySpeed = _originalSpeed;
+        _enemyMove.Init(this);
     }
 }
