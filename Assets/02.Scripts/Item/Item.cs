@@ -12,6 +12,9 @@ public class Item : PoolingObject
     [Header("아이템 획득시 VFX프리팹")] [SerializeField]
     protected GameObject _UseEffect;
 
+    [Header("아이템 획득시 소리")] [SerializeField]
+    protected AudioClip _effectAudio;
+
     public float MoveSpeed => _moveSpeed;
     public float WaitTime => _waitTime;
 
@@ -46,7 +49,7 @@ public class Item : PoolingObject
             _itemEffector.Effect(other.GetComponent<Player>());
             //Destroy(gameObject);
             PoolManager.Instance.InputToPool(this.gameObject);
-
+            AudioManager.Instance.ActivateEffectAudioClip(_effectAudio);
             //this.GetComponent<PoolingObject>().Deactivate();
         }
     }

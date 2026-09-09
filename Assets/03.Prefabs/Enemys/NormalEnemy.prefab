@@ -218,6 +218,7 @@ MonoBehaviour:
   _enemyHP: 200
   _enemyDamage: 40
   _explosionPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
+  _deathSound: {fileID: 8300000, guid: 7c89d86fff21efb499aca5d9edf68599, type: 3}
 --- !u!114 &634953394652511314
 MonoBehaviour:
   m_ObjectHideFlags: 0

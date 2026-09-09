@@ -110,6 +110,7 @@ MonoBehaviour:
   _moveSpeed: 3
   _damage: 5
   _hitEffectPrefab: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+  _hitAudioClip: {fileID: 8300000, guid: eb5ceed09efa18b4fbdeef2ebf1f00c5, type: 3}
 --- !u!251 &-9202972959405574277
 PlatformEffector2D:
   m_ObjectHideFlags: 0

@@ -122,6 +122,7 @@ MonoBehaviour:
   _moveSpeed: 3
   _waitTime: 0.5
   _UseEffect: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
+  _effectAudio: {fileID: 8300000, guid: 14ad58fc70f4dae42b2fe4a28aef9a15, type: 3}
 --- !u!114 &2528821677423820032
 MonoBehaviour:
   m_ObjectHideFlags: 0
