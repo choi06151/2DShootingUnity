@@ -55,6 +55,7 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
 
     public void Death()
     {
+        ScoreManager.Instance.Addscore(10);
         _enemy.EnhanceEnemy();
         Instantiate(_exlosionPrefab, transform.position, Quaternion.identity);
         ItemCreator.Instance.CreateItem(this.transform.position);
