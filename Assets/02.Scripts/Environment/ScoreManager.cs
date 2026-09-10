@@ -7,6 +7,9 @@ public class ScoreManager : MonoBehaviour
     private int _currentScore;
     public int BestScore => _bestScore;
     public int CurrentScore => _currentScore;
+
+    private const string SaveKey = "BestScore";
+
     [SerializeField] private TextMeshProUGUI _bestScoreText;
 
     [SerializeField] private TextMeshProUGUI _currentScoreText;
@@ -23,19 +26,25 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            return;
+            Destroy(gameObject);
         }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (PlayerPrefs.HasKey(SaveKey))
+        {
+            _bestScore = PlayerPrefs.GetInt(SaveKey, 0);
+        }
+
+
+        Refresh();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Refresh();
     }
 
     private void Refresh()
@@ -49,7 +58,6 @@ public class ScoreManager : MonoBehaviour
         if (score <= 0) return;
         _currentScore += score;
         Refresh();
-
         UpdateBestScore();
     }
 
@@ -57,6 +65,9 @@ public class ScoreManager : MonoBehaviour
     {
         if (_bestScore < _currentScore)
         {
+            PlayerPrefs.SetInt(SaveKey, _bestScore);
+            PlayerPrefs.Save();
+
             _bestScore = _currentScore;
             Refresh();
         }

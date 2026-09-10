@@ -43,13 +43,21 @@ public class Item : PoolingObject
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other != null && other.CompareTag("Player"))
         {
-            Instantiate(_UseEffect, transform.position, Quaternion.identity);
-            _itemEffector.Effect(other.GetComponent<Player>());
+            Player player = other.GetComponent<Player>();
+            if (player == null || _itemEffector == null)
+                return;
+
+            if (_UseEffect != null)
+                Instantiate(_UseEffect, transform.position, Quaternion.identity);
+
+            _itemEffector.Effect(player);
             //Destroy(gameObject);
-            PoolManager.Instance.InputToPool(this.gameObject);
-            AudioManager.Instance.ActivateEffectAudioClip(_effectAudio);
+            if (PoolManager.Instance != null)
+                PoolManager.Instance.InputToPool(this.gameObject);
+            if (AudioManager.Instance != null && _effectAudio != null)
+                AudioManager.Instance.ActivateEffectAudioClip(_effectAudio);
             //this.GetComponent<PoolingObject>().Deactivate();
         }
     }

@@ -47,6 +47,9 @@ public class CommandManager : MonoBehaviour
 
     public void ExecuteCommand(CommandParent command)
     {
+        if (command == null)
+            return;
+
         command.Execute();
         _commandsHistory.Add(command);
     }
@@ -65,6 +68,7 @@ public class CommandManager : MonoBehaviour
         _currentReplayTime = Time.time - _replayStartTime;
 
         while (_replayIdx < _commandsHistory.Count &&
+               _commandsHistory[_replayIdx] != null &&
                _currentReplayTime >= _commandsHistory[_replayIdx].GetExecutionTime()) //같은시간대 발생건 다 실행
         {
             _commandsHistory[_replayIdx].Execute();

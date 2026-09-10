@@ -21,6 +21,9 @@ public class TeleportCommand : CommandParent
 
     public override void Execute()
     {
+        if (_executedObject == null)
+            return;
+
         _executedObject.transform.position = _targetPosition;
     }
 }

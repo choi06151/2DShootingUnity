@@ -51,6 +51,9 @@ public class PoolManager : MonoBehaviour
 
     public void InputToPool(GameObject poolingObject)
     {
+        if (poolingObject == null)
+            return;
+
         if (poolingObject.TryGetComponent(out Enemy enemy))
         {
             PutEnemyToPool(enemy);
@@ -68,6 +71,9 @@ public class PoolManager : MonoBehaviour
 
     public PoolingObject GetFromPool(GameObject poolingObject)
     {
+        if (poolingObject == null)
+            return null;
+
         if (poolingObject.TryGetComponent(out Enemy enemy))
         {
             Enemy result = GetEnemyFromPool(enemy);

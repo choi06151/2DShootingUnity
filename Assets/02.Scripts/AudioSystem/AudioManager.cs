@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
     AudioSource _mainAudioSource;
@@ -27,11 +28,17 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeBackgroundMusic(AudioClip clip)
     {
+        if (_mainAudioSource == null || clip == null)
+            return;
+
         _mainAudioSource.clip = clip;
     }
 
     public void ActivateEffectAudioClip(AudioClip clip)
     {
+        if (_mainAudioSource == null || clip == null)
+            return;
+
         _mainAudioSource.pitch = Random.Range(0.8f, 1.2f);
         _mainAudioSource.PlayOneShot(clip);
     }

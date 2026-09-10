@@ -45,12 +45,20 @@ public class ItemCreator : MonoBehaviour
 
     public void CreateItem(Vector3 position)
     {
-        if (IsCreate())
+        if (IsCreate() && _items != null && _items.Count > 0 && CommandManager.Instance != null)
         {
+            Item itemPrefab = _items[GetRandomItemIdx()];
+            if (itemPrefab == null)
+                return;
+
             CreateCommand createCommand =
-                new CreateCommand(this.gameObject, _items[GetRandomItemIdx()].gameObject, position);
+                new CreateCommand(this.gameObject, itemPrefab.gameObject, position);
             CommandManager.Instance.ExecuteCommand(createCommand);
-            createCommand.GetCreatedObeject.GetComponent<Item>().InitItem(this);
+            if (createCommand.GetCreatedObeject != null &&
+                createCommand.GetCreatedObeject.TryGetComponent(out Item item))
+            {
+                item.InitItem(this);
+            }
         }
     }
 
@@ -64,6 +72,9 @@ public class ItemCreator : MonoBehaviour
 
     private int GetRandomItemIdx() //추후 확률 보정 
     {
+        if (_items == null || _items.Count == 0)
+            return -1;
+
         return Random.Range(0, _items.Count);
     }
 }

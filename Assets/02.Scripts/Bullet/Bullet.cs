@@ -24,7 +24,8 @@ public class Bullet : PoolingObject
     {
         _bulletMove = GetComponent<BulletMove>();
 
-        _bulletMove.Init(this);
+        if (_bulletMove != null)
+            _bulletMove.Init(this);
     }
 
     // Update is called once per frame
@@ -35,21 +36,30 @@ public class Bullet : PoolingObject
 
     public void Init(Player player)
     {
+        if (player == null)
+            return;
+
         _damage = _damage * player.PlayerDamageMultiplier;
         _moveSpeed = _moveSpeed + _moveSpeed * player.MoveSpeedMultiplier;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other != null && other.CompareTag("Enemy"))
         {
-            Instantiate(_hitEffectPrefab, transform.position, Quaternion.identity);
             Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy == null)
+                return;
 
-            AudioManager.Instance.ActivateEffectAudioClip(_hitAudioClip);
+            if (_hitEffectPrefab != null)
+                Instantiate(_hitEffectPrefab, transform.position, Quaternion.identity);
+
+            if (AudioManager.Instance != null && _hitAudioClip != null)
+                AudioManager.Instance.ActivateEffectAudioClip(_hitAudioClip);
 
             enemy.TakeDamage(_damage);
-            PoolManager.Instance.InputToPool(this.gameObject);
+            if (PoolManager.Instance != null)
+                PoolManager.Instance.InputToPool(this.gameObject);
         }
     }
 }

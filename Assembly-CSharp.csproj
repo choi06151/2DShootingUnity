@@ -57,7 +57,6 @@
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
     <Compile Include="Assets\02.Scripts\AudioSystem\AudioManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerSkill.cs" />
-    <Compile Include="Assets\03.Prefabs\Bullets\PlayerFollowerManager.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerBombSkill.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
@@ -91,6 +90,7 @@
     <Compile Include="Assets\02.Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\ToPlayerDirectionEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerFollowerManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerSkillManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Environment\BackgroundScroll.cs" />

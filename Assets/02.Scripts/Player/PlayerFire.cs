@@ -21,6 +21,9 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
 
     public void Init(Player player)
     {
+        if (player == null)
+            return;
+
         _player = player;
         _isAutoFire = player.bulletAutoFire;
         _bulletFireCount = player.BulletFireCount;
@@ -68,17 +71,30 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
 
     private void FireAllBullet()
     {
+        if (_spawnBulletList == null || _mainBulletSpawnPoint == null ||
+            CommandManager.Instance == null || _player == null)
+        {
+            return;
+        }
+
         _currentFireCooldown = 0;
         int bulletIndex = 0;
 
         foreach (Bullet bullet in _spawnBulletList)
         {
+            if (bullet == null)
+                continue;
+
             for (int i = 0; i < _bulletFireCount; i++)
             {
                 CreateCommand createCommand =
                     new CreateCommand(this.gameObject, bullet.gameObject, GetFirePoint(i, bulletIndex));
                 CommandManager.Instance.ExecuteCommand(createCommand);
-                createCommand.GetCreatedObeject.GetComponent<Bullet>().Init(_player);
+                if (createCommand.GetCreatedObeject != null &&
+                    createCommand.GetCreatedObeject.TryGetComponent(out Bullet spawnedBullet))
+                {
+                    spawnedBullet.Init(_player);
+                }
             }
 
             bulletIndex++;
@@ -90,12 +106,14 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
 
     private void PlayFireSound()
     {
-        AudioManager.Instance.ActivateEffectAudioClip(_fireClip);
+        if (AudioManager.Instance != null && _fireClip != null)
+            AudioManager.Instance.ActivateEffectAudioClip(_fireClip);
     }
 
     private void FireFollowerBullet()
     {
-        _player.PlayerFollowerManager.FireAllFollowers();
+        if (_player != null && _player.PlayerFollowerManager != null)
+            _player.PlayerFollowerManager.FireAllFollowers();
     }
 
     private Vector3 GetFirePoint(int createIndex, int bulletIndex)

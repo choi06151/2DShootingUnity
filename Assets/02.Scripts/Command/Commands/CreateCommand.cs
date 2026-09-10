@@ -28,7 +28,19 @@ public class CreateCommand : CommandParent
 
     public override void Execute()
     {
+        if (PoolManager.Instance == null || _createTarget == null)
+        {
+            _createdObject = null;
+            return;
+        }
+
         PoolingObject pooledObject = PoolManager.Instance.GetFromPool(_createTarget);
+        if (pooledObject == null)
+        {
+            _createdObject = null;
+            return;
+        }
+
         pooledObject.gameObject.transform.position = _createPosition;
         _createdObject = pooledObject.gameObject;
 
