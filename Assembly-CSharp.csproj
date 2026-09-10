@@ -53,6 +53,7 @@
     <Compile Include="Assets\02.Scripts\Item\ItemMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\SpeedItem.cs" />
     <Compile Include="Assets\02.Scripts\Common\RotateToMoveDirection.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerAutoMove.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyCreator.cs" />
     <Compile Include="Assets\02.Scripts\AudioSystem\AudioManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerSkill.cs" />
@@ -966,20 +967,20 @@
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Bindings.OpenImageIO.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Bindings.OpenImageIO.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Base">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.UnifiedRayTracing.Runtime">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.UnifiedRayTracing.Runtime.dll</HintPath>
@@ -993,11 +994,11 @@
     <Reference Include="Unity.2D.Aseprite.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Recorder">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>

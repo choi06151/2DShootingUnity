@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     private PlayerAnimationControl _playerAnimationControl;
     private PlayerSkillManager _playerSkillManager;
     private PlayerFollowerManager _playerFollowerManager;
-
+    private PlayerAutoMove _playerAutoMove;
     public PlayerFollowerManager PlayerFollowerManager => _playerFollowerManager;
+    public PlayerMove PlayerMove => _playerMove;
 
     [Header("플레이어 메인 총알 발사 지점")] [SerializeField]
     private Transform _bulletSpawnPoint;
@@ -30,6 +31,13 @@ public class Player : MonoBehaviour
 
     [Header("플레이어 총알 자동 발사")] [SerializeField]
     private bool _bulletAutoFire;
+
+    [Header("플레이어 자동 움직임")] [SerializeField]
+    private bool _isPlayerAutoMove;
+
+    [Header("플레이어 자동 스킬 사용")] [SerializeField]
+    private bool _isPlayerAutoSkill;
+
 
     [Header("플레이어 총알 쿨타임")] [SerializeField]
     private float _fireCoolTime;
@@ -55,6 +63,13 @@ public class Player : MonoBehaviour
     [Header("플레이어 죽을시 이펙트 프리팹")] [SerializeField]
     private GameObject _deathPrefab;
 
+    [Header("플레이어 죽을시 소리")] [SerializeField]
+    private AudioClip _playerDeathClip;
+
+    [Header("플레이어 데미지 받을때 소리")] [SerializeField]
+    private AudioClip _playerDamageClip;
+
+
     [Header("현재 플레이어 스킬 후보 프리팹")] [SerializeField]
     private List<GameObject> _playerSkillPrefab = new List<GameObject>();
 
@@ -64,6 +79,8 @@ public class Player : MonoBehaviour
     public float MaxHp => _maxHp;
     public float PlayerDamageMultiplier => _playerDamageMultiplier;
     public bool bulletAutoFire => _bulletAutoFire;
+    public bool PlayerAutoMove => _isPlayerAutoMove;
+    public bool PlayerAutoSkill => _isPlayerAutoSkill;
     public float FireCoolTime => _fireCoolTime;
     public AudioClip FireClip => _fireClip;
     public float FirePointInterval => _firePointInterval;
@@ -85,6 +102,7 @@ public class Player : MonoBehaviour
         _playerAnimationControl = GetComponent<PlayerAnimationControl>();
         _playerSkillManager = GetComponent<PlayerSkillManager>();
         _playerFollowerManager = GetComponent<PlayerFollowerManager>();
+        _playerAutoMove = GetComponent<PlayerAutoMove>();
 
         _playerInfo.Init(this);
         _playerMove.Init(this);
@@ -92,6 +110,7 @@ public class Player : MonoBehaviour
         _playerAnimationControl.Init(this);
         _playerSkillManager.Init(this);
         _playerFollowerManager.Init(this);
+        _playerAutoMove.Init(this);
     }
 
 

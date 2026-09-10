@@ -1257,6 +1257,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &827450823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827450790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4ad83113a59a24bb281f749cd22263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAutoMove
+  _threshold: 2
+  _delayTime: 2
 --- !u!1001 &928503666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2155,9 +2169,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _playerAutoMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _bulletFireCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _playerDeathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c89d86fff21efb499aca5d9edf68599, type: 3}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _isPlayerAutoMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      propertyPath: _playerDamageClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 61f0ee77a4309b545ab94f64e932713d, type: 3}
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _firePointInterval
       value: 0.3
@@ -2223,6 +2253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7709070467436759092, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 827450816}
+    - targetCorrespondingSourceObject: {fileID: 7709070467436759092, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 827450823}
   m_SourcePrefab: {fileID: 100100000, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

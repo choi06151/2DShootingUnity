@@ -7,6 +7,7 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     private float _skillCoolTime;
     private float _curCoolTime;
     private Player _player;
+    private bool _isAutoSkillOn;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,12 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
             CheckUseSkill();
         }
 
+
+        if (_isAutoSkillOn && _curCoolTime < 0)
+        {
+            CheckUseSkill();
+        }
+
         _curCoolTime -= Time.deltaTime;
     }
 
@@ -28,6 +35,8 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     {
         _player = player;
         GetRandomSkill();
+
+        _isAutoSkillOn = _player.PlayerAutoSkill;
     }
 
     private void GetRandomSkill()
