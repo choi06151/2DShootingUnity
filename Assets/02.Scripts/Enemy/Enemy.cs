@@ -88,4 +88,9 @@ public class Enemy : PoolingObject
         _enemySpeed = _originalSpeed;
         _enemyMove.Init(this);
     }
+
+    public void EnhanceEnemy()
+    {
+        _enemyHP *= _enemyHP;
+    }
 }

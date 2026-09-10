@@ -9,9 +9,11 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
     private float _damage;
     private GameObject _exlosionPrefab;
     private AudioClip _deathSound;
+    private Enemy _enemy;
 
     public void Init(Enemy enemy)
     {
+        _enemy = enemy;
         MaxHp = enemy.EnemyHp;
         Hp = MaxHp;
         _damage = enemy.EnemyDamage;
@@ -53,6 +55,7 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
 
     public void Death()
     {
+        _enemy.EnhanceEnemy();
         Instantiate(_exlosionPrefab, transform.position, Quaternion.identity);
         ItemCreator.Instance.CreateItem(this.transform.position);
         AudioManager.Instance.ActivateEffectAudioClip(_deathSound);
