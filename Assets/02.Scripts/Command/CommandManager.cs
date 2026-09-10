@@ -11,13 +11,14 @@ public class CommandManager : MonoBehaviour
     private Transform _recordStartTransform;
 
 
-    public static CommandManager Instance { get; private set; } //어디에서든 호출 가능
+    private static CommandManager _instance; //어디에서든 호출 가능
+    public static CommandManager Instance => _instance;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
         }
         else
         {

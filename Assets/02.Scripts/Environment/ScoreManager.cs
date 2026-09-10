@@ -12,13 +12,14 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentScoreText;
 
 
-    public static ScoreManager Instance { get; private set; }
+    private static ScoreManager _instance;
+    public static ScoreManager Instance => _instance;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
         }
         else
         {

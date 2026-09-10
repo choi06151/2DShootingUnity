@@ -5,13 +5,14 @@ public class AudioManager : MonoBehaviour
     AudioSource _mainAudioSource;
 
 
-    public static AudioManager Instance { get; private set; }
+    private static AudioManager _instance;
+    public static AudioManager Instance => _instance;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
         }
         else
         {
