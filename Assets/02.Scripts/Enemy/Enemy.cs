@@ -91,6 +91,7 @@ public class Enemy : PoolingObject
 
     public void EnhanceEnemy()
     {
-        _enemyHP *= _enemyHP;
+        _enemyHP = _enemyHP * 1.6f;
+        Debug.Log($"강화됌{_enemyHP}");
     }
 }

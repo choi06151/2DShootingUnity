@@ -3,55 +3,48 @@ using UnityEngine;
 
 public class PlayerAutoMove : MonoBehaviour, IPlayerFun
 {
-    [Header("접근 완료 처리 임계값")] [SerializeField]
-    private float _threshold;
+    [Header("목표 X 좌표 도달 임계값")] [SerializeField]
+    private float _targetThreshold = 0.1f;
 
-    [Header("탐색 실패시 재탐색 대기시간")] [SerializeField]
-    private float _delayTime;
+    [Header("적과 유지할 최소 거리")] [SerializeField]
+    private float _safeDistance = 1.5f;
+
+    [Header("재탐색 대기 시간")] [SerializeField] private float _delayTime = 0.5f;
 
     private float _curTime;
+
     private bool _isTargetSettings;
     private bool _isAutoActivated;
-    private Vector3 _targetPosition;
-    private GameObject _targetObject;
-    private Vector3 _moveDirection;
-    private Player _player;
 
+    private Enemy _targetEnemy;
+
+    private float _targetX;
+
+    private Player _player;
     private PlayerMove _playerMove;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Update()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (_isAutoActivated)
+        if (!_isAutoActivated)
         {
-            if (_isTargetSettings)
-            {
-                InputMovementToPlayer();
-            }
-            else
-            {
-                _curTime -= Time.deltaTime;
+            return;
+        }
 
-                if (_curTime <= 0)
-                {
-                    SetNewTargetPosition();
-                }
-
-                MoveAvoidDirection();
-            }
+        if (_isTargetSettings)
+        {
+            InputMovementToPlayer();
+        }
+        else
+        {
+            UpdateAvoidAndRefind();
         }
     }
 
     public void Init(Player player)
     {
         _player = player;
-        _playerMove = _player.PlayerMove;
-        _isAutoActivated = _player.PlayerAutoMove;
+        _playerMove = player.PlayerMove;
+        _isAutoActivated = player.PlayerAutoMove;
 
         if (_isAutoActivated)
         {
@@ -59,57 +52,76 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
         }
     }
 
-
     private void StartAutoMove()
     {
         _isAutoActivated = true;
+
         SetNewTargetPosition();
     }
 
     private void StopAutoMove()
     {
         _isAutoActivated = false;
+
+        ClearTarget();
     }
 
-    private void ReFindNewTargetDelay()
-    {
-        _isTargetSettings = false;
-        _curTime = _delayTime;
-    }
 
     private void SetNewTargetPosition()
     {
-        GameObject[] finedEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] findEnemies =
+            GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (finedEnemies.Length == 0)
+        if (findEnemies.Length == 0)
         {
             ReFindNewTargetDelay();
             return;
         }
 
         List<Enemy> enemies = new List<Enemy>();
-        foreach (GameObject obj in finedEnemies)
+
+        foreach (GameObject obj in findEnemies)
         {
-            Enemy enemy = obj.GetComponent<Enemy>();
-            enemies.Add(enemy);
+            if (obj.TryGetComponent(out Enemy enemy))
+            {
+                enemies.Add(enemy);
+            }
         }
 
-        Enemy lowest = GetLowestHpEnemy(enemies);
-        _targetObject = lowest.gameObject;
-        _targetPosition = transform.position;
-        _targetPosition.x = lowest.transform.position.x;
+        if (enemies.Count == 0)
+        {
+            ReFindNewTargetDelay();
+            return;
+        }
+
+        Enemy lowestEnemy = GetLowestHpEnemy(enemies);
+
+        if (lowestEnemy == null)
+        {
+            ReFindNewTargetDelay();
+            return;
+        }
+
+        _targetEnemy = lowestEnemy;
+
+        _targetX = lowestEnemy.transform.position.x;
+
         _isTargetSettings = true;
     }
 
     private Enemy GetLowestHpEnemy(List<Enemy> enemies)
     {
-        float lowestHp = enemies[0].EnemyHp;
-        Enemy lowestEnemy = enemies[0];
-        foreach (var enemy in enemies)
+        if (enemies.Count == 0)
         {
-            if (lowestHp > enemy.EnemyHp)
+            return null;
+        }
+
+        Enemy lowestEnemy = enemies[0];
+
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy.EnemyHp < lowestEnemy.EnemyHp)
             {
-                lowestHp = enemy.EnemyHp;
                 lowestEnemy = enemy;
             }
         }
@@ -117,54 +129,125 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
         return lowestEnemy;
     }
 
-    private void InputMovementToPlayer()
+    private void ClearTarget()
     {
-        Vector3 direction = _targetPosition - transform.position;
-        _moveDirection = direction.normalized;
-        direction.Normalize();
-        float h = direction.x;
-        float v = direction.y;
-
-        if (CheckIsSafeToMove())
-        {
-            _playerMove.PlayerMovementInput(h, v);
-            CheckXDistanceToTargetPosition();
-        }
+        _targetEnemy = null;
+        _isTargetSettings = false;
     }
 
 
-    private void CheckXDistanceToTargetPosition()
+    private void InputMovementToPlayer()
     {
-        float playerPosX = _player.transform.position.x;
-        float targetPosX = _targetPosition.x;
+        if (!IsTargetValid())
+        {
+            ReFindNewTargetDelay();
+            return;
+        }
 
-        float distance = Mathf.Abs(playerPosX - targetPosX);
+        if (!CheckIsSafeToMove())
+        {
+            ReFindNewTargetDelay();
+            return;
+        }
 
-        if (distance <= _threshold)
+        if (CheckXDistanceToTargetPosition())
+        {
+            ReFindNewTargetDelay();
+            return;
+        }
+
+        float directionX =
+            _targetX - transform.position.x;
+
+        directionX = Mathf.Sign(directionX);
+
+        _playerMove.PlayerMovementInput(
+            directionX,
+            0f
+        );
+    }
+
+
+    private void UpdateAvoidAndRefind()
+    {
+        if (IsTargetValid())
+        {
+            MoveAvoidDirection();
+        }
+
+        _curTime -= Time.deltaTime;
+
+        if (_curTime <= 0f)
         {
             SetNewTargetPosition();
         }
     }
 
+    private void MoveAvoidDirection()
+    {
+        if (!IsTargetValid())
+        {
+            return;
+        }
+
+        Vector3 playerPosition =
+            transform.position;
+
+        Vector3 enemyPosition =
+            _targetEnemy.transform.position;
+
+        // 적 반대 방향
+        Vector3 avoidDirection =
+            playerPosition - enemyPosition;
+
+        avoidDirection.Normalize();
+
+        _playerMove.PlayerMovementInput(
+            avoidDirection.x,
+            avoidDirection.y
+        );
+    }
+
+    private bool CheckXDistanceToTargetPosition()
+    {
+        float playerPosX =
+            transform.position.x;
+
+        float distance =
+            Mathf.Abs(playerPosX - _targetX);
+
+        return distance <= _targetThreshold;
+    }
+
     private bool CheckIsSafeToMove()
     {
-        Vector3 playerPos = _player.transform.position;
-        Vector3 targetPos = _targetObject.transform.position;
-
-        float distance = Vector3.Distance(playerPos, targetPos);
-
-        if (distance <= _threshold)
+        if (!IsTargetValid())
         {
-            ReFindNewTargetDelay();
             return false;
         }
 
-        return true;
+        Vector3 playerPos =
+            transform.position;
+
+        Vector3 targetPos =
+            _targetEnemy.transform.position;
+
+        float distance =
+            Vector3.Distance(playerPos, targetPos);
+
+        return distance > _safeDistance;
     }
 
-    private void MoveAvoidDirection()
+    private bool IsTargetValid()
     {
-        Vector3 direction = _moveDirection;
-        _playerMove.PlayerMovementInput(direction.x, direction.y);
+        return _targetEnemy != null &&
+               _targetEnemy.gameObject.activeInHierarchy;
+    }
+
+    private void ReFindNewTargetDelay()
+    {
+        _isTargetSettings = false;
+
+        _curTime = _delayTime;
     }
 }
