@@ -13,6 +13,8 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
     private bool _isTargetSettings;
     private bool _isAutoActivated;
     private Vector3 _targetPosition;
+    private GameObject _targetObject;
+    private Vector3 _moveDirection;
     private Player _player;
 
     private PlayerMove _playerMove;
@@ -39,6 +41,8 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
                 {
                     SetNewTargetPosition();
                 }
+
+                MoveAvoidDirection();
             }
         }
     }
@@ -91,6 +95,7 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
         }
 
         Enemy lowest = GetLowestHpEnemy(enemies);
+        _targetObject = lowest.gameObject;
         _targetPosition = transform.position;
         _targetPosition.x = lowest.transform.position.x;
         _isTargetSettings = true;
@@ -115,16 +120,20 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
     private void InputMovementToPlayer()
     {
         Vector3 direction = _targetPosition - transform.position;
+        _moveDirection = direction.normalized;
         direction.Normalize();
         float h = direction.x;
         float v = direction.y;
 
-        _playerMove.PlayerMovementInput(h, v);
-        CheckDistanceToTargetPosition();
+        if (CheckIsSafeToMove())
+        {
+            _playerMove.PlayerMovementInput(h, v);
+            CheckXDistanceToTargetPosition();
+        }
     }
 
 
-    private void CheckDistanceToTargetPosition()
+    private void CheckXDistanceToTargetPosition()
     {
         float playerPosX = _player.transform.position.x;
         float targetPosX = _targetPosition.x;
@@ -135,5 +144,27 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
         {
             SetNewTargetPosition();
         }
+    }
+
+    private bool CheckIsSafeToMove()
+    {
+        Vector3 playerPos = _player.transform.position;
+        Vector3 targetPos = _targetObject.transform.position;
+
+        float distance = Vector3.Distance(playerPos, targetPos);
+
+        if (distance <= _threshold)
+        {
+            ReFindNewTargetDelay();
+            return false;
+        }
+
+        return true;
+    }
+
+    private void MoveAvoidDirection()
+    {
+        Vector3 direction = _moveDirection;
+        _playerMove.PlayerMovementInput(direction.x, direction.y);
     }
 }
