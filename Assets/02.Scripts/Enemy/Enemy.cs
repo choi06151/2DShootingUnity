@@ -8,27 +8,22 @@ public class Enemy : PoolingObject
     private EnemyInfo _enemyInfo;
     private EnemyAnimationControl _enemyAnimationControl;
 
-    [Header("적 기본 속도")] [SerializeField] protected float _enemySpeed;
-    [Header("적 기본 체력")] [SerializeField] protected float _enemyHP;
-    [Header("적 기본 데미지")] [SerializeField] protected float _enemyDamage;
+    [Header("적 기본 속도")]
+    [SerializeField] protected float _enemySpeed;
 
-    [Header("죽을때 나올 이펙트 프리팹")] [SerializeField]
-    private GameObject _explosionPrefab;
+    [Header("적 기본 체력")]
+    [SerializeField] protected float _enemyHP;
 
-    [Header("죽을때 나올 소리")] [SerializeField] private AudioClip _deathSound;
+    [Header("적 기본 데미지")]
+    [SerializeField] protected float _enemyDamage;
 
     private float _originalSpeed;
-
 
     public float EnemySpeed => _enemySpeed;
     public float EnemyHp => _enemyHP;
     public float EnemyDamage => _enemyDamage;
 
-    public GameObject ExplosionPrefab => _explosionPrefab;
-
-
     public EnemyCreator GetEnemyCreator => _enemyCreator;
-    public AudioClip DeathSound => _deathSound;
 
     public void InitEnemy(EnemyCreator enemyCreator)
     {
@@ -38,9 +33,18 @@ public class Enemy : PoolingObject
         _enemyMove = GetComponent<EnemyMove>();
         _enemyAnimationControl = GetComponent<EnemyAnimationControl>();
 
-        _enemyInfo.Init(this);
-        _enemyMove.Init(this);
-        _enemyAnimationControl.Init(this);
+        IEnemyFun[] funs = GetComponentsInChildren<IEnemyFun>();
+        foreach (var fun in funs)
+        {
+            fun.Init(this);
+        }
+
+        IEnemyFun[] enemyFuns = GetComponentsInChildren<IEnemyFun>();
+        foreach (var enemyFun in enemyFuns)
+        {
+            enemyFun.Init(this);
+        }
+
 
         _originalSpeed = _enemySpeed;
     }
@@ -56,7 +60,7 @@ public class Enemy : PoolingObject
         if (other.tag == "Player")
         {
             Player player = other.GetComponent<Player>();
-            player.TakeDamage(_enemyInfo.GetDamageInfo());
+            player.TakeDamage(_enemyDamage);
             _enemyInfo.Death();
         }
     }

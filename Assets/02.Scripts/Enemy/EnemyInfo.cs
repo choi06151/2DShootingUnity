@@ -4,27 +4,20 @@ using UnityEngine;
 public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
 {
     public float Hp { get; private set; }
-    public float MaxHp { get; private set; }
 
-    private float _damage;
-    private GameObject _exlosionPrefab;
-    private AudioClip _deathSound;
     private Enemy _enemy;
+
+    [Header("죽을때 나올 이펙트 프리팹")]
+    [SerializeField] private GameObject _explosionPrefab;
+
+    [Header("죽을때 나올 소리")]
+    [SerializeField] private AudioClip _deathSound;
+
 
     public void Init(Enemy enemy)
     {
         _enemy = enemy;
-        MaxHp = enemy.EnemyHp;
-        Hp = MaxHp;
-        _damage = enemy.EnemyDamage;
-        _exlosionPrefab = enemy.ExplosionPrefab;
-        _deathSound = enemy.DeathSound;
-    }
-
-
-    public float GetDamageInfo()
-    {
-        return _damage;
+        Hp = _enemy.EnemyHp;
     }
 
     public void GetDamage(float damage)
@@ -39,8 +32,8 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
     public void GetHp(float hp)
     {
         Hp += hp;
-        if (Hp > MaxHp)
-            Hp = MaxHp;
+        if (Hp > _enemy.EnemyHp)
+            Hp = _enemy.EnemyHp;
     }
 
     public bool IsDeathAbleDamage(float damage)
@@ -57,7 +50,7 @@ public class EnemyInfo : MonoBehaviour, IHP, IEnemyFun
     {
         ScoreManager.Instance.Addscore(10);
         _enemy.EnhanceEnemy();
-        Instantiate(_exlosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
         ItemCreator.Instance.CreateItem(this.transform.position);
         AudioManager.Instance.ActivateEffectAudioClip(_deathSound);
 

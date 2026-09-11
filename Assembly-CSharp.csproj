@@ -76,6 +76,7 @@
     <Compile Include="Assets\02.Scripts\Command\Commands\CreateCommand.cs" />
     <Compile Include="Assets\02.Scripts\Item\Item.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerInfo.cs" />
+    <Compile Include="Assets\02.Scripts\Data\Stat.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletCountItem.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemEffector.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSwordSlashSkill.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Environment\BackgroundScroll.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSlowZoneSkill.cs" />
-    <Compile Include="Assets\02.Scripts\Player\Stat.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemySpawnDataTableSO.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletDamageUpItem.cs" />
