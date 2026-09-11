@@ -1625,13 +1625,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2281,13 +2281,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2439,14 +2439,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCreator
   distanceToAnotherEnemy: 1
-  EnemyPrefabs:
-  - {fileID: 5950680651562814429, guid: 7ef03b44a09da824b8c8e24f762ece11, type: 3}
-  - {fileID: 5185800396200252646, guid: cc365782f89b11f4bb412c61c8e4107c, type: 3}
-  - {fileID: -6317996665165057776, guid: ba45351f0b206d7469e4640fbf486d48, type: 3}
   SpawnPoint: {fileID: 2081495119}
   RespawnCoolTimeSet:
   - 1
   - 4
+  _spawnDataTable: {fileID: 11400000, guid: 80aa8e702d93f7b40968655486324ae7, type: 2}
 --- !u!4 &2081495121
 Transform:
   m_ObjectHideFlags: 0
@@ -2474,12 +2471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a5eb8ce6706564388d7de2ad2e0778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemCreator
-  _items:
-  - {fileID: 8313095365546275626, guid: 24dc9d6df413f6847bc6b5ec7ae825b8, type: 3}
-  - {fileID: 8313095365546275626, guid: c225b314316fb6c47a75a4a08b662904, type: 3}
-  - {fileID: 8313095365546275626, guid: d2fa76b9254baf24793845239d689791, type: 3}
-  - {fileID: 8313095365546275626, guid: 10e93bc2ba85ae7468e53337ac137951, type: 3}
-  - {fileID: 8313095365546275626, guid: a6a3cdcacc8a1c64d9640433204d9ccb, type: 3}
+  _itemSpawnDataTableSo: {fileID: 11400000, guid: 0b1ae6be9812b034c83cb62fb4c02d85, type: 2}
   _itemMoveSpeed: 0.05
   _itemWaitTime: 0.5
   _player: {fileID: 827450791}
@@ -2762,7 +2754,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 7c89d86fff21efb499aca5d9edf68599, type: 3}
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _isPlayerAutoMove
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9173780963916636105, guid: 74c955a11426bcd41a57f340c71186f0, type: 3}
       propertyPath: _playerDamageClip

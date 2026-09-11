@@ -12,11 +12,10 @@ enum EnemyType
 public class EnemyCreator : MonoBehaviour
 {
     [Header("적과의 간격")] public float distanceToAnotherEnemy = 0.5f;
-    [Header("스폰될 적")] public List<EnemyMove> EnemyPrefabs;
     [Header("스폰 위치")] public GameObject SpawnPoint;
     [Header("스폰 간격 - 시작 끝")] public float[] RespawnCoolTimeSet = new float[2] { 1, 4 };
 
-
+    [Header("적 스폰 정보")] [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
     private float _nextSpawnTime = 3;
     private float _currentCoolTime = 0;
 
@@ -56,7 +55,7 @@ public class EnemyCreator : MonoBehaviour
     {
         int spawnedCount = 0;
         int spawnAmount = Random.Range(1, 5);
-        EnemyType spawnType = GetRandomSpawnType();
+        GameObject spawnType = GetRandomSpawnType();
         bool[] isCreated = new bool[5];
 
         while (spawnedCount <= spawnAmount)
@@ -68,7 +67,7 @@ public class EnemyCreator : MonoBehaviour
             }
 
             CreateCommand createCommand =
-                new CreateCommand(this.gameObject, EnemyPrefabs[(int)spawnType].gameObject,
+                new CreateCommand(this.gameObject, spawnType,
                     GetSpawnPoint(spawnPointIndex));
             CommandManager.Instance.ExecuteCommand(createCommand);
             createCommand.GetCreatedObeject.GetComponent<Enemy>().InitEnemy(this);
@@ -89,21 +88,41 @@ public class EnemyCreator : MonoBehaviour
         return indexSpawnPoint;
     }
 
-    private EnemyType GetRandomSpawnType()
+    private GameObject GetRandomSpawnType()
     {
-        int randomIdx = Random.Range(0, 10);
-        if (randomIdx >= 0 && randomIdx < 5)
+        // int randomIdx = Random.Range(0, 10);
+        // if (randomIdx >= 0 && randomIdx < 5)
+        // {
+        //     return EnemyType.Normal;
+        // }
+        // else if (randomIdx >= 5 & randomIdx < 8)
+        // {
+        //     return EnemyType.ToPlayerDirection;
+        // }
+        // else
+        // {
+        //     return EnemyType.Homing;
+        // }
+
+        int totalWeight = 0;
+        foreach (var data in _spawnDataTable.Datas)
         {
-            return EnemyType.Normal;
+            totalWeight += data.Weight;
         }
-        else if (randomIdx >= 5 & randomIdx < 8)
+
+        int randomWeight = Random.Range(0, totalWeight);
+
+        int cumulativeWeight = 0;
+        foreach (var data in _spawnDataTable.Datas)
         {
-            return EnemyType.ToPlayerDirection;
+            cumulativeWeight += data.Weight;
+            if (randomWeight < cumulativeWeight)
+            {
+                return data.EnemyPrefab;
+            }
         }
-        else
-        {
-            return EnemyType.Homing;
-        }
+
+        return null;
     }
 
     private void ChangeRespawnTime()

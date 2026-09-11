@@ -60,10 +60,12 @@
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\HomingEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerBombSkill.cs" />
     <Compile Include="Assets\02.Scripts\Command\ICommand.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\EnemySpawnData.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerFollower.cs" />
     <Compile Include="Assets\02.Scripts\Bullet\IBulletFun.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolingObject.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerMove.cs" />
+    <Compile Include="Assets\02.Scripts\Item\ItemSpawnData.cs" />
     <Compile Include="Assets\02.Scripts\Environment\DestroyZone.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerFire.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyInfo.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Assets\02.Scripts\Bullet\BulletMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\MaxHpItem.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\CreateCommand.cs" />
+    <Compile Include="Assets\02.Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\02.Scripts\Item\Item.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerInfo.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletCountItem.cs" />
@@ -85,6 +88,8 @@
     <Compile Include="Assets\02.Scripts\Item\IItemFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletTypePlusItem.cs" />
     <Compile Include="Assets\02.Scripts\Common\IHP.cs" />
+    <Compile Include="Assets\02.Scripts\Item\ItemSpawnDataTableSO.cs" />
+    <Compile Include="Assets\02.Scripts\Environment\DataLoader.cs" />
     <Compile Include="Assets\02.Scripts\Command\Commands\TeleportCommand.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Bullet\Bullet.cs" />
@@ -95,6 +100,7 @@
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Environment\BackgroundScroll.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSlowZoneSkill.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\EnemySpawnDataTableSO.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletDamageUpItem.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandParent.cs" />

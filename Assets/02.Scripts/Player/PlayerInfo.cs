@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
@@ -53,7 +54,6 @@ public class PlayerInfo : MonoBehaviour, IHP, IPlayerFun
     public void Death()
     {
         Instantiate(_deathPrefab, transform.position, Quaternion.identity);
-
         Destroy(gameObject);
     }
 }

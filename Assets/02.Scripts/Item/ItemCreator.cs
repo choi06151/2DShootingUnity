@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemCreator : MonoBehaviour
 {
-    [Header("아이템 리스트")] [SerializeField] private List<Item> _items;
+    [Header("아이템 리스트")] [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTableSo;
     [Header("아이템 이동 속도")] [SerializeField] private float _itemMoveSpeed;
 
     [Header("아이템 이동 대기시간")] [SerializeField]
@@ -45,14 +45,14 @@ public class ItemCreator : MonoBehaviour
 
     public void CreateItem(Vector3 position)
     {
-        if (IsCreate() && _items != null && _items.Count > 0 && CommandManager.Instance != null)
+        if (IsCreate() && _itemSpawnDataTableSo != null && CommandManager.Instance != null)
         {
-            Item itemPrefab = _items[GetRandomItemIdx()];
+            GameObject itemPrefab = GetRandomItemIdx();
             if (itemPrefab == null)
                 return;
 
             CreateCommand createCommand =
-                new CreateCommand(this.gameObject, itemPrefab.gameObject, position);
+                new CreateCommand(this.gameObject, itemPrefab, position);
             CommandManager.Instance.ExecuteCommand(createCommand);
             if (createCommand.GetCreatedObeject != null &&
                 createCommand.GetCreatedObeject.TryGetComponent(out Item item))
@@ -70,11 +70,26 @@ public class ItemCreator : MonoBehaviour
         return randomIndex >= 7;
     }
 
-    private int GetRandomItemIdx() //추후 확률 보정 
+    private GameObject GetRandomItemIdx() //추후 확률 보정 
     {
-        if (_items == null || _items.Count == 0)
-            return -1;
+        int totalWeight = 0;
+        foreach (var data in _itemSpawnDataTableSo.Datas)
+        {
+            totalWeight += data.Weight;
+        }
 
-        return Random.Range(0, _items.Count);
+        int randomWeight = Random.Range(0, totalWeight);
+
+        int cumulativeWeight = 0;
+        foreach (var data in _itemSpawnDataTableSo.Datas)
+        {
+            cumulativeWeight += data.Weight;
+            if (randomWeight < cumulativeWeight)
+            {
+                return data.ItemPrefab;
+            }
+        }
+
+        return null;
     }
 }
