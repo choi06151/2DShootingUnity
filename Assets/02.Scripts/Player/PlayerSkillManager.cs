@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSkillManager : MonoBehaviour, IPlayerFun
@@ -7,7 +8,11 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     private float _skillCoolTime;
     private float _curCoolTime;
     private Player _player;
-    private bool _isAutoSkillOn;
+
+    [Header("현재 플레이어 스킬 후보 프리팹")]
+    [SerializeField] private List<GameObject> _playerSkillPrefab = new List<GameObject>();
+
+    public List<GameObject> PlayerSkillPrefab => _playerSkillPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +28,7 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
         }
 
 
-        if (_isAutoSkillOn && _curCoolTime < 0)
+        if (_player.Stat.IsPlayerAutoSkillOn && _curCoolTime < 0)
         {
             CheckUseSkill();
         }
@@ -35,14 +40,12 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     {
         _player = player;
         GetRandomSkill();
-
-        _isAutoSkillOn = _player.PlayerAutoSkill;
     }
 
     private void GetRandomSkill()
     {
-        int randomIdx = Random.Range(0, _player.PlayerSkillPrefab.Count);
-        _curEquipedSkillPrefab = _player.PlayerSkillPrefab[randomIdx];
+        int randomIdx = Random.Range(0, PlayerSkillPrefab.Count);
+        _curEquipedSkillPrefab = PlayerSkillPrefab[randomIdx];
         _curEquipedSkill = _curEquipedSkillPrefab.GetComponent<PlayerSkill>();
         _skillCoolTime = _curEquipedSkill.SkillCoolTime;
     }
@@ -73,7 +76,7 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     {
         GameObject skill = Instantiate(
             _curEquipedSkillPrefab,
-            _player.BulletSpawnPoint.position,
+            transform.position,
             Quaternion.identity
         );
 

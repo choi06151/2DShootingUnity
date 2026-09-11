@@ -3,29 +3,28 @@ using UnityEngine;
 
 public class PlayerAutoMove : MonoBehaviour, IPlayerFun
 {
-    [Header("목표 X 좌표 도달 임계값")] [SerializeField]
-    private float _targetThreshold = 0.1f;
+    [Header("목표 X 좌표 도달 임계값")]
+    [SerializeField] private float _targetThreshold = 0.1f;
 
-    [Header("적과 유지할 최소 거리")] [SerializeField]
-    private float _safeDistance = 1.5f;
+    [Header("적과 유지할 최소 거리")]
+    [SerializeField] private float _safeDistance = 1.5f;
 
-    [Header("재탐색 대기 시간")] [SerializeField] private float _delayTime = 0.5f;
+    [Header("재탐색 대기 시간")]
+    [SerializeField] private float _delayTime = 0.5f;
 
     private float _curTime;
 
     private bool _isTargetSettings;
-    private bool _isAutoActivated;
 
     private Enemy _targetEnemy;
 
     private float _targetX;
 
     private Player _player;
-    private PlayerMove _playerMove;
 
     private void Update()
     {
-        if (!_isAutoActivated)
+        if (!_player.Stat.IsPlayerAutoMoveOn)
         {
             return;
         }
@@ -43,10 +42,7 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
     public void Init(Player player)
     {
         _player = player;
-        _playerMove = player.PlayerMove;
-        _isAutoActivated = player.PlayerAutoMove;
-
-        if (_isAutoActivated)
+        if (_player.Stat.IsPlayerAutoMoveOn)
         {
             StartAutoMove();
         }
@@ -54,14 +50,14 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
 
     private void StartAutoMove()
     {
-        _isAutoActivated = true;
+        _player.Stat.IsPlayerAutoMoveOn = true;
 
         SetNewTargetPosition();
     }
 
     private void StopAutoMove()
     {
-        _isAutoActivated = false;
+        _player.Stat.IsPlayerAutoMoveOn = false;
 
         ClearTarget();
     }
@@ -161,7 +157,7 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
 
         directionX = Mathf.Sign(directionX);
 
-        _playerMove.PlayerMovementInput(
+        _player.PlayerMove.PlayerMovementInput(
             directionX,
             0f
         );
@@ -202,7 +198,7 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
 
         avoidDirection.Normalize();
 
-        _playerMove.PlayerMovementInput(
+        _player.PlayerMove.PlayerMovementInput(
             avoidDirection.x,
             avoidDirection.y
         );

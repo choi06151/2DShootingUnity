@@ -22,6 +22,7 @@ public class PlayerFollowerManager : MonoBehaviour, IPlayerFun
     public void Init(Player player)
     {
         _player = player;
+        _followerSpawnInterval = _player.Stat.FollowerInterval;
     }
 
     public void CreateFollowers()

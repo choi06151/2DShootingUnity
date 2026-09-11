@@ -8,15 +8,9 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
 
     private Player _player;
     private Transform _recordStartTransform;
-    private float _currentSpeed;
-
-
-    private float _moveSpeed;
     private float _moveSpeedDownMultiplier;
     private float _moveSpeedUpMultiplier;
-    public float[] constraintYRange = new float[2] { -5f, -1.5f }; //-1.5 , -5 //이동 가능범위
     public float[] constraintXRange = new float[2] { -2.5f, 2.5f };
-
 
     private void Start()
     {
@@ -24,34 +18,17 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
 
     public void Init(Player player)
     {
-        _moveSpeed = player.MoveSpeed;
-        _moveSpeedDownMultiplier = 1.0f - player.MoveSpeedMultiplier;
-        _moveSpeedUpMultiplier = 1.0f + player.MoveSpeedMultiplier;
         _player = player;
+        _moveSpeedDownMultiplier = 1.0f - _player.SpeedMultiplier;
+        _moveSpeedUpMultiplier = 1.0f + _player.SpeedMultiplier;
     }
 
 
     void Update()
     {
         PlayerMovementCheck();
-        PlayerSpeedCheck();
     }
 
-    private void PlayerSpeedCheck()
-    {
-        if (Input.GetKey(KeyCode.Q))
-        {
-            _currentSpeed = _moveSpeed * _moveSpeedDownMultiplier;
-        }
-        else if (Input.GetKey(KeyCode.E))
-        {
-            _currentSpeed = _moveSpeed * _moveSpeedUpMultiplier;
-        }
-        else
-        {
-            _currentSpeed = _moveSpeed;
-        }
-    }
 
     private void PlayerMovementCheck()
     {
@@ -62,12 +39,14 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
         {
             normalDirection = new Vector2(h, v); //현재 방향과 속도에 따라 이동한다
             Vector2 normalizedDirection = normalDirection.normalized; //정규화
-            Vector3 nextPosition = transform.position + (Vector3)normalizedDirection * Time.deltaTime * _currentSpeed;
+            Vector3 nextPosition = transform.position +
+                                   (Vector3)normalizedDirection * Time.deltaTime * _player.Stat.MoveSpeed;
 
-            if (nextPosition.y >= constraintYRange[0] && nextPosition.y <= constraintYRange[1]) //범위 내부여야만 이동
+            if (nextPosition.y >= _player.Stat.PlayerYRangeMin &&
+                nextPosition.y <= _player.Stat.PlayerYRangeMax) //범위 내부여야만 이동
             {
                 MovementCommand movementCommand = new MovementCommand(this.gameObject,
-                    (Vector3)normalizedDirection * Time.deltaTime * _currentSpeed);
+                    (Vector3)normalizedDirection * Time.deltaTime * _player.Stat.MoveSpeed);
                 CommandManager.Instance.ExecuteCommand(movementCommand);
             }
 
@@ -92,12 +71,14 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
         {
             normalDirection = new Vector2(h, v); //현재 방향과 속도에 따라 이동한다
             Vector2 normalizedDirection = normalDirection.normalized; //정규화
-            Vector3 nextPosition = transform.position + (Vector3)normalizedDirection * Time.deltaTime * _currentSpeed;
+            Vector3 nextPosition = transform.position +
+                                   (Vector3)normalizedDirection * Time.deltaTime * _player.Stat.MoveSpeed;
 
-            if (nextPosition.y >= constraintYRange[0] && nextPosition.y <= constraintYRange[1]) //범위 내부여야만 이동
+            if (nextPosition.y >= _player.Stat.PlayerYRangeMin &&
+                nextPosition.y <= _player.Stat.PlayerYRangeMax) //범위 내부여야만 이동
             {
                 MovementCommand movementCommand = new MovementCommand(this.gameObject,
-                    (Vector3)normalizedDirection * Time.deltaTime * _currentSpeed);
+                    (Vector3)normalizedDirection * Time.deltaTime * _player.Stat.MoveSpeed);
                 CommandManager.Instance.ExecuteCommand(movementCommand);
             }
 

@@ -5,97 +5,51 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerFire), typeof(PlayerMove), typeof(PlayerInfo))]
 public class Player : MonoBehaviour
 {
+    [Header("현재 스탯 정보")]
+    [SerializeField] private Stat _stat;
+
+    public Stat Stat => _stat;
+
     private PlayerFire _playerFire;
     private PlayerMove _playerMove;
+    public PlayerMove PlayerMove => _playerMove;
+
     private PlayerInfo _playerInfo;
     private PlayerAnimationControl _playerAnimationControl;
     private PlayerSkillManager _playerSkillManager;
     private PlayerFollowerManager _playerFollowerManager;
-    private PlayerAutoMove _playerAutoMove;
     public PlayerFollowerManager PlayerFollowerManager => _playerFollowerManager;
-    public PlayerMove PlayerMove => _playerMove;
 
-    [Header("플레이어 메인 총알 발사 지점")] [SerializeField]
-    private Transform _bulletSpawnPoint;
-
-    [Header("플레이어 이동 속도")] [SerializeField]
-    private float _moveSpeed;
-
-    [Header("플레이어 이동 증감 배율")] [SerializeField]
-    private float _moveSpeedMultiplier;
-
-    [Header("플레이어 최대 체력")] [SerializeField]
-    private float _maxHp;
-
-    [Header("플레이어 공격력")] [SerializeField] private float _playerDamageMultiplier;
-
-    [Header("플레이어 총알 자동 발사")] [SerializeField]
-    private bool _bulletAutoFire;
-
-    [Header("플레이어 자동 움직임")] [SerializeField]
-    private bool _isPlayerAutoMove;
-
-    [Header("플레이어 자동 스킬 사용")] [SerializeField]
-    private bool _isPlayerAutoSkill;
+    private PlayerAutoMove _playerAutoMove;
 
 
-    [Header("플레이어 총알 쿨타임")] [SerializeField]
-    private float _fireCoolTime;
-
-    [Header("플레이어 총알 발사 위치 간격")] [SerializeField]
-    private float _firePointInterval;
-
-    [Header("플레이어 총알 발사 개수")] [SerializeField]
-    private int _bulletFireCount;
-
-    [Header("플레이어 총알 업그레이드 기준 개수")] [SerializeField]
-    private int _bulletUpgradeCount;
-
-    [Header("플레이어 총알 종류")] [SerializeField]
-    private List<Bullet> _bulletList;
-
-    [Header("플레이어 총알 발사 소리")] [SerializeField]
-    private AudioClip _fireClip;
-
-    [Header("플레이어 피격시 이펙트 프리팹")] [SerializeField]
-    private GameObject _damagedPrefab;
-
-    [Header("플레이어 죽을시 이펙트 프리팹")] [SerializeField]
-    private GameObject _deathPrefab;
-
-    [Header("플레이어 죽을시 소리")] [SerializeField]
-    private AudioClip _playerDeathClip;
-
-    [Header("플레이어 데미지 받을때 소리")] [SerializeField]
-    private AudioClip _playerDamageClip;
+    private float _speedMultiplier;
+    public float SpeedMultiplier => _speedMultiplier;
 
 
-    [Header("현재 플레이어 스킬 후보 프리팹")] [SerializeField]
-    private List<GameObject> _playerSkillPrefab = new List<GameObject>();
-
-    public Transform BulletSpawnPoint => _bulletSpawnPoint;
-    public float MoveSpeed => _moveSpeed;
-    public float MoveSpeedMultiplier => _moveSpeedMultiplier;
-    public float MaxHp => _maxHp;
-    public float PlayerDamageMultiplier => _playerDamageMultiplier;
-    public bool bulletAutoFire => _bulletAutoFire;
-    public bool PlayerAutoMove => _isPlayerAutoMove;
-    public bool PlayerAutoSkill => _isPlayerAutoSkill;
-    public float FireCoolTime => _fireCoolTime;
-    public AudioClip FireClip => _fireClip;
-    public float FirePointInterval => _firePointInterval;
-    public int BulletFireCount => _bulletFireCount;
-    public int BulletUpgradeCount => _bulletUpgradeCount;
-    public List<Bullet> BulletList => _bulletList;
-
-    public GameObject DamagedPrefab => _damagedPrefab;
-    public GameObject DeathPrefab => _deathPrefab;
-    public List<GameObject> PlayerSkillPrefab => _playerSkillPrefab;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void ApplyPlayerData(Stat stat)
     {
+        if (stat != null)
+        {
+            _stat = stat;
+            Init();
+            Debug.Log("데이터 불러오기 성공");
+        }
+        else
+        {
+            Debug.Log("데이터 불러오기 실패");
+        }
+    }
+
+    private void Init()
+    {
+        IPlayerFun[] funs = GetComponentsInChildren<IPlayerFun>();
+        foreach (var fun in funs)
+        {
+            fun.Init(this);
+        }
+
+
         _playerInfo = GetComponent<PlayerInfo>();
         _playerMove = GetComponent<PlayerMove>();
         _playerFire = GetComponent<PlayerFire>();
@@ -103,14 +57,6 @@ public class Player : MonoBehaviour
         _playerSkillManager = GetComponent<PlayerSkillManager>();
         _playerFollowerManager = GetComponent<PlayerFollowerManager>();
         _playerAutoMove = GetComponent<PlayerAutoMove>();
-
-        _playerInfo.Init(this);
-        _playerMove.Init(this);
-        _playerFire.Init(this);
-        _playerAnimationControl.Init(this);
-        _playerSkillManager.Init(this);
-        _playerFollowerManager.Init(this);
-        _playerAutoMove.Init(this);
     }
 
 
@@ -126,11 +72,11 @@ public class Player : MonoBehaviour
 
     public void TakeSpeedUp(float speed)
     {
-        _moveSpeed = _moveSpeed + _moveSpeed * speed;
-        _moveSpeedMultiplier = speed;
-        _fireCoolTime = _fireCoolTime - _fireCoolTime * _moveSpeedMultiplier;
-        _playerMove.Init(this);
-        _playerFire.Init(this);
+        _speedMultiplier = speed;
+
+        _stat.MoveSpeed = _stat.MoveSpeed + speed * _stat.MoveSpeed;
+
+        _stat.BulletCoolTime = _stat.BulletCoolTime - _stat.BulletCoolTime * _speedMultiplier;
     }
 
 
@@ -141,39 +87,28 @@ public class Player : MonoBehaviour
 
     public void TakeMaxHp(float hp)
     {
-        _playerInfo.GetMaxHp(hp);
+        _stat.Hp += hp;
     }
 
     public void TakeDamageUp(float input)
     {
-        _playerDamageMultiplier += input;
+        _stat.Damage += input;
     }
 
     public void TakeBulletCountUp(int input)
     {
-        _bulletFireCount += input;
-        CheckFireUpgrade();
+        _stat.BulletCount += input;
+        _playerFire.CheckFireUpgrade();
     }
 
     public void TakeBulletTypePlusItem(Bullet bullet)
     {
-        _bulletList.Add(bullet);
-        CheckFireUpgrade();
+        _playerFire.BulletTypePlus(bullet);
     }
 
-    private void CheckFireUpgrade()
+
+    public void PlusPlayerFollower()
     {
-        if (_bulletFireCount >= BulletUpgradeCount || _bulletList.Count >= BulletUpgradeCount)
-        {
-            Bullet mainBullet = _bulletList[0];
-            _bulletList.Clear();
-            _bulletList.Add(mainBullet);
-            _bulletFireCount = 1;
-            _playerDamageMultiplier *= 1.2f;
-            _playerFollowerManager.CreateFollowers();
-        }
-
-
-        _playerFire.Init(this);
+        _playerFollowerManager.CreateFollowers();
     }
 }
