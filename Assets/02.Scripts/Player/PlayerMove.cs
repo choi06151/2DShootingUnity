@@ -26,6 +26,8 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
 
     void Update()
     {
+        if (_player == null) return;
+
         PlayerMovementCheck();
     }
 

@@ -24,6 +24,8 @@ public class PlayerAutoMove : MonoBehaviour, IPlayerFun
 
     private void Update()
     {
+        if (_player == null) return;
+
         if (!_player.Stat.IsPlayerAutoMoveOn)
         {
             return;

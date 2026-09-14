@@ -102,6 +102,7 @@ public class PlayerFire : MonoBehaviour, IPlayerFun
 
     private void CheckAutoFire()
     {
+        if (_player == null) return;
         if (_player.Stat.IsBulletAutoFireOn)
         {
             if (_currentFireCooldown > _player.Stat.BulletCoolTime)

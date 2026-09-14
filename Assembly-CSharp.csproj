@@ -102,7 +102,9 @@
     <Compile Include="Assets\02.Scripts\Player\PlayerSkillManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Environment\BackgroundScroll.cs" />
+    <Compile Include="Assets\02.Scripts\UI\UpgradeButtons\UI_AttackDamageUpgradeButton.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSlowZoneSkill.cs" />
+    <Compile Include="Assets\02.Scripts\UI\UI_UpgradeButton.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemySpawnDataTableSO.cs" />
     <Compile Include="Assets\02.Scripts\Player\IPlayerFun.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletDamageUpItem.cs" />

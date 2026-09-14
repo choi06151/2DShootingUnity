@@ -61,6 +61,21 @@ public class ScoreManager : MonoBehaviour
         UpdateBestScore();
     }
 
+    public bool IsScoreEnough(int score)
+    {
+        if (score <= 0) return false;
+
+        return _currentScore >= score;
+    }
+
+    public void Usescore(int score)
+    {
+        if (score <= 0) return;
+        _currentScore -= score;
+
+        Refresh();
+    }
+
     private void UpdateBestScore()
     {
         if (_bestScore < _currentScore)

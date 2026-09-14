@@ -101,6 +101,11 @@ public class Player : MonoBehaviour
         _stat.Damage += input;
     }
 
+    public void UpgradeDamage(float up)
+    {
+        _stat.Damage *= up;
+    }
+
     public void TakeBulletCountUp(int input)
     {
         _stat.BulletCount += input;

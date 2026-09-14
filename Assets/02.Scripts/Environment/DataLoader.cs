@@ -45,7 +45,6 @@ public class DataLoader : MonoBehaviour
     {
         if (_request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError($"CSV Load Failed : {_request.error}");
             return null;
         }
 

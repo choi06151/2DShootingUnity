@@ -22,6 +22,8 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     // Update is called once per frame
     void Update()
     {
+        if (_player == null) return;
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             CheckUseSkill();

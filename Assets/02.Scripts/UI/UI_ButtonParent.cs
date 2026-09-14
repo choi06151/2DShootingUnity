@@ -57,6 +57,9 @@ public abstract class UI_ButtonParent : MonoBehaviour
 
     private void SwitchUiSprite(bool isOn)
     {
-        _myImage.sprite = isOn ? _onImage : _offImage;
+        if (_onImage != null && _offImage != null)
+        {
+            _myImage.sprite = isOn ? _onImage : _offImage;
+        }
     }
 }
