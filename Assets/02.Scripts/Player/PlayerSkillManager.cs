@@ -49,7 +49,7 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
         int randomIdx = Random.Range(0, PlayerSkillPrefab.Count);
         _curEquipedSkillPrefab = PlayerSkillPrefab[randomIdx];
         _curEquipedSkill = _curEquipedSkillPrefab.GetComponent<PlayerSkill>();
-        _skillCoolTime = _curEquipedSkill.SkillCoolTime;
+        _skillCoolTime = _curEquipedSkill.SkillCoolTime * _player.Stat.SkillCoolTimeRate;
     }
 
     public void CheckUseSkill()

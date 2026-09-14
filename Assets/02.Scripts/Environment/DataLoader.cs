@@ -131,6 +131,12 @@ public class DataLoader : MonoBehaviour
 
                     break;
                 }
+                case "스킬 쿨타임 배율":
+                {
+                    _stat.SkillCoolTimeRate = float.Parse(value);
+
+                    break;
+                }
             }
         }
 

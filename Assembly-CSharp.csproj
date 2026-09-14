@@ -67,8 +67,10 @@
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolingObject.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemSpawnData.cs" />
+    <Compile Include="Assets\02.Scripts\Upgrade\UpgradeType\ScoreGetAmountUpgradeApplier.cs" />
     <Compile Include="Assets\02.Scripts\Environment\DestroyZone.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerFire.cs" />
+    <Compile Include="Assets\02.Scripts\Upgrade\UpgradeType\DamageUpgradeApplier.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemyInfo.cs" />
     <Compile Include="Assets\02.Scripts\Command\CommandManager.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\IEnemyFun.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\02.Scripts\UI\UI_AutoButton.cs" />
     <Compile Include="Assets\02.Scripts\Data\Stat.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletCountItem.cs" />
+    <Compile Include="Assets\02.Scripts\Upgrade\UpgradeApplier.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemEffector.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSwordSlashSkill.cs" />
     <Compile Include="Assets\02.Scripts\Player\Player.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Assets\02.Scripts\Item\IItemFun.cs" />
     <Compile Include="Assets\02.Scripts\UI\UI_ButtonParent.cs" />
     <Compile Include="Assets\02.Scripts\Item\EffectTypes\BulletTypePlusItem.cs" />
+    <Compile Include="Assets\02.Scripts\Upgrade\UpgradeDataSO.cs" />
     <Compile Include="Assets\02.Scripts\Common\IHP.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemSpawnDataTableSO.cs" />
     <Compile Include="Assets\02.Scripts\Environment\DataLoader.cs" />
@@ -98,12 +102,11 @@
     <Compile Include="Assets\02.Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\MoveTypes\ToPlayerDirectionEnemyMove.cs" />
     <Compile Include="Assets\02.Scripts\Item\ItemCreator.cs" />
+    <Compile Include="Assets\02.Scripts\Upgrade\UpgradeType\SkillCoolTimeUpgradeApplier.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerFollowerManager.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerSkillManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolingSystem\PoolManager.cs" />
     <Compile Include="Assets\02.Scripts\Environment\BackgroundScroll.cs" />
-    <Compile Include="Assets\02.Scripts\UI\UpgradeButtons\UI_ScoreGetAmountUpgradeButton.cs" />
-    <Compile Include="Assets\02.Scripts\UI\UpgradeButtons\UI_AttackDamageUpgradeButton.cs" />
     <Compile Include="Assets\02.Scripts\Player\Skills\PlayerSlowZoneSkill.cs" />
     <Compile Include="Assets\02.Scripts\UI\UI_UpgradeButton.cs" />
     <Compile Include="Assets\02.Scripts\Enemy\EnemySpawnDataTableSO.cs" />

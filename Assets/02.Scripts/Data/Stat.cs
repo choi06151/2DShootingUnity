@@ -17,4 +17,5 @@ public class Stat
     public float FollowerInterval { get; set; }
     public float PlayerYRangeMin { get; set; }
     public float PlayerYRangeMax { get; set; }
+    public float SkillCoolTimeRate { get; set; }
 }

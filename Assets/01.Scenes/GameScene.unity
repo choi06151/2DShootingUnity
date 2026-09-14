@@ -2413,7 +2413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonAnimation
   _scale: 1.5
-  _bumpDuration: 1.2
+  _bumpDuration: 0.2
   _bumpCurve:
     serializedVersion: 2
     m_Curve:

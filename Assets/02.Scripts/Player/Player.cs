@@ -58,6 +58,13 @@ public class Player : MonoBehaviour
         _playerFollowerManager = GetComponent<PlayerFollowerManager>();
         _playerAutoMove = GetComponent<PlayerAutoMove>();
 
+
+        UpgradeApplier[] upgradeAppliers = FindObjectsByType<UpgradeApplier>(FindObjectsSortMode.None);
+        foreach (var applier in upgradeAppliers)
+        {
+            applier.Init(this);
+        }
+
         UI_ButtonParent[] ui_buttons = FindObjectsByType<UI_ButtonParent>(FindObjectsSortMode.None);
         foreach (var button in ui_buttons)
         {
@@ -102,6 +109,11 @@ public class Player : MonoBehaviour
     }
 
     public void UpgradeDamage(float up)
+    {
+        _stat.Damage *= up;
+    }
+
+    public void UpgradeSkillCoolTime(float up)
     {
         _stat.Damage *= up;
     }

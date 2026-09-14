@@ -220,7 +220,7 @@ MonoBehaviour:
   _enemyHP: 100
   _enemyDamage: 20
   _enemyScore: 50
-  _enemyHpUgradeMultipier: 1.5
+  _enemyHpUgradeMultipier: 3
   _enemyScoreUgradeMultipier: 1.5
 --- !u!114 &1493077831807280776
 MonoBehaviour:
