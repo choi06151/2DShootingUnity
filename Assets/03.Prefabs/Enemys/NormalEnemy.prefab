@@ -219,6 +219,9 @@ MonoBehaviour:
   _enemySpeed: 3
   _enemyHP: 200
   _enemyDamage: 40
+  _enemyScore: 50
+  _enemyHpUgradeMultipier: 1.5
+  _enemyScoreUgradeMultipier: 1.5
 --- !u!114 &634953394652511314
 MonoBehaviour:
   m_ObjectHideFlags: 0

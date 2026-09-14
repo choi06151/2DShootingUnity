@@ -8,6 +8,10 @@ public class ScoreManager : MonoBehaviour
     public int BestScore => _bestScore;
     public int CurrentScore => _currentScore;
 
+    private float _scoreMultiplier = 1;
+    public float ScoreMultiplier => _scoreMultiplier;
+
+
     private const string SaveKey = "BestScore";
 
     [SerializeField] private TextMeshProUGUI _bestScoreText;
@@ -53,10 +57,15 @@ public class ScoreManager : MonoBehaviour
         _currentScoreText.text = $"current score: {_currentScore:N0}";
     }
 
+    public void UpgradeScoreMultiplier(float input)
+    {
+        _scoreMultiplier *= input;
+    }
+
     public void Addscore(int score)
     {
         if (score <= 0) return;
-        _currentScore += score;
+        _currentScore += score * (int)_scoreMultiplier;
         Refresh();
         UpdateBestScore();
     }

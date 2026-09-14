@@ -17,6 +17,18 @@ public class Enemy : PoolingObject
     [Header("적 기본 데미지")]
     [SerializeField] protected float _enemyDamage;
 
+    [Header("적 기본 스코어")]
+    [SerializeField] protected int _enemyScore;
+
+    public int EnemyScore => _enemyScore;
+
+    [Header("적 사망시 체력 업그레이드 배율")]
+    [SerializeField] protected float _enemyHpUgradeMultipier;
+
+    [Header("적 사망시 점수 업그레이드 배율")]
+    [SerializeField] protected float _enemyScoreUgradeMultipier;
+
+
     private float _originalSpeed;
 
     public float EnemySpeed => _enemySpeed;
@@ -95,6 +107,7 @@ public class Enemy : PoolingObject
 
     public void EnhanceEnemy()
     {
-        _enemyHP = _enemyHP * 1.6f;
+        _enemyHP = _enemyHP * _enemyHpUgradeMultipier;
+        _enemyScore = _enemyScore * (int)_enemyScoreUgradeMultipier;
     }
 }

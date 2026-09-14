@@ -736,8 +736,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1016,6 +1016,8 @@ GameObject:
   - component: {fileID: 479536374}
   - component: {fileID: 479536373}
   - component: {fileID: 479536372}
+  - component: {fileID: 479536377}
+  - component: {fileID: 479536376}
   m_Layer: 5
   m_Name: UpgradeButton (2)
   m_TagString: Untagged
@@ -1153,6 +1155,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479536370}
   m_CullTransparentMesh: 1
+--- !u!114 &479536376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479536370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26b68a5ce8805c4d8c3d40d455a6450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_ScoreGetAmountUpgradeButton
+  _clickSound: {fileID: 8300000, guid: 9437c5e113529a44eba0b3e57ac65aa4, type: 3}
+  _isToggle: 0
+  _onImage: {fileID: 0}
+  _offImage: {fileID: 0}
+  _title: ScoreGetMultipier
+  _initScoreText: 200
+  _scoreMultiplier: 3
+  _effectAmount: 2
+--- !u!114 &479536377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479536370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f609680f8d70c4e4fa30a4ca28a9e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonAnimation
+  _scale: 1.2
+  _bumpDuration: 0.2
+  _bumpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &481451383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,7 +2397,7 @@ MonoBehaviour:
   _onImage: {fileID: 0}
   _offImage: {fileID: 0}
   _title: AttackDamage
-  _initScoreText: 100
+  _initScoreText: 70
   _scoreMultiplier: 2
   _effectAmount: 2
 --- !u!114 &825837946
@@ -2353,7 +2413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonAnimation
   _scale: 1.5
-  _bumpDuration: 0.2
+  _bumpDuration: 1.2
   _bumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -3931,10 +3991,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_ButtonAnimation
   _scale: 1.2
-  _bumpDuration: 0
+  _bumpDuration: 0.2
   _bumpCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
