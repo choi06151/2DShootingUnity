@@ -8,7 +8,7 @@ public class DataLoader : MonoBehaviour
     private Stat _stat;
 
     private bool _isDataConfirm;
-
+    private bool _isApplied;
     private UnityWebRequest _request;
     private string _csvText;
 
@@ -142,6 +142,10 @@ public class DataLoader : MonoBehaviour
 
     private void ApplyToPlayer()
     {
-        _player.ApplyPlayerData(_stat);
+        if (!_isApplied)
+        {
+            _player.ApplyPlayerData(_stat);
+            _isApplied = true;
+        }
     }
 }

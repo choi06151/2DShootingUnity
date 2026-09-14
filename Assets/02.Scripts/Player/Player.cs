@@ -57,6 +57,12 @@ public class Player : MonoBehaviour
         _playerSkillManager = GetComponent<PlayerSkillManager>();
         _playerFollowerManager = GetComponent<PlayerFollowerManager>();
         _playerAutoMove = GetComponent<PlayerAutoMove>();
+
+        UI_ButtonParent[] ui_buttons = FindObjectsByType<UI_ButtonParent>(FindObjectsSortMode.None);
+        foreach (var button in ui_buttons)
+        {
+            button.Init(this);
+        }
     }
 
 
@@ -110,5 +116,14 @@ public class Player : MonoBehaviour
     public void PlusPlayerFollower()
     {
         _playerFollowerManager.CreateFollowers();
+    }
+
+    public void SwitchAutoPlayMode()
+    {
+        _stat.IsBulletAutoFireOn = !_stat.IsBulletAutoFireOn;
+        _stat.IsPlayerAutoMoveOn = !_stat.IsPlayerAutoMoveOn;
+        _stat.IsPlayerAutoSkillOn = !_stat.IsPlayerAutoSkillOn;
+
+        Debug.Log("자동재생부분 변환");
     }
 }
