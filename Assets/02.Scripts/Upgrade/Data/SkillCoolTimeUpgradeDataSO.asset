@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e1f7a745afefa4ebe5c0ec539ffc67, type: 3}
   m_Name: SkillCoolTimeUpgradeDataSO
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDataSO
-  _title: SCORE
-  _initScoreText: 600
+  _title: COOLTIME
+  _initScoreText: 300
   _scoreMultiplier: 3
-  _effectAmount: 2
+  _effectAmount: 0.9

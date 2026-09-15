@@ -2,20 +2,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-enum EnemyType
-{
-    Normal,
-    Homing,
-    ToPlayerDirection
-}
-
 public class EnemyCreator : MonoBehaviour
 {
-    [Header("적과의 간격")] public float distanceToAnotherEnemy = 0.5f;
-    [Header("스폰 위치")] public GameObject SpawnPoint;
-    [Header("스폰 간격 - 시작 끝")] public float[] RespawnCoolTimeSet = new float[2] { 1, 4 };
+    [Header("적과의 간격")]
+    public float distanceToAnotherEnemy = 0.5f;
 
-    [Header("적 스폰 정보")] [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+    [Header("스폰 위치")]
+    public GameObject SpawnPoint;
+
+    [Header("스폰 간격 - 시작 끝")]
+    public float[] RespawnCoolTimeSet = new float[2] { 1, 4 };
+
+    [Header("적 스폰 정보")]
+    [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+
     private float _nextSpawnTime = 3;
     private float _currentCoolTime = 0;
 

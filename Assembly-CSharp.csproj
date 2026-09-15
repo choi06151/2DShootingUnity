@@ -1167,6 +1167,14 @@
       <Project>{2769c7c0-991e-c407-55ec-554baacf5619}</Project>
       <Name>CFXR.WelcomeScreen</Name>
     </ProjectReference>
+    <ProjectReference Include="SimpleInput.Editor.csproj">
+      <Project>{0405b166-3dc3-4d79-d607-ace49d494afa}</Project>
+      <Name>SimpleInput.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="SimpleInput.Runtime.csproj">
+      <Project>{d5b4ef6c-7f10-702b-a30f-db89c9b7450a}</Project>
+      <Name>SimpleInput.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="CFXREditor.csproj">
       <Project>{28c88462-89cf-d375-496a-74e39dedfb26}</Project>
       <Name>CFXREditor</Name>

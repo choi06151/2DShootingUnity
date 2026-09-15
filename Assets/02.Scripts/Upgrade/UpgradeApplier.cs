@@ -23,7 +23,18 @@ public abstract class UpgradeApplier : MonoBehaviour
     {
         _player = player;
         _score = upgradeData._initScoreText;
+        //Load();
         ApplyEffect();
+    }
+
+    public void TryUpgrade()
+    {
+        ScoreManager scoreManager = ScoreManager.Instance;
+        if (scoreManager.IsScoreEnough(Score))
+        {
+            scoreManager.Usescore(Score);
+            Upgrade();
+        }
     }
 
     public void Upgrade()
@@ -31,8 +42,25 @@ public abstract class UpgradeApplier : MonoBehaviour
         _level++;
         _score *= (int)_upgradeData._scoreMultiplier;
         ApplyEffect();
+        Save();
     }
 
 
     protected abstract void ApplyEffect();
+
+    private void Save()
+    {
+        string json = JsonUtility.ToJson(_upgradeData);
+        PlayerPrefs.SetString(_upgradeData._title, json);
+        PlayerPrefs.Save();
+    }
+
+    private void Load()
+    {
+        if (!PlayerPrefs.HasKey(_upgradeData._title)) return;
+
+        string json = PlayerPrefs.GetString(_upgradeData._title);
+
+        _upgradeData = JsonUtility.FromJson<UpgradeDataSO>(json);
+    }
 }

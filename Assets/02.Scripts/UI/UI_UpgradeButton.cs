@@ -24,20 +24,15 @@ public class UI_UpgradeButton : UI_ButtonParent
 
     protected override void ClickExecute()
     {
-        ScoreManager scoreManager = ScoreManager.Instance;
-        if (scoreManager.IsScoreEnough(_upgradeApplier.Score))
-        {
-            scoreManager.Usescore(_upgradeApplier.Score);
-            _upgradeApplier.Upgrade();
-            Refresh();
-        }
+        _upgradeApplier.TryUpgrade();
+        Refresh();
     }
 
 
     private void Refresh()
     {
         _titleText.text = _upgradeApplier.upgradeData._title;
-        _conTextText.text = _upgradeApplier.CurrentValue + " => " + _upgradeApplier.NextValue;
-        _scoreCostText.text = _upgradeApplier.Score.ToString();
+        _conTextText.text = $"{_upgradeApplier.CurrentValue:F2} => {_upgradeApplier.NextValue:F2}";
+        _scoreCostText.text = $"{_upgradeApplier.Score:F2}";
     }
 }
