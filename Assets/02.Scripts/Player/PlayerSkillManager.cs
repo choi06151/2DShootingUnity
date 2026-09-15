@@ -24,7 +24,7 @@ public class PlayerSkillManager : MonoBehaviour, IPlayerFun
     {
         if (_player == null) return;
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (SimpleInput.GetButton("Skill"))
         {
             CheckUseSkill();
         }

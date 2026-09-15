@@ -34,8 +34,8 @@ public class PlayerMove : MonoBehaviour, IPlayerFun
 
     private void PlayerMovementCheck()
     {
-        float h = Input.GetAxisRaw("Horizontal"); //키보드 왼/ 오른쪽 입력상태에 따라 -1f ~ 1f
-        float v = Input.GetAxisRaw("Vertical"); //키보드 위 /아래 -1f~1f
+        float h = SimpleInput.GetAxisRaw("Horizontal"); //키보드 왼/ 오른쪽 입력상태에 따라 -1f ~ 1f
+        float v = SimpleInput.GetAxisRaw("Vertical"); //키보드 위 /아래 -1f~1f
         Vector2 normalDirection = new Vector2(0, 0);
         if (h != 0 || v != 0) //이동 인풋이 들어온다면
         {
