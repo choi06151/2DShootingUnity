@@ -27,7 +27,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\Assembly-CSharp\</OutputPath>
-    <DefineConstants>UNITY_6000_3_22;UNITY_6000_3;UNITY_6000;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_2023_1_OR_NEWER;UNITY_2023_2_OR_NEWER;UNITY_2023_3_OR_NEWER;UNITY_6000_0_OR_NEWER;UNITY_6000_1_OR_NEWER;UNITY_6000_2_OR_NEWER;UNITY_6000_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CLOTH;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_UNITY_CONSENT;ENABLE_UNITY_CLOUD_IDENTIFIERS;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;RENDER_SOFTWARE_CURSOR;ENABLE_MARSHALLING_TESTS;ENABLE_VIDEO;ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;TEXTCORE_1_0_OR_NEWER;EDITOR_ONLY_NAVMESH_BUILDER_DEPRECATED;PLATFORM_WEBGL;UNITY_WEBGL;UNITY_WEBGL_API;UNITY_DISABLE_WEB_VERIFICATION;UNITY_GFX_USE_PLATFORM_VSYNC;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_SPATIALTRACKING;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;ENABLE_PROFILER_ASSISTANT_INTEGRATION;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER;TEXTCORE_FONT_ENGINE_1_6_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_6000_3_22;UNITY_6000_3;UNITY_6000;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_2023_1_OR_NEWER;UNITY_2023_2_OR_NEWER;UNITY_2023_3_OR_NEWER;UNITY_6000_0_OR_NEWER;UNITY_6000_1_OR_NEWER;UNITY_6000_2_OR_NEWER;UNITY_6000_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CLOTH;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_UNITY_CONSENT;ENABLE_UNITY_CLOUD_IDENTIFIERS;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;RENDER_SOFTWARE_CURSOR;ENABLE_MARSHALLING_TESTS;ENABLE_VIDEO;ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;TEXTCORE_1_0_OR_NEWER;EDITOR_ONLY_NAVMESH_BUILDER_DEPRECATED;PLATFORM_WEBGL;UNITY_WEBGL;UNITY_WEBGL_API;UNITY_DISABLE_WEB_VERIFICATION;UNITY_GFX_USE_PLATFORM_VSYNC;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_SPATIALTRACKING;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;ENABLE_PROFILER_ASSISTANT_INTEGRATION;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER;TEXTCORE_FONT_ENGINE_1_6_OR_NEWER;SENTIS_ANALYTICS_ENABLED;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169,0649</NoWarn>
@@ -45,6 +45,9 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
+    <Analyzer Include="C:\Users\choi0\Desktop\Projects\2DShooting\Library\PackageCache\com.unity.ai.inference@9a123aee5df7\Runtime\Core\SourceGenerator\SourceGenerators.dll" />
+    <Analyzer Include="C:\Users\choi0\Desktop\Projects\2DShooting\Library\PackageCache\com.unity.dt.app-ui@8ac7e730dd5d\Runtime\SourceGenerators\netstandard2.0\EnumToLowerCase.dll" />
+    <Analyzer Include="C:\Users\choi0\Desktop\Projects\2DShooting\Library\PackageCache\com.unity.dt.app-ui@8ac7e730dd5d\Runtime\MVVM\SourceGenerators\netstandard2.0\MVVMSourceGenerators.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\Bullet\MoveType\ForwardBulletMove.cs" />
@@ -542,6 +545,9 @@
     <Reference Include="Mono.Cecil">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff\Mono.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
     </Reference>
@@ -914,9 +920,6 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
     </Reference>
@@ -925,9 +928,6 @@
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI.Analytics">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\UnityEditor.UI.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
@@ -941,41 +941,23 @@
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InputSystem.ForUI.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InputSystem.ForUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    <Reference Include="Unity.AI.Assistant.API.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Assistant.API.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.2D.Editor.Overrides">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Editor.Overrides.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="PPv2URPConverters">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tooling.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Tooling.Editor.dll</HintPath>
+    <Reference Include="Unity.AI.Assistant.Integrations.Profiler.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Assistant.Integrations.Profiler.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
@@ -986,26 +968,17 @@
     <Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    <Reference Include="Unity.AI.Assistant.Tools.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Assistant.Tools.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    <Reference Include="Unity.AI.MCP.Runtime">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.MCP.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Bindings.OpenImageIO.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Bindings.OpenImageIO.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    <Reference Include="Unity.AppUI.Undo">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.Undo.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Base">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
@@ -1016,8 +989,14 @@
     <Reference Include="Unity.2D.Aseprite.Common">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InferenceEngine.MacBLAS">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InferenceEngine.MacBLAS.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Assistant.Bridge.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Assistant.Bridge.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Aseprite.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
@@ -1025,23 +1004,140 @@
     <Reference Include="Unity.Recorder">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    <Reference Include="Unity.InferenceEngine.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InferenceEngine.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem.ForUI">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="HFDownloader">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\HFDownloader.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AppUI">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AppUI.Redux">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.Redux.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.MCP.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.MCP.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InferenceEngine.ONNX.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InferenceEngine.ONNX.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AppUI.Navigation">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI.Analytics">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\UnityEditor.UI.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem.ForUI.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InputSystem.ForUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Assistant.Agent.Dynamic.Extension.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.2D.Editor.Overrides">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Editor.Overrides.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tooling.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Tooling.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AppUI.MVVM">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Assistant.Annotations.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Assistant.Annotations.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Assistant.Runtime">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Assistant.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
@@ -1055,11 +1151,11 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    <Reference Include="Unity.AI.Tracing">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AI.Tracing.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    <Reference Include="Unity.AppUI.Redux.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.Redux.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
@@ -1067,26 +1163,14 @@
     <Reference Include="Unity.Collections">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    <Reference Include="Unity.AppUI.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Multiplayer.Center.Common">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Multiplayer.Center.Common.dll</HintPath>
@@ -1103,14 +1187,14 @@
     <Reference Include="Unity.Multiplayer.Center.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    <Reference Include="Unity.InferenceEngine.Tokenization">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InferenceEngine.Tokenization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+    <Reference Include="Unity.AppUI.Navigation.Editor">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.AppUI.Navigation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
@@ -1121,24 +1205,17 @@
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    <Reference Include="Unity.InferenceEngine.iOSBLAS">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InferenceEngine.iOSBLAS.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InferenceEngine">
+      <HintPath>C:\Users\choi0\Desktop\Projects\2DShooting\Library\ScriptAssemblies\Unity.InferenceEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
-      <Project>{d69ed70b-37f9-5955-4c7a-ad7d31cfa12d}</Project>
-      <Name>ToonyColorsPro.Demo.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="KinoBloom.Runtime.csproj">
       <Project>{1b7fbde9-47c4-45cf-4dd3-85e259be9627}</Project>
       <Name>KinoBloom.Runtime</Name>
@@ -1146,6 +1223,14 @@
     <ProjectReference Include="CFXRRuntime.csproj">
       <Project>{5b19a494-5a5e-938f-59fe-bbe41db36c7b}</Project>
       <Name>CFXRRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{28c88462-89cf-d375-496a-74e39dedfb26}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{d69ed70b-37f9-5955-4c7a-ad7d31cfa12d}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="CFXRDemo.csproj">
       <Project>{48320117-8963-a9d3-dc29-12020a19f285}</Project>
@@ -1162,10 +1247,6 @@
     <ProjectReference Include="SimpleInput.Runtime.csproj">
       <Project>{d5b4ef6c-7f10-702b-a30f-db89c9b7450a}</Project>
       <Name>SimpleInput.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="CFXREditor.csproj">
-      <Project>{28c88462-89cf-d375-496a-74e39dedfb26}</Project>
-      <Name>CFXREditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
